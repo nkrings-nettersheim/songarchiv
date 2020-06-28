@@ -1,0 +1,26 @@
+
+.header {
+  background-color: #ffffff;
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #343a40;
+  text-align: center;
+}
+
+.inline {
+    display: inline;
+}
+
+.bg-class {
+  background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center 1%;
+  padding: 50px;
+}

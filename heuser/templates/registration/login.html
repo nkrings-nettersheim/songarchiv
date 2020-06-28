@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+{% load static %}
+{% endblock %}
+
+{% block nav %}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a href="{% url 'songarchiv:index' %}" class="navbar-brand">Song suchen</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar6">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-stretch" id="navbar6">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+            </li>
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+            </li>
+        {% endif %}
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'logout'%}">Logout</a>
+            {% else %}
+                <a class="nav-link" href="{% url 'login'%}">Login</a>
+            {% endif %}
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+<content>
+  <p></p>
+  <p></p>
+{% if form.errors %}
+  <p>Die eingegebenen Daten konnten nicht gefunden werden. Bitte überprüfen Sie Ihre Eingaben!</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p>Ihr Account hat keinen Zugriff auf die gewünschte Seite. Bitte einen Account mit entsprechender Berechtigung verwenden.</p>
+  {% else %}
+    <p>Bitte einloggen.</p>
+  {% endif %}
+{% endif %}
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+      <div class="container">
+        <div class="form-group row">
+          <div class="col-sm-4">&nbsp;</div>
+          <div class="col-sm-2">{{ form.username.label_tag }}</div>
+          <div class="col-sm-2">{{ form.username }}</div>
+          <div class="col-sm-4">&nbsp;</div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-4">&nbsp;</div>
+          <div class="col-sm-2">{{ form.password.label_tag }}</div>
+          <div class="col-sm-2">{{ form.password }}</div>
+          <div class="col-sm-4">&nbsp;</div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-4">&nbsp;</div>
+          <div class="col-sm-2">&nbsp;</div>
+          <div class="col-sm-2"><input type="submit" class="btn btn-dark" value="Einloggen" /></div>
+          <div class="col-sm-4"><input type="hidden" name="next" value="{{ next }}" /></div>
+        </div>
+</form>
+        <div class="form-group row">
+          <div class="col-sm-6">&nbsp;</div>
+          <div class="col-sm-2"><a href="{% url 'password_reset' %}" class="text-dark">Passwort vergessen?</a></div>
+          <div class="col-sm-4">&nbsp;</div>
+        </div>
+      </div>
+</content>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+{% load static %}
+{% endblock %}
+
+{% block nav %}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a href="{% url 'songarchiv:index' %}" class="navbar-brand">Song suchen</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar6">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-stretch" id="navbar6">
+        <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'songarchiv:edit_album' album.id %}">Album ändern</a>
+            </li>
+        {% endif %}
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'logout'%}">Logout</a>
+            {% else %}
+                <a class="nav-link" href="{% url 'login'%}">Login</a>
+            {% endif %}
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<content>
+    <p></p>
+    <div class="container">
+          <div class="row">
+            <div class="col-sm-2">
+                <div class="small inline">Album:</div>
+            </div>
+              <div class="col-sm-6">
+                 <strong>{{ album.album_title }}</strong>
+              </div>
+          </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="small inline">Erscheinungsjahr:</div>
+            </div>
+            <div class="col-sm-6">
+                <strong>{{ album.album_year }}</strong>
+            </div>
+        </div>
+   </div>
+</content>
+{% endblock %}
