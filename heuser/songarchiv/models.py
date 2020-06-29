@@ -37,6 +37,8 @@ class Album(models.Model):
 
 class Song_Text(models.Model):
     text_text = RichTextField()
+    text_standard_german = RichTextField()
+    text_chordpro = RichTextField()
     text_chords = RichTextField()
     text_nashville = RichTextField()
     song = models.ForeignKey(Song, on_delete=models.CASCADE, default='')

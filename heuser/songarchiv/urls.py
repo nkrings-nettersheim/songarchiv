@@ -18,6 +18,10 @@ urlpatterns = [
     path('add/text/', views.add_text, name='add_text'),
     path('edit/text/<id>/', views.edit_text, name='edit_text'),
     path('text/<id>/', views.text, name='text'),
+    path('print_text/', views.print_text, name='print_text'),
+    path('print_chords/', views.print_chords, name='print_chords'),
+    path('print_nashville/', views.print_nashville, name='print_nashville'),
+
     path('impressum/', views.impressum, name='impressum'),
     path('datenschutz/', views.datenschutz, name='datenschutz'),
 ]

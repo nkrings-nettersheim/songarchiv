@@ -52,6 +52,20 @@
             </div>
         </div>
         <div class="form-group row">
+            <label for="{{ form.text_standard_german.id_for_label }}" class="col-sm-2 control-label">Text in Hoch-Deutsch:</label>
+            <div class="col-sm-10">
+                {{ form.text_standard_german }}
+                <div class="text-danger">{{ form.text_standard_german.errors }}</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="{{ form.text_chordpro.id_for_label }}" class="col-sm-2 control-label">Text im Chordpro Format:</label>
+            <div class="col-sm-10">
+                {{ form.text_chordpro }}
+                <div class="text-danger">{{ form.text_chordpro.errors }}</div>
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="{{ form.text_chords.id_for_label }}" class="col-sm-2 control-label">Text mit Akkorden:</label>
             <div class="col-sm-10">
                 {{ form.text_chords }}

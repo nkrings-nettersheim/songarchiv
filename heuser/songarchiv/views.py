@@ -6,10 +6,12 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
+from django.template.loader import render_to_string
 
 from .forms import IndexForm, SongForm, SearchAlbumForm, AlbumForm, SongTextForm
 from .models import Song, Album, Song_Text
 from django.conf import settings
+from weasyprint import HTML, CSS
 
 BASE_DIR = settings.BASE_DIR
 
@@ -206,12 +208,74 @@ def edit_text(request, id=None):
 
 def text(request, id=id):
     try:
+        if request.user_agent.is_mobile:
+            user_agent = 'mobile'
+        else:
+            user_agent = 'non-mobile'
+
         text_result = Song_Text.objects.get(song_id=id)
         song_result = Song.objects.get(id=id)
-        logger.debug('text: text mit der ID: ' + id + ' aufgerufen')
-        return render(request, 'songarchiv/text.html', {'text': text_result, 'song': song_result})
+        logger.debug('text: text mit der ID: ' + id + ' aufgerufen. UserAgent: ' + user_agent)
+        return render(request, 'songarchiv/text.html', {'text': text_result, 'song': song_result, 'user_agent': user_agent})
     except ObjectDoesNotExist:
         return redirect('/songarchiv/add/text/?id=' + id)
+
+# **************************************************************************************************
+
+def print_text(request):
+    id = request.GET.get('id')
+    result_text = Song_Text.objects.get(id=request.GET.get('id'))
+    result_song = Song.objects.get(id=result_text.song_id)
+    #result.static_root = settings.STATIC_ROOT
+
+    filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_text.pdf"
+
+    html_string = render_to_string('pdf_templates/print_text.html', {'result_text': result_text, 'result_song': result_song})
+
+    html = HTML(string=html_string, base_url=request.build_absolute_uri())
+    pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_text.css')])
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=' + filename
+
+    return response
+
+# **************************************************************************************************
+
+def print_chords(request):
+    id = request.GET.get('id')
+    result_text = Song_Text.objects.get(id=request.GET.get('id'))
+    result_song = Song.objects.get(id=result_text.song_id)
+    #result.static_root = settings.STATIC_ROOT
+
+    filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_chords.pdf"
+
+    html_string = render_to_string('pdf_templates/print_chords.html', {'result_text': result_text, 'result_song': result_song})
+
+    html = HTML(string=html_string, base_url=request.build_absolute_uri())
+    pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_chords.css')])
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=' + filename
+
+    return response
+
+# **************************************************************************************************
+
+def print_nashville(request):
+    id = request.GET.get('id')
+    result_text = Song_Text.objects.get(id=request.GET.get('id'))
+    result_song = Song.objects.get(id=result_text.song_id)
+    #result.static_root = settings.STATIC_ROOT
+
+    filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_nashville.pdf"
+
+    html_string = render_to_string('pdf_templates/print_nashville.html', {'result_text': result_text, 'result_song': result_song})
+
+    html = HTML(string=html_string, base_url=request.build_absolute_uri())
+    pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_nashville.css')])
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=' + filename
+
+    return response
 
 
 # **************************************************************************************************

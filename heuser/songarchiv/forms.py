@@ -205,6 +205,12 @@ class SongTextForm(forms.ModelForm):
     text_text = forms.CharField(required=False,
                                 widget=CKEditorWidget(config_name='text'))
 
+    text_standard_german = forms.CharField(required=False,
+                                  widget=CKEditorWidget(config_name='text'))
+
+    text_chordpro = forms.CharField(required=False,
+                                  widget=CKEditorWidget(config_name='text'))
+
     text_chords = forms.CharField(required=False,
                                   widget=CKEditorWidget(config_name='chords'))
 
@@ -215,6 +221,8 @@ class SongTextForm(forms.ModelForm):
         model = Song_Text
         fields = [
             'text_text',
+            'text_standard_german',
+            'text_chordpro',
             'text_chords',
             'text_nashville',
             'song'

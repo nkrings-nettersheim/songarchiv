@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Therapiebericht</title>
+    <meta name="description" content="Therapiebericht Logopädische Praxis Petra Klein">
+    <meta name="author" content="Norbert Krings">
+</head>
+<body>
+<div id="song_title">{{ result_song.song_title }}</div>
+<div id="top_line">____________________________________________________________________________________</div>
+
+    <div id="song_music_lyrics_publisher">
+            {% if song.song_music == song.song_lyrics %}
+              Musik & Text {{ result_song.song_music }} / Verlag: {{ result_song.song_publisher }}
+            {% else %}
+              Musik: {{ result_song.song_music }}; Text: {{ result_song.song_lyrics }} / Verlag: {{ result_song.song_publisher }}
+            {% endif %}
+    </div>
+
+
+<div id="song_text">{{ result_text.text_nashville | safe }}</div>
+
+<div id="footer_line">____________________________________________________________________________________</div>
+<div id="footer">Bereitgestellt durch den Björn Heuser Fan-Service. https://songarchiv.heuser-koeln.de </div>
+<div id="footer_2">Das Chord-Sheet darf frei verwendet und verteilt werden. </div>
+
+</body>
+</html>

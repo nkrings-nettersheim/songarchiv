@@ -1,0 +1,77 @@
+@page {
+    size: A4 portrait;
+    margin-top: 0cm;
+    margin-left: 0cm;
+    margin-right: 0cm;
+    margin-bottom: 0cm;
+}
+
+body {
+    font-family: Helvetica;
+    font-size: 10pt;
+}
+
+#kopf {
+    position: absolute;
+    left: 13cm;
+    top: 0.0cm;
+    font-family: "Times New Roman";
+    font-size: 18pt;
+    font-weight: bold;
+    color: #AAAAAA;
+}
+
+#song_title {
+    position: absolute;
+    font-size: 18pt;
+    font-weight: bold;
+    text-decoration-style: solid;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 1.0cm;
+}
+#song_music_container {
+    position: relative;
+}
+
+#song_music_lyrics_publisher {
+    position: relative;
+    font-size: 10pt;
+    font-weight: bold;
+    top: 1.5cm;
+    text-align: center;
+}
+
+#top_line {
+    position: absolute;
+    font-size: 12pt;
+    left: 0.5cm;
+    top: 2cm;
+}
+
+#song_text {
+    position: absolute;
+    font-size: 11pt;
+    left: 2.0cm;
+    top: 2.5cm;
+}
+
+#footer_line {
+    position: absolute;
+    font-size: 12pt;
+    left: 0.5cm;
+    top: 28cm;
+}
+
+#footer {
+    position: relative;
+    font-size: 12pt;
+    top: 28.0cm;
+    text-align: center;
+}
+#footer_2 {
+    position: relative;
+    font-size: 12pt;
+    top: 28.0cm;
+    text-align: center;
+}
