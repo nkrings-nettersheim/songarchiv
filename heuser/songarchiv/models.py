@@ -9,6 +9,17 @@ def dynamik_path(instance, filename):
     return file_path
 
 
+class Album(models.Model):
+    album_title = models.CharField(max_length=250)
+    album_year = models.DateField(default='1900-01-01')
+    album_cover = models.CharField(max_length=250, default='')
+    album_spotify = models.CharField(max_length=500, default='')
+    album_amazon_selling = models.CharField(max_length=1000, default='')
+
+    def __str__(self):
+        return self.album_title
+
+
 class Song(models.Model):
     song_title = models.CharField(max_length=250)
     song_artist = models.CharField(max_length=250)
@@ -22,17 +33,10 @@ class Song(models.Model):
     song_itunes = models.URLField(max_length=250, blank=True, default='')
     song_snippet = models.FileField(upload_to=dynamik_path, max_length=100, blank=True)
     song_background = models.TextField(blank=True, default='')
+    album = models.ForeignKey(Album, on_delete=models.PROTECT, blank=True, null=True)
 
     def __str__(self):
         return self.song_title
-
-
-class Album(models.Model):
-    album_title = models.CharField(max_length=250)
-    album_year = models.DateField(default='1900-01-01')
-
-    def __str__(self):
-        return self.album_title
 
 
 class Song_Text(models.Model):

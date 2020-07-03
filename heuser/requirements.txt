@@ -1,8 +1,8 @@
-Django==3.0.2
+Django==3.0.7
 pytz==2019.3
 sqlparse==0.3.0
 mysqlclient==1.4.6
-django-js-asset-1.2.2
+django-js-asset==1.2.2
 django-ckeditor==5.9.0
 django-classy-tags==1.0.0
 django-cookie-law==2.0.3
@@ -12,3 +12,4 @@ pyyaml==5.3.1
 ua-parser==0.10.0
 user-agents==2.1
 django-user-agents==0.4.0
+weasyprint==51

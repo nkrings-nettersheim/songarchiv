@@ -17,10 +17,22 @@
     display: inline;
 }
 
-.bg-class {
-  background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-position: center 1%;
-  padding: 50px;
+@media screen and (min-width: 1024px){
+    .bg-class {
+      background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: center 1%;
+      padding: 50px;
+    }
+}
+
+@media screen and (max-width: 1023px){
+    .bg-class {
+      background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: center 1%;
+      padding: 50px;
+    }
 }

@@ -20,9 +20,9 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
             {% if user.is_authenticated %}
-                <a class="nav-link" href="{% url 'logout'%}">Logout</a>
+                <a class="nav-link" href="{% url 'logout'%}"><i class="fa fa-sign-out" style="font-size:24px"></i> Logout</a>
             {% else %}
-                <a class="nav-link" href="{% url 'login'%}">Login</a>
+                <a class="nav-link" href="{% url 'login'%}"><i class="fa fa-sign-in" style="font-size:24px"></i> Login</a>
             {% endif %}
             </li>
         </ul>
@@ -127,6 +127,13 @@
                 <div class="text-danger">{{ form.song_background.errors }}</div>
             </div>
         </div>
+        <div class="form-group row">
+            <label for="{{ form.album.id_for_label }}" class="col-sm-2 control-label">Album:</label>
+            <div class="col-sm-6">
+                {{ form.album }}
+                <div class="text-danger">{{ form.album.errors }}</div>
+            </div>
+        </div>
 
         <div class="form-group row">
             <div class="col-sm-2"></div>
@@ -135,5 +142,7 @@
             </div>
         </div>
     </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
 </content>
 {% endblock %}

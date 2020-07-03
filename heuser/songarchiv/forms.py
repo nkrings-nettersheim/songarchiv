@@ -156,7 +156,8 @@ class SongForm(forms.ModelForm):
                   'song_amazon',
                   'song_itunes',
                   'song_snippet',
-                  'song_background'
+                  'song_background',
+                  'album'
                   ]
 
 
@@ -193,11 +194,47 @@ class AlbumForm(forms.ModelForm):
         required=False
     )
 
+
+    album_cover = forms.CharField(required=False,
+                                  max_length=250,
+                                  widget=forms.TextInput(
+                                      attrs={
+                                          'class': 'form-control',
+                                          'placeholder': 'Album-Cover eingeben ...'
+                                      }
+                                  )
+                                  )
+
+
+    album_spotify = forms.CharField(required=False,
+                                  max_length=500,
+                                  widget=forms.TextInput(
+                                      attrs={
+                                          'class': 'form-control',
+                                          'placeholder': 'Album-Spotify eingeben ...'
+                                      }
+                                  )
+                                  )
+
+
+    album_amazon_selling = forms.CharField(required=False,
+                                  max_length=1000,
+                                  widget=forms.TextInput(
+                                      attrs={
+                                          'class': 'form-control',
+                                          'placeholder': 'Amazon Link zum Shop eingeben ...'
+                                      }
+                                  )
+                                  )
+
     class Meta:
         model = Album
         fields = [
             'album_title',
-            'album_year'
+            'album_year',
+            'album_cover',
+            'album_spotify',
+            'album_amazon_selling'
         ]
 
 

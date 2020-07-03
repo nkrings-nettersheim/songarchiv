@@ -166,9 +166,12 @@ EMAIL_HOST_PASSWORD = get_secret('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = get_secret('EMAIL_PORT')
 EMAIL_USE_TLS = get_secret('EMAIL_USE_TLS')
 
+
 ####################################
 ##  CKEDITOR CONFIGURATION ##
 ####################################
+
+from ckeditor.configs import DEFAULT_CONFIG
 
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 
@@ -203,7 +206,6 @@ CKEDITOR_CONFIGS = {'default':
                     'chords':
                         {'height': 380,
                          'width': 800,
-                         'font-family': "Arial",
                          'defaultLanguage': "de",
                          'scayt_autoStartup': True,
                          'scayt_sLang': "de_DE",

@@ -12,9 +12,8 @@
         <ul class="navbar-nav">
         {% if user.is_authenticated %}
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'songarchiv:search_album_start' %}">Album suchen</a>
+                <a class="nav-link" href="{% url 'songarchiv:album' %}">Alben</a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'songarchiv:add_song' %}">Song erfassen</a>
             </li>
@@ -38,92 +37,97 @@
 
 {% block content %}
 <content>
-    <div class="container-fluid mr-auto bg-class" >
+    <div class="container-fluid min-100 d-flex flex-column" >
+        <div class="row flex-grow-1 min-100 bg-white">
+            <div class="col p-4 flex-grow-1 bg-class">
         <form action="{% url 'songarchiv:search_song' %}" method="post">
         {% csrf_token %}
-        <p></p>
-        <div class="row" >
-            <div class="col-sm text-white">
-                <center><h2> Offizielles Songarchiv des Liedermacher Björn Heuser</h2></center>
+            <div class="row" >
+                <div class="col-sm text-white">
+                    <center><h2> Offizielles Songarchiv des Liedermachers Björn Heuser</h2></center>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-           <div class="col-sm-4">
-           </div>
-       </div>
-       <div class="form-group row">
-           <div class="col-sm-3">
-           </div>
-            <div class="col-sm-6 center">
-                {{ form.title }}
-                {{ form.title.errors }}
+            <div class="form-group row">
+               <div class="col-sm-4">
+               </div>
             </div>
-           <div class="col-sm-3">
-           </div>
-        </div>
-       <div class="form-group row">
-           <div class="col-sm-12 text-white">
-               <center>Aktuell befinden sich {{ form.song_count }} Songs im Archiv</center>
-           </div>
-       </div>
+            <div class="form-group row">
+               <div class="col-sm-3">
+               </div>
+                <div class="col-sm-6 center">
+                    {{ form.title }}
+                    {{ form.title.errors }}
+                </div>
+               <div class="col-sm-3">
+               </div>
+            </div>
+            <div class="form-group row">
+               <div class="col-sm-12 text-white">
+                   <center>Aktuell befinden sich {{ form.song_count }} Songs im Archiv</center>
+               </div>
+            </div>
 
-       <div class="form-group row">
-           <div class="col-sm-12 text-danger">
-               {% if form.info %}
-               <center>{{ form.info }}</center>
-               {% else %}
-               &nbsp;
-               {% endif %}
-           </div>
-       </div>
-       <div class="form-group row">
-           <div class="col-sm-12">
-               <center><button type="submit" class="btn btn-white btn-sm">suchen</button></center>
-           </div>
-       </div>
-        <div class="form-group row">
-            <div class="col-sm-12 text-center">
+            <div class="form-group row">
+               <div class="col-sm-12 text-danger">
+                   {% if form.info %}
+                   <center>{{ form.info }}</center>
+                   {% else %}
+                   &nbsp;
+                   {% endif %}
+               </div>
+            </div>
+            <div class="form-group row">
+               <div class="col-sm-12">
+                   <center><button type="submit" class="btn btn-white btn-sm">suchen</button></center>
+               </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12 text-center">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12 text-center text-white">
+                    <h4>ABC- Suche</h4>
+                </div>
+            </div>
+            <div class="form-group row">
+               <div class="col-sm-12">
+                   <div class="text-center text-white">
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=A">A</a>&nbsp;
+                       <!-- <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=O">Ä</a>&nbsp;-->
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=B">B</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=C">C</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=D">D</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=E">E</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=F">F</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=G">G</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=H">H</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=I">I</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=J">J</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=K">K</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=L">L</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=M">M</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=N">N</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=O">O</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=Ö">Ö</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=P">P</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=Q">Q</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=R">R</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=S">S</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=T">T</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=U">U</a>&nbsp;
+                       <!-- <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=Ü">Ü</a>&nbsp;-->
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=V">V</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=W">W</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=X">X</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=Y">Y</a>&nbsp;
+                       <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=Z">Z</a>
+                   </div>
+               </div>
             </div>
         </div>
-        <div class="form-group row">
-            <div class="col-sm-12 text-center text-white">
-                <h4>ABC- Suche</h4>
-            </div>
         </div>
-       <div class="form-group row">
-           <div class="col-sm-12">
-               <div class="text-center text-white">
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=A">A</a>&nbsp;
-                   <!-- <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=O">Ä</a>&nbsp;-->
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=B">B</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=C">C</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=D">D</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=E">E</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=F">F</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=G">G</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=H">H</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=I">I</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=J">J</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=K">K</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=L">L</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=M">M</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=N">N</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=O">O</a>&nbsp;
-                   <!-- <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=Ö">Ö</a>&nbsp;-->
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=P">P</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=Q">Q</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=R">R</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=S">S</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=T">T</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=U">U</a>&nbsp;
-                   <!-- <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=Ü">Ü</a>&nbsp;-->
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=V">V</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=W">W</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=X">X</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=Y">Y</a>&nbsp;
-                   <a class="text-white" href="{% url 'songarchiv:search_song' %}?title=Z">Z</a>
-           </div>
-       </div>
+        </form>
     </div>
 </content>
 

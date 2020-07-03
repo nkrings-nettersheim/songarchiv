@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+  background-color: #ffffff;
+}
 
 .header {
   background-color: #ffffff;
@@ -17,10 +21,60 @@
     display: inline;
 }
 
-.bg-class {
-  background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-position: center 1%;
-  padding: 50px;
+.min-100 {
+    min-height: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 575px){
+    .bg-class {
+        background-image: url('/static/songarchiv/images/bjoern.jpg');
+        background-size: 575px auto;
+        background-repeat: no-repeat;
+        background-position: center 1%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px){
+    .bg-class {
+        background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center 1%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .bg-class {
+        background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center 1%;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1140px){
+    .bg-class {
+        background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
+        background-size: 1140px auto;
+        background-repeat: no-repeat;
+        background-position:center 1%;
+     }
+}
+
+@media screen and (min-width: 1141px) and (max-width: 1599px){
+    .bg-class {
+        background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
+        background-size: 1600px auto;
+        background-repeat: no-repeat;
+        background-position:center 1%;
+     }
+}
+@media screen and (min-width: 1600px){
+    .bg-class {
+        background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
+        background-size: auto auto;
+        background-repeat: no-repeat;
+        background-position:center 1%;
+     }
 }

@@ -125,7 +125,7 @@ def add_album(request):
             album_item.save()
             #            logger.info('{:>2}'.format(request.user.id) + ' add_doctor: Arzt mit Namen: ' + str(
             #                doctor_item.doctor_name1) + ' angelegt')
-            return redirect('/songarchiv/album/' + str(album_item.id) + '/')
+            return redirect('/songarchiv/album/')
     else:
         logger.info('add_album: Formular zur Bearbeitung/Erfassung der Song-Daten')
         form = AlbumForm()
@@ -163,16 +163,16 @@ def edit_album(request, id=None):
     if form.is_valid():
         form.save()
         # logger.info('{:>2}'.format(request.user.id) + ' edit_doctor: ' + str(item.id) + ' Daten werden gespeichert')
-        return redirect('/songarchiv/album/' + str(item.id) + '/')
+        return redirect('/songarchiv/album/')
     # logger.debug('edit_doctor: Bearbeitungsformular aufgerufen ID: ' + id)
     form.id = item.id
     return render(request, 'songarchiv/album_form.html', {'form': form})
 
 
-def album(request, id=id):
+def album(request):
     try:
-        album_result = Album.objects.get(id=id)
-        logger.debug('album: album mit der ID: ' + id + ' aufgerufen')
+        album_result = Album.objects.all()
+        logger.debug('album: Alben aufgerufen ')
         return render(request, 'songarchiv/album.html', {'album': album_result})
     except ObjectDoesNotExist:
         return redirect('/songarchiv/')
