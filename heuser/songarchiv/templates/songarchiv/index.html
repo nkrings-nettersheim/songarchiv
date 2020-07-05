@@ -10,10 +10,10 @@
     </button>
     <div class="navbar-collapse collapse justify-content-stretch" id="navbar6">
         <ul class="navbar-nav">
-        {% if user.is_authenticated %}
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'songarchiv:album' %}">Alben</a>
             </li>
+        {% if user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'songarchiv:add_song' %}">Song erfassen</a>
             </li>

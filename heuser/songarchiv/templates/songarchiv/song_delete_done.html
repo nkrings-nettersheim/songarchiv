@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block extrahead %}
+{% load static %}
+{% endblock %}
+
 {% block nav %}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a href="{% url 'songarchiv:index' %}" class="navbar-brand">Song suchen</a>
@@ -9,16 +13,7 @@
     <div class="navbar-collapse collapse justify-content-stretch" id="navbar6">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'songarchiv:album' %}">Alben</a>
             </li>
-        {% if user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'songarchiv:add_song' %}">Song erfassen</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'songarchiv:add_album' %}">Album erfassen</a>
-            </li>
-        {% endif %}
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -35,15 +30,12 @@
 
 {% block content %}
 <content>
+    <p></p>
     <div class="container">
-        <p></p>
         <div class="row">
-            <div class="col-md-2">&nbsp;</div>
-            <div class="d-flex justify-content-center col-md-8">
-                  <h4>Wir haben dir an deine E-Mailadresse Informationen geschickt, wie du das Passwort ändern kannst.
-                      Die E-Mail sollte in wenigen Minuten bei dir ankommen.</h4>
+            <div class="col-sm">
+                <h4>Song wurde erfolgreich gelöscht!</h4>
             </div>
-            <div class="col-md-2">&nbsp;</div>
         </div>
     </div>
 </content>

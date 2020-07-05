@@ -109,7 +109,7 @@ class SongForm(forms.ModelForm):
                                   widget=forms.TextInput(
                                       attrs={
                                           'class': 'form-control',
-                                          'placeholder': 'Link zu Amazon ...'
+                                          'placeholder': 'Link zu Amazon-Music ...'
                                       }
                                   )
                                   )
@@ -134,6 +134,36 @@ class SongForm(forms.ModelForm):
 #                                  )
 #                                  )
 
+    song_cover = forms.CharField(required=False,
+                                  max_length=150,
+                                  widget=forms.TextInput(
+                                      attrs={
+                                          'class': 'form-control',
+                                          'placeholder': 'Name der Cover-Datei ...'
+                                      }
+                                  )
+                                  )
+
+    song_youtube = forms.CharField(required=False,
+                                  max_length=250,
+                                  widget=forms.TextInput(
+                                      attrs={
+                                          'class': 'form-control',
+                                          'placeholder': 'Link zu Youtube ...'
+                                      }
+                                  )
+                                  )
+
+    song_amazon_sale = forms.CharField(required=False,
+                                  max_length=250,
+                                  widget=forms.TextInput(
+                                      attrs={
+                                          'class': 'form-control',
+                                          'placeholder': 'Link zum Amazon Shop ...'
+                                      }
+                                  )
+                                  )
+
     song_background = forms.CharField(required=False,
                                       widget=forms.Textarea(
                                           attrs={
@@ -142,6 +172,8 @@ class SongForm(forms.ModelForm):
                                           }
                                       )
                                       )
+
+    album = forms.ModelChoiceField(required=False, queryset=Album.objects.all().order_by('album_title'))
 
     class Meta:
         model = Song
@@ -156,6 +188,9 @@ class SongForm(forms.ModelForm):
                   'song_amazon',
                   'song_itunes',
                   'song_snippet',
+                  'song_cover',
+                  'song_youtube',
+                  'song_amazon_sale',
                   'song_background',
                   'album'
                   ]

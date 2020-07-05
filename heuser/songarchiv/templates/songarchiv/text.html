@@ -220,8 +220,8 @@
                               </a>
                           </div>
                       </div>
+                  {% if text.text_chords %}
                       <div class="row bg-white">&nbsp;</div>
-
                       <div class="row bg-white">
                           <div class="col-sm-1"></div>
                           <div class="col-sm-11">
@@ -230,6 +230,19 @@
                             </a>
                           </div>
                       </div>
+                  {% endif %}
+                  {% if text.text_chordpro %}
+                      <div class="row bg-white">&nbsp;</div>
+                      <div class="row bg-white">
+                          <div class="col-sm-1"></div>
+                          <div class="col-sm-11">
+                            <a href="{% url 'songarchiv:print_chordpro' %}?id={{text.id}}">
+                              <button type="button" class="btn btn-dark">Text und Akkorde {Chordpro}</button>
+                            </a>
+                          </div>
+                      </div>
+                  {% endif %}
+                  {% if text.text_nashville %}
                       <div class="row bg-white">&nbsp;</div>
                       <div class="row bg-white ">
                           <div class="col-sm-1"></div>
@@ -239,6 +252,7 @@
                               </a>
                           </div>
                       </div>
+                  {% endif %}
                   </div>
 
               </div>

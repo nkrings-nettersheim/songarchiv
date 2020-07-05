@@ -120,6 +120,28 @@
                 <div class="text-danger">{{ form.song_snippet.errors }}</div>
             </div>
         </div>
+       <div class="form-group row">
+            <label for="{{ form.song_cover.id_for_label }}" class="col-sm-2 control-label">Cover Datei:</label>
+            <div class="col-sm-6">
+                {{ form.song_cover }}
+                <div class="text-danger">{{ form.song_cover.errors }}</div>
+            </div>
+        </div>
+       <div class="form-group row">
+            <label for="{{ form.song_youtube.id_for_label }}" class="col-sm-2 control-label">Youtube Datei:</label>
+            <div class="col-sm-6">
+                {{ form.song_youtube }}
+                <div class="text-danger">{{ form.song_youtube.errors }}</div>
+                <div class="text-warning">Hinweis: width... und height... müssen ersetzt werden durch class="embed-responsive-item"</div>
+            </div>
+        </div>
+       <div class="form-group row">
+            <label for="{{ form.song_amazon_sale.id_for_label }}" class="col-sm-2 control-label">Link zum Amazon Shop:</label>
+            <div class="col-sm-6">
+                {{ form.song_amazon_sale }}
+                <div class="text-danger">{{ form.song_amazon_sale.errors }}</div>
+            </div>
+        </div>
         <div class="form-group row">
             <label for="{{ form.song_background.id_for_label }}" class="col-sm-2 control-label">Background:</label>
             <div class="col-sm-6">

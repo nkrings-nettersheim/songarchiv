@@ -4,9 +4,11 @@ import logging
 
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render, redirect
 from django.template.loader import render_to_string
+from django.urls import reverse_lazy
+from django.views.generic import DeleteView
 
 from .forms import IndexForm, SongForm, SearchAlbumForm, AlbumForm, SongTextForm
 from .models import Song, Album, Song_Text
@@ -52,6 +54,7 @@ def add_song(request):
 def search_song(request):
     if request.method == "POST":
         title = request.POST['title']
+        title = title.strip()
         logger.debug('search_song: POST Anfrage erhalten ' + title)
         if title != '':
             song_list = Song.objects.filter(song_title__icontains=title).order_by('song_title')
@@ -114,6 +117,17 @@ def song(request, id=id):
         return redirect('/songarchiv/')
 
 
+class del_song(DeleteView):
+    model = Song
+    template_name = 'songarchiv/song_delete_confirm.html'
+    context_object_name = 'song'
+    success_url = reverse_lazy('songarchiv:index')
+
+
+def song_delete_done(request):
+    return render(request, 'songarchiv/song_delete_done.html')
+
+
 # **************************************************************************************************
 
 @login_required
@@ -171,7 +185,7 @@ def edit_album(request, id=None):
 
 def album(request):
     try:
-        album_result = Album.objects.all()
+        album_result = Album.objects.all().order_by('-album_year')
         logger.debug('album: Alben aufgerufen ')
         return render(request, 'songarchiv/album.html', {'album': album_result})
     except ObjectDoesNotExist:
@@ -238,6 +252,26 @@ def print_text(request):
     response['Content-Disposition'] = 'attachment; filename=' + filename
 
     return response
+
+# **************************************************************************************************
+
+def print_chordpro(request):
+    id = request.GET.get('id')
+    result_text = Song_Text.objects.get(id=request.GET.get('id'))
+    result_song = Song.objects.get(id=result_text.song_id)
+    #result.static_root = settings.STATIC_ROOT
+
+    filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_chordpro.pdf"
+
+    html_string = render_to_string('pdf_templates/print_chordpro.html', {'result_text': result_text, 'result_song': result_song})
+
+    html = HTML(string=html_string, base_url=request.build_absolute_uri())
+    pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_chordpro.css')])
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=' + filename
+
+    return response
+
 
 # **************************************************************************************************
 

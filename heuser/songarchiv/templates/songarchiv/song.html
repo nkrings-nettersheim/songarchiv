@@ -20,6 +20,11 @@
                 <a class="nav-link" href="{% url 'songarchiv:edit_song' song.id %}">Song ändern</a>
             </li>
         {% endif %}
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'songarchiv:del_song' song.id %}">Song löschen</a>
+            </li>
+        {% endif %}
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -72,7 +77,7 @@
                     <div class="col-md-2 col-4">
                     {% if song.song_music == song.song_lyrics%}
                     {% else %}
-                        <div class="small inline">Text von:</div>
+                        <div class="small inline">Text:</div>
                     {% endif %}
                     </div>
                     <div class="col-md-9 col-8">
@@ -126,11 +131,21 @@
                 </div>
                 <div class="row">
                     {% if song.album %}
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-4">
                         <div class="small inline">Album:</div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9 col-8">
                         <strong>{{ song.album }} ({{ song.album.album_year | date:"Y" }})</strong>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="row">
+                    {% if song.song_youtube %}
+                    <div class="col-md-2 col-0">
+
+                    </div>
+                    <div class="col-md-9 col-12 embed-responsive embed-responsive-16by9">
+                            {{ song.song_youtube | safe }}
                     </div>
                     {% endif %}
                 </div>
@@ -138,49 +153,72 @@
             </div>
 
             <div class="col-md-4 col-sm-12">
-                <div class="row">
+            {% if song.song_cover %}
+                    <div class="row">
                     <div class="d-flex justify-content-center col-md">
-                              {% if song.song_snippet %}
+                        {% if song.song_amazon_sale %}
+                            <a href="{{ song.song_amazon_sale }}" target="_blank">
+                                <img src="{% static 'songarchiv/images/' %}{{ song.song_cover}}" width="150px">
+                            </a>
+                        {% else %}
+                            <img src="{% static 'songarchiv/images/' %}{{ song.song_cover}}" width="150px">
+                        {% endif%}
+                    </div>
+                </div>
+                <br>
+            {% endif %}
+            {% if song.song_snippet %}
+                    <div class="row">
+                    <div class="d-flex justify-content-center col-md">
                                 <audio controls preload="none">
                                     <source src="{% static 'songarchiv/mp3/' %}{{ song.song_snippet}}" type="audio/mpeg"></source>
                                 </audio>
-                              {% endif %}
                     </div>
                 </div>
                 <br>
-                <div class="row">
+            {% endif %}
+            {% if song.song_spotify %}
+                  <div class="row">
                     <div class="d-flex justify-content-center col-md">
-                          {% if song.song_spotify %}
                             <a href="{{ song.song_spotify }}" target="_blank"> <img src="{% static 'songarchiv/images/spotify_large.png' %}" width="100px"></a>
-                          {% endif %}
                     </div>
                 </div>
                 <br>
+            {% endif %}
+            {% if song.song_amazon %}
                 <div class="row">
                     <div class="d-flex justify-content-center col-md">
-                      {% if song.song_amazon %}
                         <a href="{{ song.song_amazon }}" target="_blank"> <img src="{% static 'songarchiv/images/amazon_large.png' %}" width="100px"></a>
-                      {% endif %}
                     </div>
                 </div>
                 <br>
+            {% endif %}
+            {% if song.song_itunes %}
                 <div class="row">
                       <div class="d-flex justify-content-center col-md">
-                          {% if song.song_itunes %}
                             <a href="{{ song.song_itunes }}" target="_blank"> <img src="{% static 'songarchiv/images/itunes_large.png' %}" width="100px"></a>
-                          {% endif %}
                       </div>
                 </div>
                 <br>
+            {% endif %}
+            {% if song.album.album_amazon_selling %}
                 <div class="row">
-                    {% if song.album.album_amazon_selling %}
                     <div class="d-flex justify-content-center col-md">
                         <a href="{{ song.album.album_amazon_selling }}" target="_blank">
                             <img class="img-fluid" src="{% static 'songarchiv/images/'%}amazon_shop2.png" width="200">
                         </a>
                     </div>
-                    {% endif %}
                 </div>
+            {% endif %}
+            {% if song.song_amazon_sale %}
+                <div class="row">
+                    <div class="d-flex justify-content-center col-md">
+                        <a href="{{ song.song_amazon_sale }}" target="_blank">
+                            <img class="img-fluid" src="{% static 'songarchiv/images/'%}amazon_shop2.png" width="200">
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
                 <div class="row">
                   <div class="d-flex justify-content-center col-md">
                         <a class="btn btn-dark btn-sm" href="{% url 'songarchiv:text' song.id %}" role="button">zum Song Text</a>
@@ -190,6 +228,11 @@
             </div>
 
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
    </div>
 </content>
 {% endblock %}
