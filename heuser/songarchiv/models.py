@@ -1,6 +1,4 @@
-import os
 
-import ordering as ordering
 from django.db import models
 from ckeditor.fields import RichTextField
 
@@ -34,7 +32,7 @@ class Song(models.Model):
     song_itunes = models.URLField(max_length=250, blank=True, default='')
     song_snippet = models.FileField(upload_to=dynamik_path, max_length=100, blank=True)
     song_cover = models.CharField(max_length=125, blank=True, default='')
-    song_youtube = models.CharField(max_length=250, blank=True, default='')
+    song_youtube = models.CharField(max_length=500, blank=True, default='')
     song_amazon_sale = models.CharField(max_length=250, blank=True, default='')
     song_background = models.TextField(blank=True, default='')
     album = models.ForeignKey(Album, on_delete=models.PROTECT, blank=True, null=True)

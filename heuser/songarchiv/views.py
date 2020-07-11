@@ -24,14 +24,17 @@ def index(request):
     form = IndexForm()
     song_count = Song.objects.all().count()
     form.song_count = song_count
+    logger.info(f"{request.META.get('REMOTE_ADDR')};Index-site")
     return render(request, 'songarchiv/index.html', {'form': form})
 
 
 def impressum(request):
+    logger.info(f"{request.META.get('REMOTE_ADDR')};Impressum")
     return render(request, 'songarchiv/impressum.html')
 
 
 def datenschutz(request):
+    logger.info(f"{request.META.get('REMOTE_ADDR')};Datenschutz")
     return render(request, 'songarchiv/datenschutz.html')
 
 
@@ -42,12 +45,12 @@ def add_song(request):
         if form.is_valid():
             song_item = form.save(commit=False)
             song_item.save()
-            #            logger.info('{:>2}'.format(request.user.id) + ' add_doctor: Arzt mit Namen: ' + str(
-            #                doctor_item.doctor_name1) + ' angelegt')
+            logger.info(f"User-ID: {request.user.id:>2};add_song: song {str(song_item.id)} created")
             return redirect('/songarchiv/song/' + str(song_item.id) + '/')
     else:
-        logger.info('add_song: Formular zur Bearbeitung/Erfassung der Song-Daten')
+        logger.info(f"{request.META.get('REMOTE_ADDR')};add_song: with get-call")
         form = SongForm()
+    logger.info(f"{request.META.get('REMOTE_ADDR')};add_song: SongForm called")
     return render(request, 'songarchiv/song_form.html', {'form': form})
 
 
@@ -55,56 +58,59 @@ def search_song(request):
     if request.method == "POST":
         title = request.POST['title']
         title = title.strip()
-        logger.debug('search_song: POST Anfrage erhalten ' + title)
+        logger.info(f"{request.META.get('REMOTE_ADDR')};search_song: POST-call with title {title}")
         if title != '':
             song_list = Song.objects.filter(song_title__icontains=title).order_by('song_title')
             if len(song_list) == 1:
-                logger.info('search_song: Suche nach Song-ID: ' + str(song_list[0].id))
+                logger.info(f"{request.META.get('REMOTE_ADDR')};search_song: song with id {str(song_list[0].id)} called")
                 return redirect('/songarchiv/song/' + str(song_list[0].id) + '/')
             elif len(song_list) > 1:
+                logger.info(f"{request.META.get('REMOTE_ADDR')};search_song: song_list called")
                 return render(request, 'songarchiv/songs.html', {'song_list': song_list})
             else:
                 form = IndexForm()
                 form.info = "Leider unter dem Suchbegriff '" + title + "' nichts gefunden"
+                logger.info(f"{request.META.get('REMOTE_ADDR')};search_song: nothing found with title {title}")
                 return render(request, 'songarchiv/index.html', {'form': form})
         else:
             form = IndexForm()
             form.info = "Bitte einen Suchbegriff eingeben"
+            logger.info(f"{request.META.get('REMOTE_ADDR')};search_song: no search-string given")
             return render(request, 'songarchiv/index.html', {'form': form})
 
     elif request.method == "GET":
-        logger.debug('search_song: GET Anfrage erhalten')
         title = request.GET['title']
-        logger.debug('search_song: GET Anfrage mit "' + title + '"')
+        logger.info(f"{request.META.get('REMOTE_ADDR')};search_song: GET-call with title {title}")
         song_list = Song.objects.filter(song_title__istartswith=title).order_by('song_title')
         if len(song_list) == 1:
-            logger.info('search_song: Suche nach Song-ID: ' + str(song_list[0].id))
+            logger.info(f"{request.META.get('REMOTE_ADDR')};search_song: GET-call song with id {str(song_list[0].id)} called")
             return redirect('/songarchiv/song/' + str(song_list[0].id) + '/')
         elif len(song_list) > 1:
+            logger.info(f"{request.META.get('REMOTE_ADDR')};search_song: GET-call song_list called")
             return render(request, 'songarchiv/songs.html', {'song_list': song_list})
         else:
             form = IndexForm
+            logger.info(f"{request.META.get('REMOTE_ADDR')};search_song: nothing found with title {title}")
             return render(request, 'songarchiv/index.html', {'form': form})
     else:
-        logger.debug('search_song: Keinen Suchbegriff eingegeben')
+        logger.info(f"{request.META.get('REMOTE_ADDR')};search_song: no searchword given")
         form = IndexForm
         return render(request, 'songarchiv/index.html', {'form': form})
 
 
 @login_required
 def edit_song(request, id=None):
-    # request.session.set_expiry(settings.SESSION_EXPIRE_SECONDS)
     item = get_object_or_404(Song, id=id)
     if request.method == 'POST':
         form = SongForm(request.POST, request.FILES, instance=item)
         if form.is_valid():
-            #assert False
             form.save()
-            logger.info('{:>2}'.format(request.user.id) + ' edit_song: ' + str(item.id) + ' Daten werden gespeichert')
+            logger.info(f"{request.user.id:>2};edit_song: song {str(item.id)} changed and saved")
             return redirect('/songarchiv/song/' + str(item.id) + '/')
     else:
         form = SongForm(request.POST or None, instance=item)
         form.id = item.id
+        logger.info(f"{request.META.get('REMOTE_ADDR')};edit_song: call edit_song get-call")
         return render(request, 'songarchiv/song_form.html', {'form': form})
 
 
@@ -112,8 +118,10 @@ def song(request, id=id):
     try:
         song_result = Song.objects.get(id=id)
         logger.debug('song: Song mit der ID: ' + id + ' aufgerufen')
+        logger.info(f"{request.META.get('REMOTE_ADDR')};song: call song {str(id)}")
         return render(request, 'songarchiv/song.html', {'song': song_result})
     except ObjectDoesNotExist:
+        logger.info(f"{request.META.get('REMOTE_ADDR')};song: call song Object with ID {str(id)} don't exist")
         return redirect('/songarchiv/')
 
 
@@ -121,11 +129,19 @@ class del_song(DeleteView):
     model = Song
     template_name = 'songarchiv/song_delete_confirm.html'
     context_object_name = 'song'
-    success_url = reverse_lazy('songarchiv:index')
+    success_url = reverse_lazy('songarchiv:del_song_done')
 
+#    def get_success_url(self):
+#        logger.info(f";del_song: object with ID {str(self.kwargs.get('pk'))} deleted")
+        #return redirect('/songarchiv/')
 
+#def post(self, request, *args, **kwargs):
+    #    logger.info(f"{request.META.get('REMOTE_ADDR')};del_song: object with ID {str(self.kwargs.get('pk'))} deleted")
+    #    return render(request, 'songarchiv/song_delete_done.html')
 def song_delete_done(request):
+    logger.info(f"{request.META.get('REMOTE_ADDR')};song_delete_done")
     return render(request, 'songarchiv/song_delete_done.html')
+
 
 
 # **************************************************************************************************
@@ -137,22 +153,23 @@ def add_album(request):
         if form.is_valid():
             album_item = form.save(commit=False)
             album_item.save()
-            #            logger.info('{:>2}'.format(request.user.id) + ' add_doctor: Arzt mit Namen: ' + str(
-            #                doctor_item.doctor_name1) + ' angelegt')
+            logger.info(f"{request.user.id:>2};add_album: album with id {str(album_item.id)} created")
             return redirect('/songarchiv/album/')
     else:
-        logger.info('add_album: Formular zur Bearbeitung/Erfassung der Song-Daten')
+        logger.info(f"{request.META.get('REMOTE_ADDR')};add_album: with get-call")
         form = AlbumForm()
+    logger.info(f"{request.META.get('REMOTE_ADDR')};add_album: AlbumForm called")
     return render(request, 'songarchiv/album_form.html', {'form': form})
 
 
+#wird wahrscheinlich nicht mehr gebraucht
 def search_album_start(request):
     # request.session.set_expiry(settings.SESSION_EXPIRE_SECONDS)
-    logger.debug('Suchmaske Album geladen')
     form = SearchAlbumForm()
     return render(request, 'songarchiv/album_search.html', {'form': form})
 
 
+#wird wahrscheinlich nicht mehr gebraucht
 def search_album(request):
     if request.method == "POST":
         title = request.POST['album_title']
@@ -165,7 +182,6 @@ def search_album(request):
         else:
             return render(request, 'songarchiv/album.html', {'album_list': album_list})
     else:
-        logger.debug('search_album: Keinen Suchbegriff eingegeben')
         return render(request, 'songarchiv/index.html')
 
 
@@ -176,17 +192,17 @@ def edit_album(request, id=None):
     form = AlbumForm(request.POST or None, instance=item)
     if form.is_valid():
         form.save()
-        # logger.info('{:>2}'.format(request.user.id) + ' edit_doctor: ' + str(item.id) + ' Daten werden gespeichert')
+        logger.info(f"{request.user.id:>2};edit_album: album {str(item.id)} changed and saved")
         return redirect('/songarchiv/album/')
-    # logger.debug('edit_doctor: Bearbeitungsformular aufgerufen ID: ' + id)
     form.id = item.id
+    logger.info(f"{request.META.get('REMOTE_ADDR')};edit_album: AlbumForm for id {str(form.id)} called")
     return render(request, 'songarchiv/album_form.html', {'form': form})
 
 
 def album(request):
     try:
         album_result = Album.objects.all().order_by('-album_year')
-        logger.debug('album: Alben aufgerufen ')
+        logger.info(f"{request.META.get('REMOTE_ADDR')};album: list of albums called")
         return render(request, 'songarchiv/album.html', {'album': album_result})
     except ObjectDoesNotExist:
         return redirect('/songarchiv/')
@@ -201,10 +217,11 @@ def add_text(request):
         if form.is_valid():
             text_item = form.save(commit=False)
             text_item.save()
+            logger.info(f"{request.user.id:>2};add_text: songtext  with id {str(text_item.id)} saved")
             return redirect('/songarchiv/')
     else:
-        logger.info('add_text: Formular zur Bearbeitung/Erfassung der Song-Daten')
         song_result = Song.objects.get(id=request.GET.get('id'))
+        logger.info(f"{request.user.id:>2};add_text: SongtextForm for id {str(id)} called")
         form = SongTextForm(initial={'song': song_result})
     return render(request, 'songarchiv/text_form.html', {'form': form})
 
@@ -215,8 +232,10 @@ def edit_text(request, id=None):
     form = SongTextForm(request.POST or None, instance=item)
     if form.is_valid():
         form.save()
+        logger.info(f"{request.user.id:>2};edit_text: songtext with id {str(item.id)} changed and saved")
         return redirect('/songarchiv/text/' + str(item.song_id))
     form.id = item.id
+    logger.info(f"{request.user.id:>2};edit_text: text_form for id {str(form.id)} called")
     return render(request, 'songarchiv/text_form.html', {'form': form})
 
 
@@ -229,9 +248,10 @@ def text(request, id=id):
 
         text_result = Song_Text.objects.get(song_id=id)
         song_result = Song.objects.get(id=id)
-        logger.debug('text: text mit der ID: ' + id + ' aufgerufen. UserAgent: ' + user_agent)
+        logger.info(f"{request.META.get('REMOTE_ADDR')};text: songtext with id {str(id)} and UserAgent {user_agent} called")
         return render(request, 'songarchiv/text.html', {'text': text_result, 'song': song_result, 'user_agent': user_agent})
     except ObjectDoesNotExist:
+        logger.info(f"{request.META.get('REMOTE_ADDR')};text: object does not exist")
         return redirect('/songarchiv/add/text/?id=' + id)
 
 # **************************************************************************************************
@@ -240,7 +260,6 @@ def print_text(request):
     id = request.GET.get('id')
     result_text = Song_Text.objects.get(id=request.GET.get('id'))
     result_song = Song.objects.get(id=result_text.song_id)
-    #result.static_root = settings.STATIC_ROOT
 
     filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_text.pdf"
 
@@ -250,6 +269,7 @@ def print_text(request):
     pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_text.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
+    logger.info(f"{request.META.get('REMOTE_ADDR')};print_text: songtext with id {str(id)} as pdf created")
 
     return response
 
@@ -259,7 +279,6 @@ def print_chordpro(request):
     id = request.GET.get('id')
     result_text = Song_Text.objects.get(id=request.GET.get('id'))
     result_song = Song.objects.get(id=result_text.song_id)
-    #result.static_root = settings.STATIC_ROOT
 
     filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_chordpro.pdf"
 
@@ -269,6 +288,7 @@ def print_chordpro(request):
     pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_chordpro.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
+    logger.info(f"{request.META.get('REMOTE_ADDR')};print_chordpro: songtext with id {str(id)} as pdf created")
 
     return response
 
@@ -279,7 +299,6 @@ def print_chords(request):
     id = request.GET.get('id')
     result_text = Song_Text.objects.get(id=request.GET.get('id'))
     result_song = Song.objects.get(id=result_text.song_id)
-    #result.static_root = settings.STATIC_ROOT
 
     filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_chords.pdf"
 
@@ -289,6 +308,7 @@ def print_chords(request):
     pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_chords.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
+    logger.info(f"{request.META.get('REMOTE_ADDR')};print_chords: songtext with id {str(id)} as pdf created")
 
     return response
 
@@ -298,7 +318,6 @@ def print_nashville(request):
     id = request.GET.get('id')
     result_text = Song_Text.objects.get(id=request.GET.get('id'))
     result_song = Song.objects.get(id=result_text.song_id)
-    #result.static_root = settings.STATIC_ROOT
 
     filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_nashville.pdf"
 
@@ -308,6 +327,7 @@ def print_nashville(request):
     pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_nashville.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
+    logger.info(f"{request.META.get('REMOTE_ADDR')};print_nashville: songtext with id {str(id)} as pdf created")
 
     return response
 

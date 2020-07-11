@@ -90,7 +90,7 @@
                 <div class="row">
                     <div class="col-md-2 col-4">
                         {% if song.song_year|date:"Y" > '1900' %}
-                        <div class="small inline">Erscheinungsjahr:</div>
+                        <div class="small inline">Jahr:</div>
                         {% endif%}
                     </div>
                     <div class="col-md-9 col-8">
@@ -142,9 +142,9 @@
                 <div class="row">
                     {% if song.song_youtube %}
                     <div class="col-md-2 col-0">
-
+                        &nbsp;
                     </div>
-                    <div class="col-md-9 col-12 embed-responsive embed-responsive-16by9">
+                    <div class="col-md-9 col-12 bd-example embed-responsive embed-responsive-16by9">
                             {{ song.song_youtube | safe }}
                     </div>
                     {% endif %}
@@ -153,6 +153,20 @@
             </div>
 
             <div class="col-md-4 col-sm-12">
+            {% if song.album %}
+                    <div class="row">
+                    <div class="d-flex justify-content-center col-md">
+                        {% if song.album.album_amazon_selling %}
+                            <a href="{{ song.album.album_amazon_selling }}" target="_blank">
+                                <img src="{% static 'songarchiv/images/' %}{{ song.album.album_cover}}" width="150px">
+                            </a>
+                        {% else %}
+                            <img src="{% static 'songarchiv/images/' %}{{song.album.album_cover}}" width="150px">
+                        {% endif%}
+                    </div>
+                </div>
+                <br>
+            {% endif %}
             {% if song.song_cover %}
                     <div class="row">
                     <div class="d-flex justify-content-center col-md">

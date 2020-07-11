@@ -145,7 +145,7 @@ class SongForm(forms.ModelForm):
                                   )
 
     song_youtube = forms.CharField(required=False,
-                                  max_length=250,
+                                  max_length=500,
                                   widget=forms.TextInput(
                                       attrs={
                                           'class': 'form-control',

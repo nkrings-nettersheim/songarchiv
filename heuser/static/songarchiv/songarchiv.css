@@ -28,7 +28,8 @@ html, body {
 
 @media screen and (max-width: 575px){
     .bg-class {
-        background-image: url('/static/songarchiv/images/bjoern.jpg');
+        /* background-image: url('/static/songarchiv/images/bjoern.jpg'); */
+        background-color: black;
         background-size: 575px auto;
         background-repeat: no-repeat;
         background-position: center 1%;
@@ -38,7 +39,7 @@ html, body {
 @media screen and (min-width: 576px) and (max-width: 767px){
     .bg-class {
         background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
-        background-size: auto;
+        background-size: 767px auto;
         background-repeat: no-repeat;
         background-position: center 1%;
     }
@@ -47,7 +48,7 @@ html, body {
 @media screen and (min-width: 768px) and (max-width: 991px){
     .bg-class {
         background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
-        background-size: auto;
+        background-size: 991px auto;
         background-repeat: no-repeat;
         background-position: center 1%;
     }
