@@ -20,7 +20,7 @@ class Album(models.Model):
 
 
 class Song(models.Model):
-    song_title = models.CharField(max_length=250)
+    song_title = models.CharField(max_length=250, unique=True)
     song_artist = models.CharField(max_length=250)
     song_music = models.CharField(max_length=250, blank=True, default='')
     song_lyrics = models.CharField(max_length=250, blank=True, default='')

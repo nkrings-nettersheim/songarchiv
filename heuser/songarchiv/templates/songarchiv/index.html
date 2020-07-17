@@ -54,7 +54,7 @@
             <div class="form-group row">
                <div class="col-sm-3">
                </div>
-                <div class="col-sm-6 center">
+                <div class="col-sm-6 center ui-widget">
                     {{ form.title }}
                     {{ form.title.errors }}
                 </div>
@@ -87,7 +87,7 @@
             </div>
             <div class="form-group row">
                 <div class="col-sm-12 text-center text-white">
-                    <h4>ABC- Suche</h4>
+                    <h4><a class="text-white" href="{% url 'songarchiv:search_song' %}?title=all&order=song_title">ABC- Suche</a></h4>
                 </div>
             </div>
             <div class="form-group row">

@@ -13,6 +13,7 @@ urlpatterns = [
     path('song/<id>/', views.song, name='song'),
     path('del/song/<pk>', views.del_song.as_view(), name='del_song'),
     path('song_delete_done', views.song_delete_done, name='del_song_done'),
+    path('autocomplete', views.autocomplete, name='autocomplete'),
 
     path('add/album/', views.add_album, name='add_album'),
     path('search/album/start', views.search_album_start, name='search_album_start'),
