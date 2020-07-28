@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="song_title">{{ result_song.song_title }}</div>
-<div id="top_line">____________________________________________________________________________________</div>
+<div id="top_line">_____________________________________________________________________________</div>
 
     <div id="song_music_lyrics_publisher">
             {% if song.song_music == song.song_lyrics %}
@@ -19,11 +19,7 @@
             {% endif %}
     </div>
 
-
 <div id="song_text">{{ result_text.text_chords | safe }}</div>
-
-<div id="footer_line">____________________________________________________________________________________</div>
-<div id="footer">Bereitgestellt durch das Björn Heuser Songarchiv. https://songarchiv.heuser-koeln.de </div>
 
 </body>
 </html>

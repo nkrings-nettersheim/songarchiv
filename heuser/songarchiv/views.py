@@ -10,6 +10,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.views.generic import DeleteView
 from weasyprint import HTML, CSS
+from weasyprint.fonts import FontConfiguration
 
 from .forms import IndexForm, SongForm, SearchAlbumForm, AlbumForm, SongTextForm
 from .models import Song, Album, Song_Text
@@ -52,7 +53,6 @@ def add_song(request):
     logger.info(f"{request.META.get('REMOTE_ADDR')};add_song;;SongForm called")
     return render(request, 'songarchiv/song_form.html', {'form': form})
 
-
 def search_song(request):
     if request.method == "POST":
         title = request.POST['title']
@@ -79,9 +79,9 @@ def search_song(request):
 
     elif request.method == "GET":
         title = request.GET['title']
-        order = request.GET['order']
         logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{title};GET-call with title")
         if (title == "all"):
+            order = request.GET['order']
             song_list = Song.objects.all().order_by(order)
         else:
             song_list = Song.objects.filter(song_title__istartswith=title).order_by('song_title')
@@ -133,8 +133,9 @@ def edit_song(request, id=None):
 def song(request, id=id):
     try:
         song_result = Song.objects.get(id=id)
+        song_text_result = Song_Text.objects.get(song_id=id)
         logger.info(f"{request.META.get('REMOTE_ADDR')};song;{str(id)};call song")
-        return render(request, 'songarchiv/song.html', {'song': song_result})
+        return render(request, 'songarchiv/song.html', {'song': song_result, 'text': song_text_result})
     except ObjectDoesNotExist:
         logger.info(f"{request.META.get('REMOTE_ADDR')};song;{str(id)};call song Object with ID don't exist")
         return redirect('/songarchiv/')
@@ -276,10 +277,11 @@ def print_text(request):
 
     filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_text.pdf"
 
-    html_string = render_to_string('pdf_templates/print_text.html', {'result_text': result_text, 'result_song': result_song})
+    html_string = render_to_string('pdf_templates/print_text.html', {'result_text': result_text,
+                                                                     'result_song': result_song})
 
     html = HTML(string=html_string, base_url=request.build_absolute_uri())
-    pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_text.css')])
+    pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
     logger.info(f"{request.META.get('REMOTE_ADDR')};print_text;{str(id)};songtext with id as pdf created")
@@ -298,7 +300,7 @@ def print_chordpro(request):
     html_string = render_to_string('pdf_templates/print_chordpro.html', {'result_text': result_text, 'result_song': result_song})
 
     html = HTML(string=html_string, base_url=request.build_absolute_uri())
-    pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_chordpro.css')])
+    pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
     logger.info(f"{request.META.get('REMOTE_ADDR')};print_chordpro;{str(id)};songtext with id as pdf created")
@@ -314,13 +316,17 @@ def print_chords(request):
     result_song = Song.objects.get(id=result_text.song_id)
 
     filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_chords.pdf"
-
-    html_string = render_to_string('pdf_templates/print_chords.html', {'result_text': result_text, 'result_song': result_song})
-
-    html = HTML(string=html_string, base_url=request.build_absolute_uri())
-    pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_chords.css')])
-    response = HttpResponse(pdf, content_type='application/pdf')
+    response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
+
+    html_string = render_to_string('pdf_templates/print_chords.html', {'result_text': result_text,
+                                                                       'result_song': result_song})
+    font_config = FontConfiguration()
+
+    HTML(string=html_string).write_pdf(response,
+                                       font_config=font_config,
+                                       stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
+
     logger.info(f"{request.META.get('REMOTE_ADDR')};print_chords;{str(id)};songtext with id as pdf created")
 
     return response
@@ -337,7 +343,7 @@ def print_nashville(request):
     html_string = render_to_string('pdf_templates/print_nashville.html', {'result_text': result_text, 'result_song': result_song})
 
     html = HTML(string=html_string, base_url=request.build_absolute_uri())
-    pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_nashville.css')])
+    pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
     logger.info(f"{request.META.get('REMOTE_ADDR')};print_nashville;{str(id)};songtext with id as pdf created")

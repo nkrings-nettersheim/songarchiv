@@ -13,7 +13,7 @@
     <div class="navbar-collapse collapse justify-content-stretch" id="navbar6">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'songarchiv:text' song.id %}">Song Text</a>
+                <a class="nav-link" href="{% url 'songarchiv:text' song.id %}">Text/Chords/Übersetzung</a>
             </li>
         {% if user.is_authenticated %}
             <li class="nav-item">
@@ -149,6 +149,15 @@
                     </div>
                     {% endif %}
                 </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-2 col-0">
+                        <div class="small inline">Songtext:</div>&nbsp;
+                    </div>
+                    <div class="col-md-9 col-8">
+                            {{ text.text_text | safe  }}
+                    </div>
+                </div>
             <br>
             </div>
 
@@ -235,7 +244,7 @@
             {% endif %}
                 <div class="row">
                   <div class="d-flex justify-content-center col-md">
-                        <a class="btn btn-dark btn-sm" href="{% url 'songarchiv:text' song.id %}" role="button">zum Song Text</a>
+                        <a class="btn btn-dark btn-sm" href="{% url 'songarchiv:text' song.id %}" role="button">zu den Chords</a>
                   </div>
                 </div>
 
