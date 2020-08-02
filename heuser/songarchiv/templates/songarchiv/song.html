@@ -151,12 +151,14 @@
                 </div>
                 <br>
                 <div class="row">
+                    {% if text.text_text %}
                     <div class="col-md-2 col-0">
                         <div class="small inline">Songtext:</div>&nbsp;
                     </div>
                     <div class="col-md-9 col-8">
                             {{ text.text_text | safe  }}
                     </div>
+                    {% endif %}
                 </div>
             <br>
             </div>
@@ -176,7 +178,7 @@
                 </div>
                 <br>
             {% endif %}
-            {% if song.song_cover %}
+            {% if song.song_cover_fehler %}
                     <div class="row">
                     <div class="d-flex justify-content-center col-md">
                         {% if song.song_amazon_sale %}

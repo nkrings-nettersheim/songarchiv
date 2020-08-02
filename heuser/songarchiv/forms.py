@@ -269,7 +269,8 @@ class AlbumForm(forms.ModelForm):
             'album_year',
             'album_cover',
             'album_spotify',
-            'album_amazon_selling'
+            'album_amazon_selling',
+            'album_single'
         ]
 
 

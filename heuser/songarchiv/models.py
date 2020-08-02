@@ -9,11 +9,20 @@ def dynamik_path(instance, filename):
 
 
 class Album(models.Model):
+
+    ALBUM_SINGLE = (
+        ('1', 'Album'),
+        ('2', 'Single'),
+        ('2', 'LDÖS'),
+        ('2', 'Sonstiges'),
+    )
+
     album_title = models.CharField(max_length=250)
     album_year = models.DateField(default='1900-01-01')
     album_cover = models.CharField(max_length=250, default='')
     album_spotify = models.CharField(max_length=500, default='')
     album_amazon_selling = models.CharField(max_length=1000, default='')
+    album_single = models.CharField(max_length=20, choices=ALBUM_SINGLE, default='1')
 
     def __str__(self):
         return self.album_title

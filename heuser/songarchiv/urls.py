@@ -1,7 +1,6 @@
 from django.urls import path
 
 from . import views
-from .views import del_song
 
 app_name = 'songarchiv'
 
@@ -20,6 +19,7 @@ urlpatterns = [
     path('search/album/', views.search_album, name='search_album'),
     path('edit/album/<id>/', views.edit_album, name='edit_album'),
     path('album/', views.album, name='album'),
+    path('single/', views.single, name='single'),
 
     path('add/text/', views.add_text, name='add_text'),
     path('edit/text/<id>/', views.edit_text, name='edit_text'),

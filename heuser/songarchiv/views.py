@@ -53,6 +53,7 @@ def add_song(request):
     logger.info(f"{request.META.get('REMOTE_ADDR')};add_song;;SongForm called")
     return render(request, 'songarchiv/song_form.html', {'form': form})
 
+
 def search_song(request):
     if request.method == "POST":
         title = request.POST['title']
@@ -80,9 +81,16 @@ def search_song(request):
     elif request.method == "GET":
         title = request.GET['title']
         logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{title};GET-call with title")
-        if (title == "all"):
+        if title == "all":
             order = request.GET['order']
-            song_list = Song.objects.all().order_by(order)
+            if order == 'song_title':
+                order = ['song_title', 'album']
+            elif order == 'album':
+                order = ['album__album_title', 'song_title']
+            else:
+                order = 'song_title'
+
+            song_list = Song.objects.all().order_by(*order)
         else:
             song_list = Song.objects.filter(song_title__istartswith=title).order_by('song_title')
 
@@ -100,6 +108,7 @@ def search_song(request):
         logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;;no searchword given")
         form = IndexForm
         return render(request, 'songarchiv/index.html', {'form': form})
+
 
 def autocomplete(request):
     if request.method =='GET':
@@ -133,7 +142,10 @@ def edit_song(request, id=None):
 def song(request, id=id):
     try:
         song_result = Song.objects.get(id=id)
-        song_text_result = Song_Text.objects.get(song_id=id)
+        try:
+            song_text_result = Song_Text.objects.get(song_id=id)
+        except Song_Text.DoesNotExist:
+            song_text_result = None
         logger.info(f"{request.META.get('REMOTE_ADDR')};song;{str(id)};call song")
         return render(request, 'songarchiv/song.html', {'song': song_result, 'text': song_text_result})
     except ObjectDoesNotExist:
@@ -147,16 +159,12 @@ class del_song(DeleteView):
     context_object_name = 'song'
     success_url = reverse_lazy('songarchiv:del_song_done')
 
-#    def get_success_url(self):
-#        logger.info(f";del_song: object with ID {str(self.kwargs.get('pk'))} deleted")
-        #return redirect('/songarchiv/')
 
-#def post(self, request, *args, **kwargs):
-    #    logger.info(f"{request.META.get('REMOTE_ADDR')};del_song: object with ID {str(self.kwargs.get('pk'))} deleted")
-    #    return render(request, 'songarchiv/song_delete_done.html')
 def song_delete_done(request):
     logger.info(f"{request.META.get('REMOTE_ADDR')};song_delete_done")
     return render(request, 'songarchiv/song_delete_done.html')
+
+
 
 
 
@@ -207,7 +215,7 @@ def edit_album(request, id=None):
     if form.is_valid():
         form.save()
         logger.info(f"{request.user.id:>2};edit_album;{str(item.id)};album changed and saved")
-        return redirect('/songarchiv/album/')
+        return redirect('/songarchiv/')
     form.id = item.id
     logger.info(f"{request.META.get('REMOTE_ADDR')};edit_album;{str(form.id)};AlbumForm for id called")
     return render(request, 'songarchiv/album_form.html', {'form': form})
@@ -215,9 +223,18 @@ def edit_album(request, id=None):
 
 def album(request):
     try:
-        album_result = Album.objects.all().order_by('-album_year')
+        album_result = Album.objects.filter(album_single__exact=1).order_by('-album_year')
         logger.info(f"{request.META.get('REMOTE_ADDR')};album;;list of albums called")
         return render(request, 'songarchiv/album.html', {'album': album_result})
+    except ObjectDoesNotExist:
+        return redirect('/songarchiv/')
+
+
+def single(request):
+    try:
+        album_result = Album.objects.filter(album_single__exact=2).order_by('-album_year')
+        logger.info(f"{request.META.get('REMOTE_ADDR')};single;;list of singles called")
+        return render(request, 'songarchiv/single.html', {'album': album_result})
     except ObjectDoesNotExist:
         return redirect('/songarchiv/')
 
@@ -288,7 +305,6 @@ def print_text(request):
 
     return response
 
-# **************************************************************************************************
 
 def print_chordpro(request):
     id = request.GET.get('id')
@@ -307,8 +323,6 @@ def print_chordpro(request):
 
     return response
 
-
-# **************************************************************************************************
 
 def print_chords(request):
     id = request.GET.get('id')
@@ -331,7 +345,6 @@ def print_chords(request):
 
     return response
 
-# **************************************************************************************************
 
 def print_nashville(request):
     id = request.GET.get('id')
