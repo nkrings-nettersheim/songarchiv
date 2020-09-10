@@ -172,6 +172,9 @@ class SongForm(forms.ModelForm):
                                           }
                                       )
                                       )
+    song_activ = forms.CheckboxInput(
+                            )
+
 
     album = forms.ModelChoiceField(required=False, queryset=Album.objects.all().order_by('album_title'))
 
@@ -192,6 +195,7 @@ class SongForm(forms.ModelForm):
                   'song_youtube',
                   'song_amazon_sale',
                   'song_background',
+                  'song_activ',
                   'album'
                   ]
 

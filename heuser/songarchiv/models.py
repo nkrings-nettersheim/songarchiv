@@ -44,6 +44,7 @@ class Song(models.Model):
     song_youtube = models.CharField(max_length=500, blank=True, default='')
     song_amazon_sale = models.CharField(max_length=250, blank=True, default='')
     song_background = models.TextField(blank=True, default='')
+    song_activ = models.BooleanField(default=True)
     album = models.ForeignKey(Album, on_delete=models.PROTECT, blank=True, null=True)
 
     def __str__(self):
@@ -60,3 +61,15 @@ class Song_Text(models.Model):
     text_chords = RichTextField()
     text_nashville = RichTextField()
     song = models.ForeignKey(Song, on_delete=models.CASCADE, default='')
+
+    def __str__(self):
+        return self.song
+
+
+class Content_text(models.Model):
+    content_kurz = models.CharField(max_length=256, default='')
+    content_lang = RichTextField()
+
+    def __str__(self):
+        return self.content_kurz
+

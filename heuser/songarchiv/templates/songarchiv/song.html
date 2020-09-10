@@ -169,10 +169,10 @@
                     <div class="d-flex justify-content-center col-md">
                         {% if song.album.album_amazon_selling %}
                             <a href="{{ song.album.album_amazon_selling }}" target="_blank">
-                                <img src="{% static 'songarchiv/images/' %}{{ song.album.album_cover}}" width="150px">
+                                <img src="{% static 'songarchiv/images/' %}{{ song.album.album_cover}}" width="150px" alt="Coverbild {{ song.album.album_title}}">
                             </a>
                         {% else %}
-                            <img src="{% static 'songarchiv/images/' %}{{song.album.album_cover}}" width="150px">
+                            <img src="{% static 'songarchiv/images/' %}{{song.album.album_cover}}" width="150px" alt="Coverbild {{ song.album.album_title}}">
                         {% endif%}
                     </div>
                 </div>
@@ -183,10 +183,18 @@
                     <div class="d-flex justify-content-center col-md">
                         {% if song.song_amazon_sale %}
                             <a href="{{ song.song_amazon_sale }}" target="_blank">
-                                <img src="{% static 'songarchiv/images/' %}{{ song.song_cover}}" width="150px">
+                                <img src="{% static 'songarchiv/images/' %}{{ song.song_cover}}"
+                                     width="150px"
+                                     alt="Coverbild {{ song.song_title }}"
+                                     title="Bei amazon kaufen"
+                                >
                             </a>
                         {% else %}
-                            <img src="{% static 'songarchiv/images/' %}{{ song.song_cover}}" width="150px">
+                            <img src="{% static 'songarchiv/images/' %}{{ song.song_cover}}"
+                                 width="150px"
+                                 alt="Coverbild {{ song.song_title }}"
+                                 title="Bei amazon kaufen"
+                            >
                         {% endif%}
                     </div>
                 </div>
@@ -205,7 +213,13 @@
             {% if song.song_spotify %}
                   <div class="row">
                     <div class="d-flex justify-content-center col-md">
-                            <a href="{{ song.song_spotify }}" target="_blank"> <img src="{% static 'songarchiv/images/spotify_large.png' %}" width="100px"></a>
+                            <a href="{{ song.song_spotify }}" target="_blank">
+                                <img src="{% static 'songarchiv/images/spotify_large.png' %}"
+                                     width="100px"
+                                     alt="Spotify-Logo"
+                                     title="Bei Spotify abspielen"
+                                >
+                            </a>
                     </div>
                 </div>
                 <br>
@@ -213,7 +227,13 @@
             {% if song.song_amazon %}
                 <div class="row">
                     <div class="d-flex justify-content-center col-md">
-                        <a href="{{ song.song_amazon }}" target="_blank"> <img src="{% static 'songarchiv/images/amazon_large.png' %}" width="100px"></a>
+                        <a href="{{ song.song_amazon }}" target="_blank">
+                            <img src="{% static 'songarchiv/images/amazon_large.png' %}"
+                                 width="100px"
+                                 alt="amazonMusic-Logo"
+                                 title="Bei amazonmusic abspielen"
+                            >
+                        </a>
                     </div>
                 </div>
                 <br>
@@ -221,7 +241,13 @@
             {% if song.song_itunes %}
                 <div class="row">
                       <div class="d-flex justify-content-center col-md">
-                            <a href="{{ song.song_itunes }}" target="_blank"> <img src="{% static 'songarchiv/images/itunes_large.png' %}" width="100px"></a>
+                            <a href="{{ song.song_itunes }}" target="_blank">
+                                <img src="{% static 'songarchiv/images/itunes_large.png' %}"
+                                    width="100px"
+                                    alt="iTunes-Logo"
+                                    title="Bei iTunes abspielen"
+                                >
+                            </a>
                       </div>
                 </div>
                 <br>
@@ -230,16 +256,24 @@
                 <div class="row">
                     <div class="d-flex justify-content-center col-md">
                         <a href="{{ song.album.album_amazon_selling }}" target="_blank">
-                            <img class="img-fluid" src="{% static 'songarchiv/images/'%}amazon_shop2.png" width="200">
+                            <img class="img-fluid" src="{% static 'songarchiv/images/'%}amazon_shop2.png"
+                                 width="200"
+                                 alt="amazon Sales Logo"
+                                 title="Direkt zu amazon Sale"
+                            >
                         </a>
                     </div>
                 </div>
             {% endif %}
-            {% if song.song_amazon_sale %}
+            {% if song.song_amazon_sale_fehler %}
                 <div class="row">
                     <div class="d-flex justify-content-center col-md">
                         <a href="{{ song.song_amazon_sale }}" target="_blank">
-                            <img class="img-fluid" src="{% static 'songarchiv/images/'%}amazon_shop2.png" width="200">
+                            <img class="img-fluid" src="{% static 'songarchiv/images/'%}amazon_shop2.png"
+                                 width="200"
+                                 alt="amazon Sales Logo"
+                                 title="Direkt zu amazon Sale"
+                            >
                         </a>
                     </div>
                 </div>

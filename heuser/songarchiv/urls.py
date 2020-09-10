@@ -31,4 +31,5 @@ urlpatterns = [
 
     path('impressum/', views.impressum, name='impressum'),
     path('datenschutz/', views.datenschutz, name='datenschutz'),
+    path('uebers_songarchiv/', views.uebers_songarchiv, name='uebers-songarchiv'),
 ]

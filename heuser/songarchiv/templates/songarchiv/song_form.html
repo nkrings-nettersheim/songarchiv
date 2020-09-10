@@ -156,6 +156,13 @@
                 <div class="text-danger">{{ form.album.errors }}</div>
             </div>
         </div>
+        <div class="form-group row">
+            <label for="{{ form.song_activ.id_for_label }}" class="col-sm-2 control-label">Aktiv:</label>
+            <div class="col-sm-6">
+                {{ form.song_activ }}
+                <div class="text-danger">{{ form.song_activ.errors }}</div>
+            </div>
+        </div>
 
         <div class="form-group row">
             <div class="col-sm-2"></div>

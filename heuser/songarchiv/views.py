@@ -13,7 +13,7 @@ from weasyprint import HTML, CSS
 from weasyprint.fonts import FontConfiguration
 
 from .forms import IndexForm, SongForm, SearchAlbumForm, AlbumForm, SongTextForm
-from .models import Song, Album, Song_Text
+from .models import Song, Album, Song_Text, Content_text
 
 BASE_DIR = settings.BASE_DIR
 
@@ -30,12 +30,20 @@ def index(request):
 
 def impressum(request):
     logger.info(f"{request.META.get('REMOTE_ADDR')};Impressum")
-    return render(request, 'songarchiv/impressum.html')
+    content = Content_text.objects.get(content_kurz='Impressum')
+    return render(request, 'songarchiv/impressum.html', {'content': content})
 
 
 def datenschutz(request):
     logger.info(f"{request.META.get('REMOTE_ADDR')};Datenschutz")
-    return render(request, 'songarchiv/datenschutz.html')
+    content = Content_text.objects.get(content_kurz='Datenschutz')
+    return render(request, 'songarchiv/datenschutz.html', {'content': content})
+
+
+def uebers_songarchiv(request):
+    logger.info(f"{request.META.get('REMOTE_ADDR')};Übers Songarchiv")
+    content = Content_text.objects.get(content_kurz='oevver_dat_songarchiv')
+    return render(request, 'songarchiv/uebers_songarchiv.html', {'content': content})
 
 
 @login_required
@@ -60,7 +68,7 @@ def search_song(request):
         title = title.strip()
         logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{title};POST-call with title")
         if title != '':
-            song_list = Song.objects.filter(song_title__icontains=title).order_by('song_title')
+            song_list = Song.objects.filter(song_title__icontains=title, song_activ=True).order_by('song_title')
             if len(song_list) == 1:
                 logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{str(song_list[0].id)};song with id called")
                 return redirect('/songarchiv/song/' + str(song_list[0].id) + '/')
@@ -90,9 +98,9 @@ def search_song(request):
             else:
                 order = 'song_title'
 
-            song_list = Song.objects.all().order_by(*order)
+            song_list = Song.objects.filter(song_activ=True).order_by(*order)
         else:
-            song_list = Song.objects.filter(song_title__istartswith=title).order_by('song_title')
+            song_list = Song.objects.filter(song_title__istartswith=title, song_activ=True).order_by('song_title')
 
         if len(song_list) == 1:
             logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{str(song_list[0].id)};GET-call song with id called")
@@ -114,7 +122,7 @@ def autocomplete(request):
     if request.method =='GET':
         title = request.GET['term']
         title = title.strip()
-        qs = Song.objects.filter(song_title__icontains=title).order_by('song_title')
+        qs = Song.objects.filter(song_title__icontains=title, song_activ=True).order_by('song_title')
         titles = list()
         for title in qs:
             titles.append(title.song_title)

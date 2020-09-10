@@ -43,7 +43,11 @@
             <div class="col-sm-2">&nbsp;</div>
             <div class="col-sm-4 pt-3">
                 <a href="{{ alb.album_amazon_selling}}" target="_blank" data-toggle='tooltip' data-placement='left' title='direkt zu Amazon Sales'>
-                    <img class="img-fluid" src="{% static 'songarchiv/images/' %}{{alb.album_cover}}" width="500">
+                    <img class="img-fluid" src="{% static 'songarchiv/images/' %}{{alb.album_cover}}"
+                         width="500"
+                         alt="Coverbild {{ alb.album_title }}"
+                         title="Album: {{ alb.album_title }}
+                    >
                 </a>
             </div>
             <div class="col-sm-5 pt-3 justify-content-center d-flex">
