@@ -26,6 +26,10 @@ html, body {
     height: 100%;
 }
 
+.modal-header {
+    display: -ms-flexbox;
+}
+
 @media screen and (max-width: 575px){
     .bg-class {
         /* background-image: url('/static/songarchiv/images/bjoern.jpg'); */

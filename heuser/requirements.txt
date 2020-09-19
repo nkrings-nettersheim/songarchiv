@@ -13,3 +13,4 @@ ua-parser==0.10.0
 user-agents==2.1
 django-user-agents==0.4.0
 weasyprint==51
+django-cookiebanner==0.2.2

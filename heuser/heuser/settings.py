@@ -14,6 +14,7 @@ import json
 import os
 
 from django.core.exceptions import ImproperlyConfigured
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -55,7 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'cookielaw',
+    'cookiebanner',
     'django_user_agents',
     'songarchiv',
 ]
@@ -167,6 +168,43 @@ EMAIL_HOST_PASSWORD = get_secret('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = get_secret('EMAIL_PORT')
 EMAIL_USE_TLS = get_secret('EMAIL_USE_TLS')
 
+####################################
+## cookiebanner configuration
+####################################
+COOKIEBANNER = {
+    "title": _("Cookie Einstellungen"),
+    "header_text": _("Wir nutzen ausschließlich Cookies, die für den Betrieb der Anwendung erforderlich sind. Es "
+                     "werden keinerlei Tracking Cookies der verschiedensten Werbeanbieter verwendet.<br>"
+                     "Weitere Informationen finden sie in den Datenschutzbestimmungen"),
+    "footer_text": _("Bitte Cookies akzeptieren:"),
+    "footer_links": [
+        {
+            "title": _("Impressum"),
+            "href": "/songarchiv/impressum"
+        },
+        {
+            "title": _("Datenschutz"),
+            "href": "/songarchiv/datenschutz"
+        },
+    ],
+    "groups": [
+        {
+            "id": "essential",
+            "name": _("Essential"),
+            "description": _("Essentielle cookies erlauben die Funktion der Website."),
+            "cookies": [
+                {
+                    "pattern": "cookiebanner",
+                    "description": _("Damit dieser Hinweis nur beim ersten Aufruf erfolgt."),
+                },
+                {
+                    "pattern": "csrftoken",
+                    "description": _("Cookie hilft Cross-Site-Request-Forgery Attacken zu verhindern."),
+                },
+            ],
+        },
+    ],
+}
 
 ####################################
 ##  CKEDITOR CONFIGURATION ##
