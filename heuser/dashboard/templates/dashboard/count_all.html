@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count all</title>
+</head>
+<body>
+<h1>{{ results.bh_count }}</h1>
+<h1>{{ results.song_text_count }}</h1>
+{% for result, myvalue in results.items %}
+<p>{{ result }} : {{ myvalue }}</p>
+{% endfor %}
+</body>
+</html>

@@ -225,6 +225,7 @@ def edit_album(request, id=None):
         logger.info(f"{request.user.id:>2};edit_album;{str(item.id)};album changed and saved")
         return redirect('/songarchiv/')
     form.id = item.id
+    form.change = True
     logger.info(f"{request.META.get('REMOTE_ADDR')};edit_album;{str(form.id)};AlbumForm for id called")
     return render(request, 'songarchiv/album_form.html', {'form': form})
 

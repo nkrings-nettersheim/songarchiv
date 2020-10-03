@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'cookiebanner',
     'django_user_agents',
     'songarchiv',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -173,8 +174,8 @@ EMAIL_USE_TLS = get_secret('EMAIL_USE_TLS')
 ####################################
 COOKIEBANNER = {
     "title": _("Cookie Einstellungen"),
-    "header_text": _("Wir nutzen ausschließlich Cookies, die für den Betrieb der Anwendung erforderlich sind. Es "
-                     "werden keinerlei Tracking Cookies der verschiedensten Werbeanbieter verwendet.<br>"
+    "header_text": _("Wir nutzen zum einen Cookies die für den Betrieb der Webseite unumgänglich sind. "
+                     "Weiterhin setzen wie Open Web Analytics zur Verbesserung der Nutzererfahrung auf der Webseite ein. <br>"
                      "Weitere Informationen finden sie in den Datenschutzbestimmungen"),
     "footer_text": _("Bitte Cookies akzeptieren:"),
     "footer_links": [
@@ -200,6 +201,17 @@ COOKIEBANNER = {
                 {
                     "pattern": "csrftoken",
                     "description": _("Cookie hilft Cross-Site-Request-Forgery Attacken zu verhindern."),
+                },
+            ],
+        },
+        {
+            "id": "analytics",
+            "name": _("Analytics"),
+            "optional": True,
+            "cookies": [
+                {
+                    "pattern": "_owa_.*",
+                    "description": _("Open Web Analytics Cookies zur Website Analysis. Weitere Information in der Datenschutzerklärung"),
                 },
             ],
         },

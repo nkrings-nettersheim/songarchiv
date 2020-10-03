@@ -233,3 +233,953 @@
 2020-07-17 07:28:19,680 songarchiv.views        INFO     127.0.0.1;search_song;Als Panz;POST-call with title
 2020-07-17 07:28:19,682 songarchiv.views        INFO     127.0.0.1;search_song;1;song with id called
 2020-07-17 07:28:19,697 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-07-17 07:48:15,557 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-17 07:48:18,189 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-17 07:48:18,191 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-17 07:48:22,253 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-17 07:48:22,255 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-17 07:48:42,581 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-17 07:48:42,583 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-17 07:48:56,146 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-17 07:49:44,807 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-17 07:55:27,510 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-22 21:46:08,482 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-22 21:51:16,536 songarchiv.views        INFO     127.0.0.1;search_song;D;GET-call with title
+2020-07-22 21:51:16,539 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-22 21:51:23,695 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-22 21:51:26,847 songarchiv.views        INFO     127.0.0.1;search_song;Q;GET-call with title
+2020-07-22 21:51:26,849 songarchiv.views        INFO     127.0.0.1;search_song;Q;nothing found with title
+2020-07-22 21:51:29,649 songarchiv.views        INFO     127.0.0.1;search_song;R;GET-call with title
+2020-07-22 21:51:29,651 songarchiv.views        INFO     127.0.0.1;search_song;R;nothing found with title
+2020-07-22 21:51:31,296 songarchiv.views        INFO     127.0.0.1;search_song;R;GET-call with title
+2020-07-22 21:51:31,298 songarchiv.views        INFO     127.0.0.1;search_song;R;nothing found with title
+2020-07-22 21:51:39,499 songarchiv.views        INFO     127.0.0.1;search_song;S;GET-call with title
+2020-07-22 21:51:39,500 songarchiv.views        INFO     127.0.0.1;search_song;S;nothing found with title
+2020-07-22 21:51:42,348 songarchiv.views        INFO     127.0.0.1;search_song;T;GET-call with title
+2020-07-22 21:51:42,350 songarchiv.views        INFO     127.0.0.1;search_song;T;nothing found with title
+2020-07-22 21:51:44,997 songarchiv.views        INFO     127.0.0.1;search_song;D;GET-call with title
+2020-07-22 21:51:44,999 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-22 21:52:07,753 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-07-25 08:03:40,628 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:03:50,201 songarchiv.views        INFO     127.0.0.1;search_song;Meddendrin;POST-call with title
+2020-07-25 08:03:50,203 songarchiv.views        INFO     127.0.0.1;search_song;2;song with id called
+2020-07-25 08:04:29,165 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-07-25 08:04:41,806 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:05:19,191 songarchiv.views        INFO     127.0.0.1;search_song;Meddendrin;POST-call with title
+2020-07-25 08:05:19,193 songarchiv.views        INFO     127.0.0.1;search_song;2;song with id called
+2020-07-25 08:05:19,207 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-07-25 08:15:29,142 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-07-25 08:15:35,747 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:15:38,728 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-25 08:15:38,730 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-25 08:15:41,274 songarchiv.views        INFO     127.0.0.1;song;6;call song Object with ID don't exist
+2020-07-25 08:15:41,284 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:15:47,592 songarchiv.views        INFO     127.0.0.1;search_song;;POST-call with title
+2020-07-25 08:15:47,592 songarchiv.views        INFO     127.0.0.1;search_song;;no search-string given
+2020-07-25 08:15:50,374 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-25 08:15:50,377 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-25 08:15:52,663 songarchiv.views        INFO     127.0.0.1;song;5;call song
+2020-07-25 08:17:12,929 songarchiv.views        INFO     127.0.0.1;song;5;call song
+2020-07-25 08:18:43,354 songarchiv.views        INFO     127.0.0.1;song;5;call song
+2020-07-25 08:19:00,415 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:19:02,524 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-25 08:19:02,525 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-25 08:19:05,261 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-07-25 08:20:10,255 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-07-25 08:20:14,665 songarchiv.views        INFO     127.0.0.1;text;4;songtext with id and UserAgent non-mobile called
+2020-07-25 08:20:17,777 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-07-25 08:21:28,744 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-07-25 08:22:36,089 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-07-25 08:22:52,432 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-07-25 08:22:56,481 songarchiv.views        INFO     127.0.0.1;text;4;songtext with id and UserAgent non-mobile called
+2020-07-25 08:23:02,539 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-07-25 08:23:14,864 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:23:18,966 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-25 08:23:18,968 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-25 08:23:21,261 songarchiv.views        INFO     127.0.0.1;song;20;call song Object with ID don't exist
+2020-07-25 08:23:21,268 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:23:31,067 songarchiv.views        INFO     127.0.0.1;search_song;Zick es Jlöck;POST-call with title
+2020-07-25 08:23:31,069 songarchiv.views        INFO     127.0.0.1;search_song;20;song with id called
+2020-07-25 08:23:31,102 songarchiv.views        INFO     127.0.0.1;song;20;call song Object with ID don't exist
+2020-07-25 08:23:31,109 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:23:44,020 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-25 08:23:44,022 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-25 08:23:45,989 songarchiv.views        INFO     127.0.0.1;song;10;call song Object with ID don't exist
+2020-07-25 08:23:46,001 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:23:49,651 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-25 08:23:49,653 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-25 08:23:51,295 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-07-25 08:23:53,556 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:23:55,637 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-25 08:23:55,639 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-25 08:23:57,693 songarchiv.views        INFO     127.0.0.1;song;8;call song Object with ID don't exist
+2020-07-25 08:23:57,702 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:51:34,358 songarchiv.views        INFO     127.0.0.1;search_song;Als Panz;POST-call with title
+2020-07-25 08:51:34,361 songarchiv.views        INFO     127.0.0.1;search_song;1;song with id called
+2020-07-25 08:51:34,376 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-07-25 08:52:58,257 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-07-25 08:54:18,775 songarchiv.views        INFO     127.0.0.1;text;1;songtext with id and UserAgent mobile called
+2020-07-25 08:54:37,521 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:54:50,935 songarchiv.views        INFO     127.0.0.1;search_song;Als Panz;POST-call with title
+2020-07-25 08:54:50,937 songarchiv.views        INFO     127.0.0.1;search_song;1;song with id called
+2020-07-25 08:54:50,952 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-07-25 08:55:19,241 songarchiv.views        INFO     127.0.0.1;text;1;songtext with id and UserAgent non-mobile called
+2020-07-25 08:55:23,816 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-07-25 08:55:43,165 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:55:44,624 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-25 08:55:44,626 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-25 08:55:46,202 songarchiv.views        INFO     127.0.0.1;song;3;call song
+2020-07-25 08:55:57,977 songarchiv.views        INFO     127.0.0.1;text;3;songtext with id and UserAgent non-mobile called
+2020-07-25 08:56:03,250 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-25 08:56:06,462 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-25 08:56:06,464 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-25 08:56:09,430 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-07-25 08:57:08,654 songarchiv.views        INFO     127.0.0.1;text;4;songtext with id and UserAgent mobile called
+2020-07-25 08:57:16,642 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-27 08:13:01,398 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-27 08:14:03,017 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-27 08:14:08,168 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-07-27 08:14:12,364 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-27 08:14:18,964 songarchiv.views        INFO     127.0.0.1;search_song;Meddendrin;POST-call with title
+2020-07-27 08:14:18,967 songarchiv.views        INFO     127.0.0.1;search_song;2;song with id called
+2020-07-27 08:15:12,797 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-07-27 08:16:26,037 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-07-27 08:16:27,622 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-07-27 08:16:38,219 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:18:26,880 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:19:33,370 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:20:45,981 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:21:17,784 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-07-27 08:21:25,259 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-07-27 08:21:30,373 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:25:41,403 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:26:49,068 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:27:29,261 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:34:34,959 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:35:15,276 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:36:17,820 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:37:19,620 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:46:10,358 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:48:48,196 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:50:16,991 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:51:33,207 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:52:16,341 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:53:40,379 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 08:58:11,474 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 09:03:12,386 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:01:33,522 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-07-27 17:01:39,090 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:03:30,381 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:04:04,991 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:04:42,207 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:05:36,208 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:08:12,302 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:09:15,287 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:12:43,777 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:13:07,403 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:14:28,672 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:15:18,749 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:16:11,289 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:17:03,346 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:35:35,838 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 17:45:18,771 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 18:35:13,494 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-27 18:35:40,417 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 07:41:12,285 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-07-28 07:41:24,167 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-07-28 07:41:31,262 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 07:42:07,679 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-07-28 07:42:12,208 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 07:42:58,040 songarchiv.views        INFO     127.0.0.1;print_text;5;songtext with id as pdf created
+2020-07-28 07:44:28,406 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 07:44:54,765 songarchiv.views        INFO     127.0.0.1;print_chordpro;5;songtext with id as pdf created
+2020-07-28 07:46:28,654 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 07:51:06,325 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 07:51:48,671 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 07:52:24,714 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 07:54:11,038 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 07:55:40,390 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 07:56:40,921 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 07:57:44,989 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:05:29,083 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:06:56,951 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:07:26,068 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:07:48,199 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:08:19,082 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:10:16,800 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:10:54,260 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:13:25,936 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:21:36,794 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:34:11,905 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:36:29,031 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:37:16,398 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:38:05,998 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:38:49,963 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:39:53,856 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:40:24,913 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:42:28,042 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:46:42,796 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:47:41,393 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:48:21,459 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:50:39,414 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:51:19,660 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:51:56,386 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:53:03,917 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:53:58,606 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:54:53,581 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:56:37,083 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:57:40,850 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 08:58:28,647 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:10:33,075 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:11:01,713 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:11:32,023 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:11:56,551 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:20:29,906 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:22:34,072 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:23:01,407 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:53:17,891 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:55:01,140 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:55:32,043 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:55:51,606 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:56:16,615 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:56:35,993 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:57:11,501 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:57:36,381 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:58:10,035 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:58:34,966 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 09:59:38,962 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:00:25,162 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:00:51,965 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:09:23,035 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:09:56,401 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:10:24,264 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:11:39,527 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:13:06,352 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:13:37,995 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:23:10,582 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:23:36,756 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:24:06,667 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:24:53,516 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:25:35,454 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:26:05,222 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:26:27,112 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:36:32,803 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:37:00,747 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:37:26,665 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:37:51,775 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:46:55,776 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:47:36,822 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:48:04,320 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 10:48:39,748 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 11:09:27,369 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 11:10:00,656 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 11:11:16,055 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 11:11:47,312 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 11:21:43,139 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 11:23:30,581 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 11:24:11,956 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 11:29:07,384 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 11:29:34,512 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 11:30:35,347 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 11:31:01,949 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-07-28 11:55:22,059 songarchiv.views        INFO     127.0.0.1;print_chordpro;5;songtext with id as pdf created
+2020-07-28 11:56:04,912 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 11:56:09,043 songarchiv.views        INFO     127.0.0.1;search_song;medd;POST-call with title
+2020-07-28 11:56:09,045 songarchiv.views        INFO     127.0.0.1;search_song;2;song with id called
+2020-07-28 11:56:09,072 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-07-28 11:56:12,159 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-07-28 11:56:16,294 songarchiv.views        INFO      2;edit_text;5;text_form for id called
+2020-07-28 11:56:34,588 songarchiv.views        INFO      2;edit_text;5;songtext with id changed and saved
+2020-07-28 11:56:34,626 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-07-28 11:56:39,984 songarchiv.views        INFO     127.0.0.1;print_chordpro;5;songtext with id as pdf created
+2020-07-28 11:57:59,616 songarchiv.views        INFO     127.0.0.1;print_chordpro;5;songtext with id as pdf created
+2020-07-28 12:00:29,509 songarchiv.views        INFO      2;edit_text;5;text_form for id called
+2020-07-28 12:00:49,018 songarchiv.views        INFO      2;edit_text;5;songtext with id changed and saved
+2020-07-28 12:00:49,035 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-07-28 12:00:52,535 songarchiv.views        INFO      2;edit_text;5;text_form for id called
+2020-07-28 12:01:23,091 songarchiv.views        INFO      2;edit_text;5;songtext with id changed and saved
+2020-07-28 12:01:23,128 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-07-28 12:01:37,118 songarchiv.views        INFO     127.0.0.1;print_nashville;5;songtext with id as pdf created
+2020-07-28 12:43:09,825 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 12:43:12,627 songarchiv.views        INFO     127.0.0.1;search_song;medd;POST-call with title
+2020-07-28 12:43:12,629 songarchiv.views        INFO     127.0.0.1;search_song;2;song with id called
+2020-07-28 12:43:12,640 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-07-28 12:43:57,598 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 12:43:59,114 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 12:43:59,117 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 12:44:02,754 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 12:44:04,967 songarchiv.views        INFO     127.0.0.1;search_song;B;GET-call with title
+2020-07-28 12:44:04,970 songarchiv.views        INFO     127.0.0.1;search_song;3;GET-call song with id called
+2020-07-28 12:44:04,983 songarchiv.views        INFO     127.0.0.1;song;3;call song
+2020-07-28 12:44:06,984 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 12:44:08,850 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 12:44:08,853 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 12:44:12,799 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 12:44:15,333 songarchiv.views        INFO     127.0.0.1;search_song;E;GET-call with title
+2020-07-28 12:44:15,336 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 12:44:20,581 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 13:18:27,660 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 13:18:33,137 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:21:08,335 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:21:08,338 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 13:21:14,326 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:21:14,328 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 13:21:19,509 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:21:19,511 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 13:21:55,367 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:23:03,293 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:23:15,079 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:25:45,979 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:26:11,637 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:26:33,850 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:27:44,961 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:29:05,939 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:29:05,942 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 13:30:13,167 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 13:30:15,095 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:30:57,627 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:31:53,764 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:33:16,358 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:36:01,819 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:36:01,822 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 13:36:24,838 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:36:24,841 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 13:36:42,596 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:36:42,598 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 13:38:34,645 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:38:34,647 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 13:38:36,593 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:38:36,596 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 13:38:40,628 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:38:40,630 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 13:38:42,730 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:38:42,732 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 13:38:56,577 songarchiv.views        INFO     127.0.0.1;song;7;call song Object with ID don't exist
+2020-07-28 13:38:56,590 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 13:39:06,923 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-28 13:39:06,925 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-28 13:39:14,327 songarchiv.views        INFO     127.0.0.1;song;3;call song
+2020-07-28 13:39:28,088 songarchiv.views        INFO     127.0.0.1;text;3;songtext with id and UserAgent non-mobile called
+2020-07-28 13:39:31,444 songarchiv.views        INFO      2;edit_text;3;text_form for id called
+2020-07-28 13:42:29,092 songarchiv.views        INFO      2;edit_text;3;songtext with id changed and saved
+2020-07-28 13:42:29,124 songarchiv.views        INFO     127.0.0.1;text;3;songtext with id and UserAgent non-mobile called
+2020-07-28 13:42:50,729 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 13:42:55,859 songarchiv.views        INFO     127.0.0.1;search_song;Barfooss em Sand;POST-call with title
+2020-07-28 13:42:55,860 songarchiv.views        INFO     127.0.0.1;search_song;3;song with id called
+2020-07-28 13:42:55,869 songarchiv.views        INFO     127.0.0.1;song;3;call song
+2020-07-28 20:43:31,259 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 20:43:58,386 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 20:44:02,507 songarchiv.views        INFO     127.0.0.1;add_song;;get-call
+2020-07-28 20:44:02,508 songarchiv.views        INFO     127.0.0.1;add_song;;SongForm called
+2020-07-28 20:44:10,600 songarchiv.views        INFO     User-ID:  2;add_song;21;song created
+2020-07-28 20:44:10,627 songarchiv.views        INFO     127.0.0.1;song;21;call song Object with ID don't exist
+2020-07-28 20:44:10,638 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 20:44:17,667 songarchiv.views        INFO     127.0.0.1;search_song;Testsong;POST-call with title
+2020-07-28 20:44:17,670 songarchiv.views        INFO     127.0.0.1;search_song;21;song with id called
+2020-07-28 20:44:17,678 songarchiv.views        INFO     127.0.0.1;song;21;call song Object with ID don't exist
+2020-07-28 20:44:17,685 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 20:46:49,991 songarchiv.views        INFO     127.0.0.1;search_song;T;GET-call with title
+2020-07-28 20:46:49,994 songarchiv.views        INFO     127.0.0.1;search_song;21;GET-call song with id called
+2020-07-28 20:46:50,011 songarchiv.views        INFO     127.0.0.1;song;21;call song Object with ID don't exist
+2020-07-28 20:46:50,022 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 20:46:55,980 songarchiv.views        INFO     127.0.0.1;search_song;T;GET-call with title
+2020-07-28 20:46:55,982 songarchiv.views        INFO     127.0.0.1;search_song;21;GET-call song with id called
+2020-07-28 20:46:55,997 songarchiv.views        INFO     127.0.0.1;song;21;call song Object with ID don't exist
+2020-07-28 20:46:56,006 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 20:48:14,820 songarchiv.views        INFO     127.0.0.1;search_song;T;GET-call with title
+2020-07-28 20:48:14,824 songarchiv.views        INFO     127.0.0.1;search_song;21;GET-call song with id called
+2020-07-28 20:48:50,559 songarchiv.views        INFO     127.0.0.1;search_song;T;GET-call with title
+2020-07-28 20:48:50,562 songarchiv.views        INFO     127.0.0.1;search_song;21;GET-call song with id called
+2020-07-28 20:48:50,577 songarchiv.views        INFO     127.0.0.1;song;21;call song Object with ID don't exist
+2020-07-28 20:48:50,588 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 20:55:15,630 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 20:55:38,825 songarchiv.views        INFO     127.0.0.1;search_song;T;GET-call with title
+2020-07-28 20:55:38,828 songarchiv.views        INFO     127.0.0.1;search_song;21;GET-call song with id called
+2020-07-28 20:55:38,842 songarchiv.views        INFO     127.0.0.1;song;21;call song
+2020-07-28 20:56:07,468 songarchiv.views        INFO     127.0.0.1;text;;object does not exist
+2020-07-28 20:56:07,481 songarchiv.views        INFO      2;add_text;<built-in function id>;SongtextForm for id called
+2020-07-28 20:56:09,763 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-28 20:58:14,157 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-29 20:06:36,900 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-07-29 20:06:39,281 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-29 20:06:39,285 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-07-29 20:06:41,928 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-29 20:10:16,105 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-07-29 20:10:16,107 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-01 09:36:30,098 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-01 09:36:35,402 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-01 09:36:35,405 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-01 09:36:37,373 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-01 09:36:37,375 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-01 09:36:41,454 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-01 10:02:39,008 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-01 10:02:43,789 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-01 10:02:46,272 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-08-01 10:02:50,308 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-01 10:02:54,541 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-01 10:02:54,544 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-01 10:02:56,695 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-01 10:02:56,697 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-01 10:02:58,543 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-01 10:02:58,545 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-01 10:03:00,176 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-01 10:03:07,404 songarchiv.views        INFO     127.0.0.1;search_song;pa;POST-call with title
+2020-08-01 10:03:07,406 songarchiv.views        INFO     127.0.0.1;search_song;1;song with id called
+2020-08-01 10:03:16,465 songarchiv.views        INFO     127.0.0.1;search_song;pa;POST-call with title
+2020-08-01 10:03:16,468 songarchiv.views        INFO     127.0.0.1;search_song;1;song with id called
+2020-08-01 10:04:07,936 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-01 10:04:12,889 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-01 10:06:23,791 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-01 10:06:31,390 songarchiv.views        INFO     127.0.0.1;search_song;Als Panz;POST-call with title
+2020-08-01 10:06:31,393 songarchiv.views        INFO     127.0.0.1;search_song;1;song with id called
+2020-08-01 10:06:31,427 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-08-02 11:05:53,517 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 11:06:00,012 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-08-02 11:06:52,567 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 11:06:55,577 songarchiv.views        INFO     127.0.0.1;add_album;;with get-call
+2020-08-02 11:06:55,577 songarchiv.views        INFO     127.0.0.1;add_album;;AlbumForm called
+2020-08-02 11:08:44,129 songarchiv.views        INFO      2;add_album;5;album with id created
+2020-08-02 11:08:44,150 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-08-02 11:16:02,514 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-08-02 11:16:17,207 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 11:17:05,671 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-08-02 11:17:10,211 songarchiv.views        INFO     127.0.0.1;edit_album;1;AlbumForm for id called
+2020-08-02 11:17:16,439 songarchiv.views        INFO     127.0.0.1;edit_album;5;AlbumForm for id called
+2020-08-02 11:17:30,753 songarchiv.views        INFO      2;edit_album;5;album changed and saved
+2020-08-02 11:17:30,766 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-08-02 11:17:33,138 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 11:17:41,572 songarchiv.views        INFO     127.0.0.1;search_song;Diamante;POST-call with title
+2020-08-02 11:17:41,574 songarchiv.views        INFO     127.0.0.1;search_song;4;song with id called
+2020-08-02 11:17:41,613 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-08-02 11:17:45,540 songarchiv.views        INFO     127.0.0.1;edit_song;;call edit_song get-call
+2020-08-02 11:17:51,755 songarchiv.views        INFO      2;edit_song;4; song changed and saved
+2020-08-02 11:17:51,766 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-08-02 11:18:13,391 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 11:18:15,492 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-02 11:18:15,495 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-02 11:18:21,021 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-02 11:18:21,023 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-02 11:20:03,336 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 11:20:08,418 songarchiv.views        INFO     127.0.0.1;search_song;Diamante;POST-call with title
+2020-08-02 11:20:08,420 songarchiv.views        INFO     127.0.0.1;search_song;4;song with id called
+2020-08-02 11:20:08,457 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-08-02 11:22:21,509 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-08-02 11:22:31,700 songarchiv.views        INFO     127.0.0.1;search_song;Diamante;POST-call with title
+2020-08-02 11:22:31,703 songarchiv.views        INFO     127.0.0.1;search_song;4;song with id called
+2020-08-02 11:22:31,713 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-08-02 11:22:39,340 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 11:26:25,157 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 11:26:30,040 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-08-02 11:26:33,874 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 11:28:37,839 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 11:29:33,110 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 11:29:49,814 songarchiv.views        INFO     127.0.0.1;edit_album;5;AlbumForm for id called
+2020-08-02 11:30:24,077 songarchiv.views        INFO      2;edit_album;5;album changed and saved
+2020-08-02 11:30:24,084 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-08-02 11:30:30,107 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 11:30:32,038 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 11:30:36,871 songarchiv.views        INFO     127.0.0.1;edit_album;5;AlbumForm for id called
+2020-08-02 11:30:40,243 songarchiv.views        INFO      2;edit_album;5;album changed and saved
+2020-08-02 11:30:40,271 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-08-02 11:31:29,635 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 11:31:31,628 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 11:31:33,701 songarchiv.views        INFO     127.0.0.1;edit_album;5;AlbumForm for id called
+2020-08-02 11:31:35,379 songarchiv.views        INFO      2;edit_album;5;album changed and saved
+2020-08-02 11:31:35,389 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 11:31:37,428 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 11:50:41,862 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 11:52:58,851 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 11:53:28,789 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 11:53:48,990 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 11:54:03,194 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 11:55:05,668 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 11:59:15,850 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 12:04:31,144 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 12:04:57,165 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 12:14:43,160 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 12:18:21,830 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 12:20:34,469 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 12:22:06,019 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 12:22:07,582 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 12:22:11,261 songarchiv.views        INFO     127.0.0.1;edit_album;5;AlbumForm for id called
+2020-08-02 12:22:30,476 songarchiv.views        INFO      2;edit_album;5;album changed and saved
+2020-08-02 12:22:30,487 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 12:22:33,586 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 12:23:44,410 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 12:28:51,798 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 12:31:00,812 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 12:31:03,283 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-08-02 12:33:28,538 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 12:33:30,801 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-08-02 12:34:47,954 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 12:34:54,262 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 12:35:11,945 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 12:35:14,799 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-02 12:35:14,803 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-02 12:45:16,825 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 12:45:22,052 songarchiv.views        INFO     127.0.0.1;search_song;Schmett;POST-call with title
+2020-08-02 12:45:22,054 songarchiv.views        INFO     127.0.0.1;search_song;Schmett; nothing found with title
+2020-08-02 12:50:06,100 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-02 12:50:06,113 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-02 12:50:10,889 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-08-02 12:50:15,033 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 12:53:33,297 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-02 12:53:33,299 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-02 12:53:36,435 songarchiv.views        INFO     127.0.0.1;song;5;call song
+2020-08-02 13:00:52,815 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 13:00:54,425 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-08-02 13:00:56,520 songarchiv.views        INFO     127.0.0.1;edit_album;5;AlbumForm for id called
+2020-08-02 13:12:06,663 songarchiv.views        INFO      2;edit_album;5;album changed and saved
+2020-08-02 13:12:06,673 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-02 13:12:13,542 songarchiv.views        INFO     127.0.0.1;search_song;Diamante;POST-call with title
+2020-08-02 13:12:13,545 songarchiv.views        INFO     127.0.0.1;search_song;4;song with id called
+2020-08-02 13:12:13,561 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-08-02 13:19:47,045 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-08-23 14:13:36,921 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-23 14:13:57,149 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-23 14:29:10,926 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-23 14:32:24,917 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-23 14:33:00,191 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-24 20:45:44,100 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-24 20:46:10,405 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-24 20:46:15,034 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-08-24 20:46:23,551 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-08-24 20:49:00,573 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-08-24 20:50:13,980 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-08-24 20:50:29,973 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 20:57:44,369 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:02:10,072 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:04:44,639 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:05:31,284 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:05:33,186 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:06:06,971 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-24 21:06:10,160 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:07:14,141 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:24:41,083 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:25:59,130 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:27:33,558 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:30:59,869 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:31:27,442 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:47:38,078 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:51:22,610 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 21:52:04,214 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-24 22:27:41,738 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-25 08:16:22,165 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-25 08:16:38,243 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-31 15:54:31,893 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-31 15:54:32,174 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-31 15:54:52,887 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-31 15:54:59,741 songarchiv.views        INFO     127.0.0.1;search_song;Als Panz;POST-call with title
+2020-08-31 15:54:59,744 songarchiv.views        INFO     127.0.0.1;search_song;1;song with id called
+2020-08-31 15:54:59,772 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-08-31 15:55:01,796 songarchiv.views        INFO     127.0.0.1;edit_song;;call edit_song get-call
+2020-08-31 15:57:19,701 songarchiv.views        INFO     127.0.0.1;edit_song;;call edit_song get-call
+2020-08-31 15:57:29,558 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-31 15:57:33,161 songarchiv.views        INFO     127.0.0.1;search_song;Als Pan;POST-call with title
+2020-08-31 15:57:33,164 songarchiv.views        INFO     127.0.0.1;search_song;1;song with id called
+2020-08-31 15:57:33,175 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-08-31 15:57:35,444 songarchiv.views        INFO     127.0.0.1;edit_song;;call edit_song get-call
+2020-08-31 15:59:37,790 songarchiv.views        INFO     127.0.0.1;edit_song;;call edit_song get-call
+2020-08-31 16:01:53,906 songarchiv.views        INFO     127.0.0.1;edit_song;;call edit_song get-call
+2020-08-31 16:03:13,910 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-08-31 16:20:50,070 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-31 16:20:58,809 songarchiv.views        INFO     127.0.0.1;search_song;Als Panz;POST-call with title
+2020-08-31 16:20:58,811 songarchiv.views        INFO     127.0.0.1;search_song;1;song with id called
+2020-08-31 16:20:58,830 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-08-31 16:21:06,563 songarchiv.views        INFO     127.0.0.1;text;1;songtext with id and UserAgent non-mobile called
+2020-08-31 16:21:08,746 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-08-31 16:21:10,515 songarchiv.views        INFO     127.0.0.1;edit_song;;call edit_song get-call
+2020-08-31 16:21:14,967 songarchiv.views        INFO      2;edit_song;1; song changed and saved
+2020-08-31 16:21:14,977 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-08-31 16:21:17,621 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-31 16:21:23,221 songarchiv.views        INFO     127.0.0.1;search_song;Als PAnz;POST-call with title
+2020-08-31 16:21:23,223 songarchiv.views        INFO     127.0.0.1;search_song;Als PAnz; nothing found with title
+2020-08-31 16:21:29,605 songarchiv.views        INFO     127.0.0.1;search_song;A;GET-call with title
+2020-08-31 16:21:29,608 songarchiv.views        INFO     127.0.0.1;search_song;A;nothing found with title
+2020-08-31 16:21:32,649 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-31 16:21:32,653 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-31 16:21:35,433 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-08-31 16:21:38,998 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-08-31 16:21:40,717 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-31 16:21:40,720 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-31 16:23:34,116 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-08-31 16:23:34,120 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-08-31 16:23:38,470 songarchiv.views        INFO     127.0.0.1;song;3;call song
+2020-08-31 16:23:42,864 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-08-31 16:23:47,229 songarchiv.views        INFO     127.0.0.1;text;1;songtext with id and UserAgent non-mobile called
+2020-08-31 16:23:49,802 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-08-31 16:23:52,023 songarchiv.views        INFO     127.0.0.1;edit_song;;call edit_song get-call
+2020-08-31 16:23:56,589 songarchiv.views        INFO      2;edit_song;1; song changed and saved
+2020-08-31 16:23:56,598 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-08-31 16:24:04,314 songarchiv.views        INFO     127.0.0.1;edit_song;;call edit_song get-call
+2020-08-31 16:24:08,584 songarchiv.views        INFO      2;edit_song;1; song changed and saved
+2020-08-31 16:24:08,602 songarchiv.views        INFO     127.0.0.1;song;1;call song
+2020-08-31 16:56:00,539 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-01 14:51:46,702 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-01 14:51:50,034 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-01 14:53:01,630 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-01 14:55:30,486 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-01 14:57:31,690 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-01 14:58:01,068 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-01 14:58:40,225 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-01 14:58:44,966 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-01 15:15:38,743 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-01 15:15:43,349 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-09 08:41:36,798 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-09 08:44:38,316 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-09 09:47:42,261 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-09 09:48:04,259 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 13:02:59,323 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 13:03:42,021 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 13:07:36,632 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-10 13:09:44,179 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-10 13:23:16,613 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 13:24:11,768 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-10 13:45:19,843 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-10 13:46:36,171 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-09-10 14:00:43,260 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-10 14:02:01,407 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-10 14:07:03,805 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-10 14:07:11,312 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-09-10 14:07:15,626 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-10 14:07:17,894 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-10 14:25:22,373 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 14:25:24,378 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-09-10 14:26:13,733 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 14:26:21,107 songarchiv.views        INFO     127.0.0.1;search_song;Meddendrin;POST-call with title
+2020-09-10 14:26:21,111 songarchiv.views        INFO     127.0.0.1;search_song;2;song with id called
+2020-09-10 14:26:21,138 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-09-10 14:26:32,796 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-09-10 14:33:16,887 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-09-10 14:33:45,000 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 14:33:47,217 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-09-10 14:34:18,334 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-09-10 14:35:09,368 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 14:35:11,035 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-09-10 14:38:51,500 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-09-10 14:46:33,219 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-09-10 14:46:41,064 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 14:46:44,345 songarchiv.views        INFO     127.0.0.1;search_song;Medd;POST-call with title
+2020-09-10 14:46:44,349 songarchiv.views        INFO     127.0.0.1;search_song;2;song with id called
+2020-09-10 14:46:44,362 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-09-10 14:51:18,119 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-09-10 15:04:29,907 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 20:27:27,968 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 20:27:31,870 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-09-10 20:30:01,578 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-09-10 20:30:20,547 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-09-10 20:30:35,429 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-09-10 20:31:11,506 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 20:31:38,535 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-09-10 20:33:21,837 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-09-10 20:34:57,659 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-09-10 20:35:21,651 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-09-10 20:38:06,116 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 20:41:31,508 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-09-10 20:41:39,536 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 20:42:58,256 songarchiv.views        INFO     127.0.0.1;search_song;Meddendrin;POST-call with title
+2020-09-10 20:42:58,258 songarchiv.views        INFO     127.0.0.1;search_song;2;song with id called
+2020-09-10 20:42:58,295 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-09-10 20:43:26,955 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent mobile called
+2020-09-10 20:57:48,035 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-09-10 20:58:09,918 songarchiv.views        INFO     127.0.0.1;text;2;songtext with id and UserAgent non-mobile called
+2020-09-10 20:58:20,707 songarchiv.views        INFO     127.0.0.1;print_nashville;5;songtext with id as pdf created
+2020-09-10 20:59:38,037 songarchiv.views        INFO     127.0.0.1;print_chords;5;songtext with id as pdf created
+2020-09-10 21:00:00,178 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-09-10 21:00:11,918 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 21:37:36,978 songarchiv.views        INFO     127.0.0.1;search_song;K;GET-call with title
+2020-09-10 21:37:36,983 songarchiv.views        INFO     127.0.0.1;search_song;K;nothing found with title
+2020-09-10 21:37:41,929 songarchiv.views        INFO     127.0.0.1;search_song;M;GET-call with title
+2020-09-10 21:37:41,932 songarchiv.views        INFO     127.0.0.1;search_song;2;GET-call song with id called
+2020-09-10 21:37:41,950 songarchiv.views        INFO     127.0.0.1;song;2;call song
+2020-09-10 21:37:45,097 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-10 21:37:47,198 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-09-10 21:37:47,201 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-09-10 21:44:57,088 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-09-10 21:44:57,092 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-09-10 21:44:59,872 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-09-10 21:44:59,874 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-09-10 21:45:02,219 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-09-10 21:45:02,222 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-09-10 21:45:04,805 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-09-10 21:45:04,808 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-09-13 12:11:28,890 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:11:40,852 songarchiv.views        INFO     127.0.0.1;Übers Songarchiv
+2020-09-13 12:13:37,257 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:13:57,399 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:16:57,381 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:23:09,821 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:23:27,064 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:27:35,046 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:27:51,054 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:27:51,702 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:27:52,335 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:27:52,943 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:27:53,385 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:27:53,669 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:27:53,981 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:29:43,181 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:29:44,524 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:29:45,219 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:29:45,899 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:29:49,582 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:30:24,532 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:31:07,833 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 12:36:49,966 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 13:35:25,096 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 13:35:44,198 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 13:36:38,415 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 13:40:24,414 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 13:41:07,523 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 13:41:40,534 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 13:42:55,184 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-09-13 13:43:50,998 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 13:44:00,534 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 13:44:05,980 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 13:44:07,489 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 13:45:35,472 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-13 13:45:43,531 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-13 13:46:33,381 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-13 13:46:37,195 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-13 13:50:26,159 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-13 13:50:38,583 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-13 13:51:28,576 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-13 13:52:03,574 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-13 13:52:32,173 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-13 13:52:33,445 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:47:10,505 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:47:39,489 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:47:41,165 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:48:12,134 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:48:47,905 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:48:51,204 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:49:59,926 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-09-18 20:50:10,163 songarchiv.views        INFO     127.0.0.1;single;;list of singles called
+2020-09-18 20:50:15,595 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-09-18 20:53:43,628 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:53:49,162 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:53:50,729 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:53:51,760 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:53:52,693 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:53:53,416 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:53:54,348 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:54:00,831 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:54:10,792 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:54:36,454 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:54:38,096 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:54:39,139 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:54:39,979 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 20:54:40,970 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:00:36,802 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:01:05,082 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:01:09,639 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:01:25,658 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:01:31,813 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:01:33,033 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:01:38,520 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:01:39,905 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:03:17,347 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:03:20,097 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:03:35,130 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:03:36,959 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:25:59,330 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:26:01,950 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:26:11,439 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:26:56,184 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:26:57,341 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:26:58,602 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:26:59,454 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:27:50,408 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:28:10,103 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:29:14,543 songarchiv.views        INFO     127.0.0.1;search_song;E;GET-call with title
+2020-09-18 21:29:14,546 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-09-18 21:30:39,788 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:31:23,712 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:31:25,323 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:35:37,333 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 21:58:36,506 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:17:10,852 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:18:13,952 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:18:16,455 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:18:28,694 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:18:30,519 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:18:31,413 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:18:32,240 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:18:33,164 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:19:58,771 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:19:59,899 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:20:25,160 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:20:26,208 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:20:27,470 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:24:16,246 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:24:19,628 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:29:00,293 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:29:18,045 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:29:20,065 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:29:22,575 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:29:23,803 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:30:03,443 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:30:05,020 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:31:03,986 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:31:09,991 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:31:13,550 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:31:38,108 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:31:48,060 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:31:50,876 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:34:32,731 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:35:16,103 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:35:25,361 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:37:19,072 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:37:30,729 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:40:46,814 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:40:50,591 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:40:52,568 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:40:53,707 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:40:54,677 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:41:19,172 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:41:25,297 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:42:41,938 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:42:43,559 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:43:24,325 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-18 22:43:27,055 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 08:01:09,315 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 08:01:32,863 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 08:01:36,731 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 08:02:00,734 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 08:02:15,430 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 08:02:16,972 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 08:11:47,571 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 08:19:38,675 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 09:09:51,148 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 09:10:39,638 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 09:11:08,891 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 09:12:05,858 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 09:14:14,857 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 09:15:51,171 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 09:17:02,129 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 09:17:21,489 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 09:38:37,649 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 09:56:56,409 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:00:22,628 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:00:25,991 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:01:14,817 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:01:35,178 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:04:17,524 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:04:47,841 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:07:12,276 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:08:01,189 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:11:07,166 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:12:01,330 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:12:59,290 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:13:10,263 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 10:14:51,412 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 10:16:01,434 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 10:17:19,320 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 10:17:52,748 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 10:17:55,612 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 10:18:18,580 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 10:19:12,919 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-19 10:19:19,089 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-19 10:19:37,610 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-19 10:19:40,673 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-19 10:19:43,229 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-19 10:19:51,040 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-19 10:23:40,015 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-19 10:24:34,900 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-19 10:24:36,062 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-19 10:24:44,456 songarchiv.views        INFO     127.0.0.1;Datenschutz
+2020-09-19 10:24:46,033 songarchiv.views        INFO     127.0.0.1;Impressum
+2020-09-29 17:40:18,550 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-29 17:46:06,178 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-29 18:24:57,365 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-09-29 18:24:59,779 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-10-01 09:46:11,772 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-10-01 09:46:22,611 songarchiv.views        INFO     127.0.0.1;text;4;songtext with id and UserAgent non-mobile called
+2020-10-01 09:46:30,833 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-10-01 09:47:29,775 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-10-01 09:47:35,058 songarchiv.views        INFO     127.0.0.1;text;4;songtext with id and UserAgent non-mobile called
+2020-10-01 09:47:49,937 songarchiv.views        INFO     127.0.0.1;text;4;songtext with id and UserAgent non-mobile called
+2020-10-01 09:47:54,355 songarchiv.views        INFO     127.0.0.1;song;3;call song
+2020-10-01 09:47:56,640 songarchiv.views        INFO     127.0.0.1;text;3;songtext with id and UserAgent non-mobile called
+2020-10-01 09:48:11,277 songarchiv.views        INFO     127.0.0.1;song;5;call song
+2020-10-01 09:48:13,858 songarchiv.views        INFO     127.0.0.1;text;5;songtext with id and UserAgent non-mobile called
+2020-10-01 09:50:01,205 songarchiv.views        INFO     127.0.0.1;text;5;songtext with id and UserAgent non-mobile called
+2020-10-01 09:50:28,538 songarchiv.views        INFO     127.0.0.1;text;5;songtext with id and UserAgent non-mobile called
+2020-10-03 10:53:34,702 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 10:53:49,707 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 10:54:04,754 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 10:59:45,951 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 11:00:18,411 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 11:01:11,759 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 11:08:30,788 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 11:10:01,506 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 11:12:58,816 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 11:13:21,186 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 11:13:30,597 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 11:13:54,302 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 11:14:19,782 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 11:14:23,511 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:05:55,273 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:06:19,104 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:07:40,625 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:07:55,065 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-10-03 19:09:36,152 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:09:41,787 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-10-03 19:09:50,844 songarchiv.views        INFO     127.0.0.1;edit_album;1;AlbumForm for id called
+2020-10-03 19:10:34,559 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-10-03 19:10:40,211 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:10:45,049 songarchiv.views        INFO     127.0.0.1;add_album;;with get-call
+2020-10-03 19:10:45,049 songarchiv.views        INFO     127.0.0.1;add_album;;AlbumForm called
+2020-10-03 19:11:05,485 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:13:41,687 songarchiv.views        INFO     127.0.0.1;add_album;;with get-call
+2020-10-03 19:13:41,688 songarchiv.views        INFO     127.0.0.1;add_album;;AlbumForm called
+2020-10-03 19:14:23,462 songarchiv.views        INFO     127.0.0.1;add_album;;with get-call
+2020-10-03 19:14:23,462 songarchiv.views        INFO     127.0.0.1;add_album;;AlbumForm called
+2020-10-03 19:15:40,252 songarchiv.views        INFO     127.0.0.1;add_album;;with get-call
+2020-10-03 19:15:40,252 songarchiv.views        INFO     127.0.0.1;add_album;;AlbumForm called
+2020-10-03 19:15:48,927 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:15:52,194 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-10-03 19:15:55,833 songarchiv.views        INFO     127.0.0.1;edit_album;1;AlbumForm for id called
+2020-10-03 19:16:00,753 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:16:03,150 songarchiv.views        INFO     127.0.0.1;add_album;;with get-call
+2020-10-03 19:16:03,151 songarchiv.views        INFO     127.0.0.1;add_album;;AlbumForm called
+2020-10-03 19:17:03,779 songarchiv.views        INFO     127.0.0.1;add_album;;with get-call
+2020-10-03 19:17:03,779 songarchiv.views        INFO     127.0.0.1;add_album;;AlbumForm called
+2020-10-03 19:17:10,618 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:17:13,237 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-10-03 19:17:15,938 songarchiv.views        INFO     127.0.0.1;edit_album;1;AlbumForm for id called
+2020-10-03 19:17:58,774 songarchiv.views        INFO     127.0.0.1;edit_album;1;AlbumForm for id called
+2020-10-03 19:19:28,004 songarchiv.views        INFO     127.0.0.1;edit_album;1;AlbumForm for id called
+2020-10-03 19:19:35,180 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-10-03 19:20:00,853 songarchiv.views        INFO     127.0.0.1;edit_album;1;AlbumForm for id called
+2020-10-03 19:20:09,438 songarchiv.views        INFO     127.0.0.1;edit_album;1;AlbumForm for id called
+2020-10-03 19:24:28,386 songarchiv.views        INFO     127.0.0.1;edit_album;1;AlbumForm for id called
+2020-10-03 19:26:42,827 songarchiv.views        INFO     127.0.0.1;edit_album;1;AlbumForm for id called
+2020-10-03 19:27:23,701 songarchiv.views        INFO     127.0.0.1;edit_album;1;AlbumForm for id called
+2020-10-03 19:29:08,119 songarchiv.views        INFO     127.0.0.1;edit_album;1;AlbumForm for id called
+2020-10-03 19:29:16,813 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:29:19,594 songarchiv.views        INFO     127.0.0.1;add_album;;with get-call
+2020-10-03 19:29:19,595 songarchiv.views        INFO     127.0.0.1;add_album;;AlbumForm called
+2020-10-03 19:30:20,083 songarchiv.views        INFO     127.0.0.1;add_album;;with get-call
+2020-10-03 19:30:20,084 songarchiv.views        INFO     127.0.0.1;add_album;;AlbumForm called
+2020-10-03 19:33:29,503 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:33:41,142 songarchiv.views        INFO     127.0.0.1;search_song;Als Pa;POST-call with title
+2020-10-03 19:33:41,145 songarchiv.views        INFO     127.0.0.1;search_song;Als Pa; nothing found with title
+2020-10-03 19:33:45,759 songarchiv.views        INFO     127.0.0.1;search_song;A;GET-call with title
+2020-10-03 19:33:45,765 songarchiv.views        INFO     127.0.0.1;search_song;A;nothing found with title
+2020-10-03 19:33:49,165 songarchiv.views        INFO     127.0.0.1;search_song;A;GET-call with title
+2020-10-03 19:33:49,167 songarchiv.views        INFO     127.0.0.1;search_song;A;nothing found with title
+2020-10-03 19:33:52,956 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-10-03 19:33:52,959 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-10-03 19:34:06,736 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-10-03 19:34:19,559 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:34:24,029 songarchiv.views        INFO     127.0.0.1;search_song;Diamante;POST-call with title
+2020-10-03 19:34:24,031 songarchiv.views        INFO     127.0.0.1;search_song;4;song with id called
+2020-10-03 19:34:24,039 songarchiv.views        INFO     127.0.0.1;song;4;call song
+2020-10-03 19:35:35,693 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:35:39,764 songarchiv.views        INFO     127.0.0.1;search_song;all;GET-call with title
+2020-10-03 19:35:39,767 songarchiv.views        INFO     127.0.0.1;search_song;;GET-call song_list called
+2020-10-03 19:35:46,492 songarchiv.views        INFO     127.0.0.1;Index-site
+2020-10-03 19:35:53,026 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-10-03 19:42:58,060 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
+2020-10-03 19:43:01,220 songarchiv.views        INFO     127.0.0.1;album;;list of albums called
