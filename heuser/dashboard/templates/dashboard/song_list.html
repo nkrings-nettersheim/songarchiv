@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste Songs</title>
+</head>
+<body>
+
+	{% for song in my_song_list %}
+	<p>Song: <a href="/songarchiv/text/{{ song.song_id }}" target="_blank">{{ song.song.song_title }}</a> benötigt Nacharbeit</p>
+	<hr/>
+	{% empty %}
+	<li>No objects yet.</li>
+	{% endfor %}
+</ul>
+
+</body>
+</html>

@@ -8,6 +8,7 @@
 <h1>Liste der zu bearbeitenden Song-Texte: {{ song_text.part }}</h1>
 {% for x in song_text %}
 <p>Song mit der ID : <a href="/songarchiv/text/{{ x.song_id }}" target="_blank">{{ x.song_id }}</a></p>
+<p>Titel: {{ x.song.song_title }}</p>
 {% endfor %}
 </body>
 </html>
