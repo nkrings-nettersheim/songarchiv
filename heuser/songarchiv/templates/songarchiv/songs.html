@@ -49,8 +49,8 @@
         {% if song_list %}
         <div class="row text-dark">
             <div class="col-sm-1 col-1 d-none d-sm-block">&nbsp;</div>
-            <div class="col-sm-5 col-5 font-weight-bold"><a class="text-dark" href="{% url 'songarchiv:search_song' %}?title=all&order=song_title">Titel</a></div>
-            <div class="col-sm-6 col-6 font-weight-bold"><a class="text-dark" href="{% url 'songarchiv:search_song' %}?title=all&order=album">Album/Single</a></div>
+            <div class="col-sm-5 col-5 font-weight-bold"><a class="text-dark" href="{% url 'songarchiv:search_song' %}?title={{title}}&order=song_title">Titel</a></div>
+            <div class="col-sm-6 col-6 font-weight-bold"><a class="text-dark" href="{% url 'songarchiv:search_song' %}?title={{title}}&order=album">Album/Single</a></div>
         </div>
         {% for song in song_list %}
         <div class="row text-dark">

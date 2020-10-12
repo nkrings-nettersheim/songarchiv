@@ -87,12 +87,17 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'songarchiv.context_processors.setting_enhancement',
             ],
         },
     },
 ]
 
+
 WSGI_APPLICATION = 'heuser.wsgi.application'
+
+#um im Template auswerten zu können, ob dies die Produktionsumgebung ist oder die Entwicklung
+PRODUCTION = get_secret('DB_ENVIRONMENT')
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases

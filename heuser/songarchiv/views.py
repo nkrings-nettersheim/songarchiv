@@ -73,8 +73,8 @@ def search_song(request):
                 logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{str(song_list[0].id)};song with id called")
                 return redirect('/songarchiv/song/' + str(song_list[0].id) + '/')
             elif len(song_list) > 1:
-                logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;;song_list called")
-                return render(request, 'songarchiv/songs.html', {'song_list': song_list})
+                logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{title};song_list called")
+                return render(request, 'songarchiv/songs.html', {'song_list': song_list, 'title': title})
             else:
                 form = IndexForm()
                 form.info = "Leider unter dem Suchbegriff '" + title + "' nichts gefunden"
@@ -89,8 +89,9 @@ def search_song(request):
     elif request.method == "GET":
         title = request.GET['title']
         logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{title};GET-call with title")
+        order = request.GET['order']
+
         if title == "all":
-            order = request.GET['order']
             if order == 'song_title':
                 order = ['song_title', 'album']
             elif order == 'album':
@@ -100,14 +101,21 @@ def search_song(request):
 
             song_list = Song.objects.filter(song_activ=True).order_by(*order)
         else:
-            song_list = Song.objects.filter(song_title__istartswith=title, song_activ=True).order_by('song_title')
+            if order == 'song_title':
+                order = ['song_title', 'album']
+            elif order == 'album':
+                order = ['album__album_title', 'song_title']
+            else:
+                order = 'song_title'
+
+            song_list = Song.objects.filter(song_title__istartswith=title, song_activ=True).order_by(*order)
 
         if len(song_list) == 1:
             logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{str(song_list[0].id)};GET-call song with id called")
             return redirect('/songarchiv/song/' + str(song_list[0].id) + '/')
         elif len(song_list) > 1:
-            logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;;GET-call song_list called")
-            return render(request, 'songarchiv/songs.html', {'song_list': song_list})
+            logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{title};GET-call song_list called")
+            return render(request, 'songarchiv/songs.html', {'song_list': song_list, 'title': title})
         else:
             form = IndexForm
             logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{title};nothing found with title")
@@ -171,10 +179,6 @@ class del_song(DeleteView):
 def song_delete_done(request):
     logger.info(f"{request.META.get('REMOTE_ADDR')};song_delete_done")
     return render(request, 'songarchiv/song_delete_done.html')
-
-
-
-
 
 # **************************************************************************************************
 

@@ -7,12 +7,16 @@ html, body {
   background-color: #ffffff;
 }
 
+.special {
+  background-color: #89bbfc;
+}
+
 .footer {
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 1.0rem;
   background-color: #343a40;
   text-align: center;
 }
@@ -33,19 +37,30 @@ html, body {
 @media screen and (max-width: 575px){
     .bg-class {
         /*background-image: url('/static/songarchiv/images/bjoern_heuser_mobil.jpg'); */
-        background-color: #70a3ff;
+        background-color: #89bbfc;
         background-size: 575px auto;
         background-repeat: no-repeat;
         background-position: center 1%;
     }
+    .footer {
+        padding: 0.5rem;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px){
     .bg-class {
-        background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
+        background-image: url('/static/songarchiv/images/20200528_bheuser_2000_1000.jpg');
         background-size: 767px auto;
         background-repeat: no-repeat;
         background-position: center 1%;
+    }
+    .footer {
+        padding: 0.5rem;
     }
 }
 
@@ -56,15 +71,20 @@ html, body {
         background-repeat: no-repeat;
         background-position: center 1%;
     }
+    .footer {
+        padding: 0.5rem;
+    }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1140px){
     .bg-class {
         background-image: url('/static/songarchiv/images/20200528_bheuserbonn_artist_0064.jpg');
+        /*background-color: #70a3ff;*/
         background-size: 1140px auto;
         background-repeat: no-repeat;
         background-position:center 1%;
      }
+
 }
 
 @media screen and (min-width: 1141px) and (max-width: 1599px){
@@ -82,4 +102,5 @@ html, body {
         background-repeat: no-repeat;
         background-position:center 1%;
      }
+
 }
