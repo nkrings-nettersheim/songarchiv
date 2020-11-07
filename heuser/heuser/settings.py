@@ -41,7 +41,7 @@ def get_secret(setting, secrets=secrets):
 SECRET_KEY = get_secret('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -276,3 +276,12 @@ CKEDITOR_CONFIGS = {'default':
                     }
 
 ###################################
+
+# This must be the last part of the settings file
+
+try:
+    from .local_settings import *
+except ImportError:
+    print('There is no local settings, you must be on production')
+
+

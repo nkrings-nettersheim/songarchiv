@@ -1,3 +1,15 @@
-heuser/static/ckeditor/
-heuser/static/cookielaw/
-heuser/static/admin/
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+
+# Created by .ignore support plugin (hsz.mobi)
+secrets.json
+!/heuser/static/
+
