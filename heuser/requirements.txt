@@ -1,7 +1,7 @@
 Django==3.0.7
 pytz==2019.3
 sqlparse==0.3.0
-mysqlclient==1.4.6
+#mysqlclient==1.4.6
 django-js-asset==1.2.2
 django-ckeditor==5.9.0
 django-classy-tags==1.0.0
