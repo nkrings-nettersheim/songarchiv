@@ -43,7 +43,7 @@ SECRET_KEY = get_secret('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['songarchiv.nk-streaming.de', 'www.bheuser-songarchiv.de', 'bheuser-songarchiv.de', 'bheuser.uber.space']
+ALLOWED_HOSTS = ['www.nk-streaming.de', 'songarchiv.nk-streaming.de', 'www.bheuser-songarchiv.de', 'bheuser-songarchiv.de', 'bheuser.uber.space']
 
 # Application definition
 
