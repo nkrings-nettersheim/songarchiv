@@ -22,23 +22,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # To get the secret information from a special file
 # https://stackoverflow.com/questions/42077532/django-security-and-settings
 
-with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
-    secrets = json.load(secrets_file)
+#with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+#    secrets = json.load(secrets_file)
 
 
-def get_secret(setting, secrets=secrets):
-    """Get secret setting or fail with ImproperlyConfigured"""
-    try:
-        return secrets[setting]
-    except KeyError:
-        raise ImproperlyConfigured("Set the {} setting".format(setting))
+#def get_secret(setting, secrets=secrets):
+#    """Get secret setting or fail with ImproperlyConfigured"""
+#    try:
+#        return secrets[setting]
+#    except KeyError:
+#        raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_secret('SECRET_KEY')
+SECRET_KEY = "4kq1sj_c6j"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -97,31 +97,24 @@ TEMPLATES = [
 WSGI_APPLICATION = 'heuser.wsgi.application'
 
 #um im Template auswerten zu können, ob dies die Produktionsumgebung ist oder die Entwicklung
-PRODUCTION = get_secret('DB_ENVIRONMENT')
+#PRODUCTION = get_secret('DB_ENVIRONMENT')
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-if get_secret('DB_ENVIRONMENT') == 'prod':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': get_secret('DB_NAME'),
-            'USER': get_secret('DB_USER'),
-            'PASSWORD': get_secret('DB_PASSWORD'),
-            'HOST': '127.0.0.1',
-            'PORT': '3306',
-            'OPTIONS': {
-                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            },
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+#if get_secret('DB_ENVIRONMENT') == 'prod':
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': get_secret('DB_NAME'),
+#        'USER': get_secret('DB_USER'),
+#        'PASSWORD': get_secret('DB_PASSWORD'),
+#        'HOST': '127.0.0.1',
+#        'PORT': '3306',
+#        'OPTIONS': {
+#            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#        },
+#    }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -167,12 +160,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'songarchiv/static/songarchiv/mp3/')
 
-# Email settings
-EMAIL_HOST = get_secret('EMAIL_HOST')
-EMAIL_HOST_USER = get_secret('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = get_secret('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = get_secret('EMAIL_PORT')
-EMAIL_USE_TLS = get_secret('EMAIL_USE_TLS')
 
 ####################################
 ## cookiebanner configuration

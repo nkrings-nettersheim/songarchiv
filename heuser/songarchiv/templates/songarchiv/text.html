@@ -57,7 +57,7 @@
         <div class="col">
              <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
-                    <a class="nav-link  text-dark active" id="text-tab" data-toggle="tab" href="#text" role="tab" aria-controls="text" aria-selected="false">Text</a>
+                    <a class="nav-link text-dark" id="text-tab" data-toggle="tab" href="#text" role="tab" aria-controls="text" aria-selected="false">Text</a>
               </li>
               {% if text.text_standard_german%}
               <li class="nav-item">
@@ -71,7 +71,7 @@
               {% endif %}
               {% if text.text_chords%}
               <li class="nav-item">
-                    <a class="nav-link text-dark" id="chords-tab" data-toggle="tab" href="#chords" role="tab" aria-controls="chords" aria-selected="false">Chords</a>
+                    <a class="nav-link text-dark active" id="chords-tab" data-toggle="tab" href="#chords" role="tab" aria-controls="chords" aria-selected="false">Chords</a>
               </li>
               {% endif %}
               {% if text.text_nashville%}
@@ -85,7 +85,7 @@
              </ul>
             <div class="tab-content" id="myTabContent">
 
-                  <div class="tab-pane fade show active" id="text" role="tabpanel" aria-labelledby="text-tab">
+                  <div class="tab-pane fade" id="text" role="tabpanel" aria-labelledby="text-tab">
                       <div class="row bg-white">
                           <div class="col-sm-1"></div>
                           <div class="col-sm-9"><h3>{{ song.song_title }}</h3></div>
@@ -110,7 +110,7 @@
                       </div>
                   </div>
 
-                  <div class="tab-pane fade show" id="text-german" role="tabpanel" aria-labelledby="text-german-tab">
+                  <div class="tab-pane fade" id="text-german" role="tabpanel" aria-labelledby="text-german-tab">
                       <div class="row bg-white">
                           <div class="col-sm-1"></div>
                           <div class="col-sm-9"><h3>{{ song.song_title }}</h3></div>
@@ -161,7 +161,7 @@
                       </div>
                   </div>
 
-                  <div class="tab-pane fade" id="chords" role="tabpanel" aria-labelledby="chords-tab">
+                  <div class="tab-pane fade show active" id="chords" role="tabpanel" aria-labelledby="chords-tab">
                       <div class="row bg-white">
                           <div class="col-sm-1"></div>
                           <div class="col-sm-9"><h3>{{ song.song_title }}</h3></div>

@@ -13,3 +13,4 @@ media
 secrets.json
 !/heuser/static/
 
+/insert_song.py
