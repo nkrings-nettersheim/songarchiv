@@ -41,6 +41,31 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <title> {% block title %}Offizielles Song-Archiv des Liedermachers Björn Heuser{% endblock %}</title>
 
+    {% if PRODUCTION == 'prod' %}
+        {% cookie_accepted 'analytics' as cookie_analytics %}
+        {% if cookie_analytics %}
+        <!-- Start Open Web Analytics Tracker -->
+        <script type="text/javascript">
+        //<![CDATA[
+        var owa_baseUrl = 'https://www.xkgmbh.eu/owa/';
+        var owa_cmds = owa_cmds || [];
+        owa_cmds.push(['setSiteId', '8df393db0d6b68809ffdc8574fe4d603']);
+        owa_cmds.push(['trackPageView']);
+        owa_cmds.push(['trackClicks']);
+
+        (function() {
+            var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
+            owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
+            _owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
+            var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
+        }());
+        //]]>
+        </script>
+        <!-- End Open Web Analytics Code -->
+        {% endif %}
+    {% else %}
+    {% endif %}
+
 </head>
 
 <body>
@@ -75,30 +100,6 @@
       $('[data-toggle="tooltip"]').tooltip()
     })
 </script>
-    {% if PRODUCTION == 'prod' %}
-        {% cookie_accepted 'analytics' as cookie_analytics %}
-        {% if cookie_analytics %}
-        <!-- Start Open Web Analytics Tracker -->
-        <script type="text/javascript">
-        //<![CDATA[
-        var owa_baseUrl = 'https://www.xkgmbh.eu/owa/';
-        var owa_cmds = owa_cmds || [];
-        owa_cmds.push(['setSiteId', '8df393db0d6b68809ffdc8574fe4d603']);
-        owa_cmds.push(['trackPageView']);
-        owa_cmds.push(['trackClicks']);
-
-        (function() {
-            var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
-            owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
-            _owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
-            var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
-        }());
-        //]]>
-        </script>
-        <!-- End Open Web Analytics Code -->
-        {% endif %}
-    {% else %}
-    {% endif %}
 
 </body>
 </html>
