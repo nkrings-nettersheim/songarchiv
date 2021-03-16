@@ -388,10 +388,10 @@ def print_nashville(request):
 
 # **************************************************************************************************
 
-#LOGLEVEL = os.environ.get('LOGLEVEL', 'info').upper()
+LOGLEVEL = os.environ.get('LOGLEVEL', 'info').upper()
 logging.config.dictConfig({
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
     'formatters': {
         'console': {
             'format': '%(name)-12s %(levelname)-8s %(message)s'
@@ -406,9 +406,11 @@ logging.config.dictConfig({
             'formatter': 'console'
         },
         'file': {
-            'class': 'logging.FileHandler',
+            'class': 'logging.handlers.RotatingFileHandler',
             'formatter': 'file',
-            'filename': BASE_DIR + '/songarchiv.log'
+            'filename': BASE_DIR + '/songarchiv.log',
+            'maxBytes': 1024*1024*1,
+            'backupCount': 10,
         }
     },
     'loggers': {
@@ -420,8 +422,6 @@ logging.config.dictConfig({
             'level': 'INFO',
             'handlers': ['console', 'file'],
             'propagate': False,
-            'maxBytes': 1024 * 1024 * 1,
-            'backupCount': 10,
         },
         'django.request': {
             'level': 'DEBUG',
