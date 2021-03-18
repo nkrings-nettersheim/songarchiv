@@ -29,19 +29,19 @@ def index(request):
 
 
 def impressum(request):
-    logger.info(f"{request.META.get('REMOTE_ADDR')};Impressum")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};Impressum")
     content = Content_text.objects.get(content_kurz='Impressum')
     return render(request, 'songarchiv/impressum.html', {'content': content})
 
 
 def datenschutz(request):
-    logger.info(f"{request.META.get('REMOTE_ADDR')};Datenschutz")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};Datenschutz")
     content = Content_text.objects.get(content_kurz='Datenschutz')
     return render(request, 'songarchiv/datenschutz.html', {'content': content})
 
 
 def uebers_songarchiv(request):
-    logger.info(f"{request.META.get('REMOTE_ADDR')};Übers Songarchiv")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};Übers Songarchiv")
     content = Content_text.objects.get(content_kurz='oevver_dat_songarchiv')
     return render(request, 'songarchiv/uebers_songarchiv.html', {'content': content})
 
@@ -56,9 +56,9 @@ def add_song(request):
             logger.info(f"User-ID: {request.user.id:>2};add_song;{str(song_item.id)};song created")
             return redirect('/songarchiv/song/' + str(song_item.id) + '/')
     else:
-        logger.info(f"{request.META.get('REMOTE_ADDR')};add_song;;get-call")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};add_song;;get-call")
         form = SongForm()
-    logger.info(f"{request.META.get('REMOTE_ADDR')};add_song;;SongForm called")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};add_song;;SongForm called")
     return render(request, 'songarchiv/song_form.html', {'form': form})
 
 
@@ -66,26 +66,26 @@ def search_song(request):
     if request.method == "POST":
         title = request.POST['title']
         title = title.strip()
-        logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{title};POST-call with title")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{title};POST-call with title")
         if title != '':
             song_list = Song.objects.filter(song_title__icontains=title, song_activ=True).order_by('song_title')
             if len(song_list) == 1:
-                logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{str(song_list[0].id)};song with id called")
+                logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{str(song_list[0].id)};song with id called")
                 return redirect('/songarchiv/song/' + str(song_list[0].id) + '/')
             elif len(song_list) > 1:
-                logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{title};song_list called")
+                logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{title};song_list called")
                 return render(request, 'songarchiv/songs.html', {'song_list': song_list,
                                                                  'title': title,
                                                                  'method': 'contains'})
             else:
                 form = IndexForm()
                 form.info = "Leider unter dem Suchbegriff '" + title + "' nichts gefunden"
-                logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{title}; nothing found with title")
+                logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{title}; nothing found with title")
                 return render(request, 'songarchiv/index.html', {'form': form})
         else:
             form = IndexForm()
             form.info = "Bitte einen Suchbegriff eingeben"
-            logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;;no search-string given")
+            logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;;no search-string given")
             return render(request, 'songarchiv/index.html', {'form': form})
 
     elif request.method == "GET":
@@ -93,7 +93,7 @@ def search_song(request):
         order = request.GET.get('order', '')
         method = request.GET.get('method', 'startswith')
 
-        logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;Titel: {title}, order: {order}, method: {method};GET-call with title")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;Titel: {title}, order: {order}, method: {method};GET-call with title")
 
 
         if title == "all":
@@ -118,19 +118,19 @@ def search_song(request):
 
         #assert False
         if len(song_list) == 1:
-            logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{str(song_list[0].id)};GET-call song with id called")
+            logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{str(song_list[0].id)};GET-call song with id called")
             return redirect('/songarchiv/song/' + str(song_list[0].id) + '/')
         elif len(song_list) > 1:
-            logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{title};GET-call song_list called")
+            logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{title};GET-call song_list called")
             return render(request, 'songarchiv/songs.html', {'song_list': song_list,
                                                              'title': title,
                                                              'method': method})
         else:
             form = IndexForm
-            logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;{title};nothing found with title")
+            logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{title};nothing found with title")
             return render(request, 'songarchiv/index.html', {'form': form})
     else:
-        logger.info(f"{request.META.get('REMOTE_ADDR')};search_song;;no searchword given")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;;no searchword given")
         form = IndexForm
         return render(request, 'songarchiv/index.html', {'form': form})
 
@@ -160,7 +160,7 @@ def edit_song(request, id=None):
     else:
         form = SongForm(request.POST or None, instance=item)
         form.id = item.id
-        logger.info(f"{request.META.get('REMOTE_ADDR')};edit_song;;call edit_song get-call")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};edit_song;;call edit_song get-call")
         return render(request, 'songarchiv/song_form.html', {'form': form})
 
 
@@ -171,10 +171,10 @@ def song(request, id=id):
             song_text_result = Song_Text.objects.get(song_id=id)
         except Song_Text.DoesNotExist:
             song_text_result = None
-        logger.info(f"{request.META.get('REMOTE_ADDR')};song;{str(id)};call song")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};song;{str(id)};call song")
         return render(request, 'songarchiv/song.html', {'song': song_result, 'text': song_text_result})
     except ObjectDoesNotExist:
-        logger.info(f"{request.META.get('REMOTE_ADDR')};song;{str(id)};call song Object with ID don't exist")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};song;{str(id)};call song Object with ID don't exist")
         return redirect('/songarchiv/')
 
 
@@ -186,7 +186,7 @@ class del_song(DeleteView):
 
 
 def song_delete_done(request):
-    logger.info(f"{request.META.get('REMOTE_ADDR')};song_delete_done")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};song_delete_done")
     return render(request, 'songarchiv/song_delete_done.html')
 
 # **************************************************************************************************
@@ -201,9 +201,9 @@ def add_album(request):
             logger.info(f"{request.user.id:>2};add_album;{str(album_item.id)};album with id created")
             return redirect('/songarchiv/album/')
     else:
-        logger.info(f"{request.META.get('REMOTE_ADDR')};add_album;;with get-call")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};add_album;;with get-call")
         form = AlbumForm()
-    logger.info(f"{request.META.get('REMOTE_ADDR')};add_album;;AlbumForm called")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};add_album;;AlbumForm called")
     return render(request, 'songarchiv/album_form.html', {'form': form})
 
 
@@ -219,7 +219,7 @@ def search_album(request):
         title = request.POST['album_title']
         album_list = Album.objects.filter(album_title__icontains=title)
         if len(album_list) == 1:
-            logger.info(f"{request.META.get('REMOTE_ADDR')};search_album;str(album_list[0].id);Suche nach album-ID")
+            logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_album;str(album_list[0].id);Suche nach album-ID")
             return redirect('/songarchiv/album/' + str(album_list[0].id) + '/')
         elif len(album_list) > 1:
             return render(request, 'songarchiv/albums.html', {'album_list': album_list})
@@ -239,14 +239,14 @@ def edit_album(request, id=None):
         return redirect('/songarchiv/')
     form.id = item.id
     form.change = True
-    logger.info(f"{request.META.get('REMOTE_ADDR')};edit_album;{str(form.id)};AlbumForm for id called")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};edit_album;{str(form.id)};AlbumForm for id called")
     return render(request, 'songarchiv/album_form.html', {'form': form})
 
 
 def album(request):
     try:
         album_result = Album.objects.filter(album_single__exact=1).order_by('-album_year')
-        logger.info(f"{request.META.get('REMOTE_ADDR')};album;;list of albums called")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};album;;list of albums called")
         return render(request, 'songarchiv/album.html', {'album': album_result})
     except ObjectDoesNotExist:
         return redirect('/songarchiv/')
@@ -255,7 +255,7 @@ def album(request):
 def single(request):
     try:
         album_result = Album.objects.filter(album_single__exact=2).order_by('-album_year')
-        logger.info(f"{request.META.get('REMOTE_ADDR')};single;;list of singles called")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};single;;list of singles called")
         return render(request, 'songarchiv/single.html', {'album': album_result})
     except ObjectDoesNotExist:
         return redirect('/songarchiv/')
@@ -301,10 +301,10 @@ def text(request, id=id):
 
         text_result = Song_Text.objects.get(song_id=id)
         song_result = Song.objects.get(id=id)
-        logger.info(f"{request.META.get('REMOTE_ADDR')};text;{str(id)};songtext with id and UserAgent {user_agent} called")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};text;{str(id)};songtext with id and UserAgent {user_agent} called")
         return render(request, 'songarchiv/text.html', {'text': text_result, 'song': song_result, 'user_agent': user_agent})
     except ObjectDoesNotExist:
-        logger.info(f"{request.META.get('REMOTE_ADDR')};text;;object does not exist")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};text;;object does not exist")
         return redirect('/songarchiv/add/text/?id=' + id)
 
 # **************************************************************************************************
@@ -323,7 +323,7 @@ def print_text(request):
     pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
-    logger.info(f"{request.META.get('REMOTE_ADDR')};print_text;{str(id)};songtext with id as pdf created")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};print_text;{str(id)};songtext with id as pdf created")
 
     return response
 
@@ -341,7 +341,7 @@ def print_chordpro(request):
     pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
-    logger.info(f"{request.META.get('REMOTE_ADDR')};print_chordpro;{str(id)};songtext with id as pdf created")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};print_chordpro;{str(id)};songtext with id as pdf created")
 
     return response
 
@@ -363,7 +363,7 @@ def print_chords(request):
                                        font_config=font_config,
                                        stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
 
-    logger.info(f"{request.META.get('REMOTE_ADDR')};print_chords;{str(id)};songtext with id as pdf created")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};print_chords;{str(id)};songtext with id as pdf created")
 
     return response
 
@@ -381,7 +381,7 @@ def print_nashville(request):
     pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
-    logger.info(f"{request.META.get('REMOTE_ADDR')};print_nashville;{str(id)};songtext with id as pdf created")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};print_nashville;{str(id)};songtext with id as pdf created")
 
     return response
 
