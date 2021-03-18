@@ -24,7 +24,7 @@ def index(request):
     form = IndexForm()
     song_count = Song.objects.all().count()
     form.song_count = song_count
-    logger.info(f"{request.META.get('REMOTE_ADDR')};Index-site")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};Index-site")
     return render(request, 'songarchiv/index.html', {'form': form})
 
 

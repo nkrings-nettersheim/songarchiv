@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django_user_agents',
     'songarchiv',
     'dashboard',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_user_agents.middleware.UserAgentMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 
