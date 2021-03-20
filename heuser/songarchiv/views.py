@@ -55,6 +55,7 @@ def add_song(request):
             song_item.save()
             logger.info(f"User-ID: {request.user.id:>2};add_song;{str(song_item.id)};song created")
             return redirect('/songarchiv/song/' + str(song_item.id) + '/')
+            #return redirect(song.get_abolute_url(song_item))
     else:
         logger.info(f"{request.META.get('HTTP_X_REAL_IP')};add_song;;get-call")
         form = SongForm()
@@ -70,8 +71,8 @@ def search_song(request):
         if title != '':
             song_list = Song.objects.filter(song_title__icontains=title, song_activ=True).order_by('song_title')
             if len(song_list) == 1:
-                logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{str(song_list[0].id)};song with id called")
-                return redirect('/songarchiv/song/' + str(song_list[0].id) + '/')
+                logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{str(song_list[0].slug)};song with id called")
+                return redirect('/songarchiv/song/' + str(song_list[0].slug) + '/')
             elif len(song_list) > 1:
                 logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{title};song_list called")
                 return render(request, 'songarchiv/songs.html', {'song_list': song_list,
@@ -118,8 +119,8 @@ def search_song(request):
 
         #assert False
         if len(song_list) == 1:
-            logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{str(song_list[0].id)};GET-call song with id called")
-            return redirect('/songarchiv/song/' + str(song_list[0].id) + '/')
+            logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{str(song_list[0].slug)};GET-call song with id called")
+            return redirect('/songarchiv/song/' + str(song_list[0].slug) + '/')
         elif len(song_list) > 1:
             logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{title};GET-call song_list called")
             return render(request, 'songarchiv/songs.html', {'song_list': song_list,
@@ -164,9 +165,14 @@ def edit_song(request, id=None):
         return render(request, 'songarchiv/song_form.html', {'form': form})
 
 
-def song(request, id=id):
+def song(request, slug):
     try:
-        song_result = Song.objects.get(id=id)
+        if slug.isnumeric():
+            song_result = Song.objects.get(id=slug)
+        else:
+            song_result = Song.objects.get(slug=slug)
+
+        id = song_result.id
         try:
             song_text_result = Song_Text.objects.get(song_id=id)
         except Song_Text.DoesNotExist:
@@ -174,7 +180,7 @@ def song(request, id=id):
         logger.info(f"{request.META.get('HTTP_X_REAL_IP')};song;{str(id)};call song")
         return render(request, 'songarchiv/song.html', {'song': song_result, 'text': song_text_result})
     except ObjectDoesNotExist:
-        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};song;{str(id)};call song Object with ID don't exist")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};song;{str(slug)};call song Object with ID don't exist")
         return redirect('/songarchiv/')
 
 
@@ -292,16 +298,23 @@ def edit_text(request, id=None):
     return render(request, 'songarchiv/text_form.html', {'form': form})
 
 
-def text(request, id=id):
+def text(request, slug):
     try:
         if request.user_agent.is_mobile:
             user_agent = 'mobile'
         else:
             user_agent = 'non-mobile'
 
-        text_result = Song_Text.objects.get(song_id=id)
+        if slug.isnumeric():
+            text_result = Song_Text.objects.get(song_id=slug)
+        else:
+            text_result = Song_Text.objects.get(slug=slug)
+
+        id = text_result.song_id
+
+        #text_result = Song_Text.objects.get(song_id=id)
         song_result = Song.objects.get(id=id)
-        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};text;{str(id)};songtext with id and UserAgent {user_agent} called")
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};text;{str(slug)};songtext with id and UserAgent {user_agent} called")
         return render(request, 'songarchiv/text.html', {'text': text_result, 'song': song_result, 'user_agent': user_agent})
     except ObjectDoesNotExist:
         logger.info(f"{request.META.get('HTTP_X_REAL_IP')};text;;object does not exist")
@@ -310,8 +323,8 @@ def text(request, id=id):
 # **************************************************************************************************
 
 def print_text(request):
-    id = request.GET.get('id')
-    result_text = Song_Text.objects.get(id=request.GET.get('id'))
+    slug = request.GET.get('slug')
+    result_text = Song_Text.objects.get(slug=request.GET.get('slug'))
     result_song = Song.objects.get(id=result_text.song_id)
 
     filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_text.pdf"
@@ -323,14 +336,14 @@ def print_text(request):
     pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
-    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};print_text;{str(id)};songtext with id as pdf created")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};print_text;{str(slug)};songtext with id as pdf created")
 
     return response
 
 
 def print_chordpro(request):
-    id = request.GET.get('id')
-    result_text = Song_Text.objects.get(id=request.GET.get('id'))
+    slug = request.GET.get('slug')
+    result_text = Song_Text.objects.get(slug=request.GET.get('slug'))
     result_song = Song.objects.get(id=result_text.song_id)
 
     filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_chordpro.pdf"
@@ -341,14 +354,14 @@ def print_chordpro(request):
     pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
-    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};print_chordpro;{str(id)};songtext with id as pdf created")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};print_chordpro;{str(slug)};songtext with id as pdf created")
 
     return response
 
 
 def print_chords(request):
-    id = request.GET.get('id')
-    result_text = Song_Text.objects.get(id=request.GET.get('id'))
+    slug = request.GET.get('slug')
+    result_text = Song_Text.objects.get(slug=request.GET.get('slug'))
     result_song = Song.objects.get(id=result_text.song_id)
 
     filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_chords.pdf"
@@ -363,14 +376,15 @@ def print_chords(request):
                                        font_config=font_config,
                                        stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
 
-    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};print_chords;{str(id)};songtext with id as pdf created")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};print_chords;{str(slug)};songtext with id as pdf created")
 
     return response
 
 
 def print_nashville(request):
-    id = request.GET.get('id')
-    result_text = Song_Text.objects.get(id=request.GET.get('id'))
+    slug = request.GET.get('slug')
+    result_text = Song_Text.objects.get(slug=request.GET.get('slug'))
+    #result_text = Song_Text.objects.get(id=request.GET.get('id'))
     result_song = Song.objects.get(id=result_text.song_id)
 
     filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_nashville.pdf"
@@ -381,7 +395,7 @@ def print_nashville(request):
     pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
-    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};print_nashville;{str(id)};songtext with id as pdf created")
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};print_nashville;{str(slug)};songtext with id as pdf created")
 
     return response
 
