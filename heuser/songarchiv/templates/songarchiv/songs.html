@@ -55,10 +55,10 @@
         {% for song in song_list %}
         <div class="row text-dark">
             <div class="col-sm-1 col-1 d-none d-sm-block text-right text-info">
-                <a href="/songarchiv/song/{{ song.id }}" class="text-reset"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                <a href="{{ song.get_absolute_url }}" class="text-reset"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
             </div>
             <div class="col-sm-5 col-5 text-dark">
-                <a href="/songarchiv/song/{{ song.id }}" class="text-reset" >{{ song.song_title }}</a>
+                 <a href="{{ song.get_absolute_url }}" class="text-reset" >{{ song.song_title }}</a>
             </div>
             <div class="col-sm-6 col-6">
                 {% if song.album %}

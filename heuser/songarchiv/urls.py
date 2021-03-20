@@ -9,7 +9,7 @@ urlpatterns = [
     path('add/song/', views.add_song, name='add_song'),
     path('search/song/', views.search_song, name='search_song'),
     path('edit/song/<id>/', views.edit_song, name='edit_song'),
-    path('song/<id>/', views.song, name='song'),
+    path('song/<slug:slug>/', views.song, name='song'),
     path('del/song/<pk>', views.del_song.as_view(), name='del_song'),
     path('song_delete_done', views.song_delete_done, name='del_song_done'),
     path('autocomplete', views.autocomplete, name='autocomplete'),
@@ -23,7 +23,8 @@ urlpatterns = [
 
     path('add/text/', views.add_text, name='add_text'),
     path('edit/text/<id>/', views.edit_text, name='edit_text'),
-    path('text/<id>/', views.text, name='text'),
+    path('text/<slug:slug>/', views.text, name='text'),
+
     path('print_text/', views.print_text, name='print_text'),
     path('print_chordpro/', views.print_chordpro, name='print_chordpro'),
     path('print_chords/', views.print_chords, name='print_chords'),

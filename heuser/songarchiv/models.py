@@ -1,6 +1,8 @@
 
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.urls import reverse
+from django.utils.text import slugify
 
 
 def dynamik_path(instance, filename):
@@ -30,6 +32,7 @@ class Album(models.Model):
 
 class Song(models.Model):
     song_title = models.CharField(max_length=250, unique=True)
+    slug = models.SlugField(max_length=70, null=True, blank=True)
     song_artist = models.CharField(max_length=250)
     song_music = models.CharField(max_length=250, blank=True, default='')
     song_lyrics = models.CharField(max_length=250, blank=True, default='')
@@ -50,12 +53,27 @@ class Song(models.Model):
     def __str__(self):
         return self.song_title
 
+    def save(self, *args, **kwargs):  # new
+        if not self.slug:
+            german_title = self.song_title.lower()
+            german_title = (german_title.translate(str.maketrans({'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss'})))
+            german_title = 'bjoern-heuser-' + german_title
+            self.slug = slugify(german_title)
+        return super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        #return "/songarchiv/song/%s/" % self.slug
+        return reverse('songarchiv:song', args=[str(self.slug)])
+        #return reverse('songarchiv:song', kwargs={'id': self.id, 'slug': self.slug })
+
+
     class Meta:
         ordering = ['album__album_title']
 
 
 class Song_Text(models.Model):
     text_text = RichTextField()
+    slug = models.SlugField(max_length=70, null=True, blank=True)
     text_standard_german = RichTextField()
     text_chordpro = RichTextField()
     text_chords = RichTextField()
@@ -63,7 +81,15 @@ class Song_Text(models.Model):
     song = models.ForeignKey(Song, on_delete=models.CASCADE, default='')
 
     def __str__(self):
-        return self.song
+        return self.song.song_title
+
+    def save(self, *args, **kwargs):  # new
+        if not self.slug:
+            self.slug = self.song.slug
+        return super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('songarchiv:text', args=[str(self.slug)])
 
 
 class Content_text(models.Model):

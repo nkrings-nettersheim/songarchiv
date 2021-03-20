@@ -17,7 +17,11 @@
     <div class="navbar-collapse collapse justify-content-stretch" id="navbar6">
         <ul class="navbar-nav">
             <li class="nav-item active">
+                <!--
                 <a class="nav-link" href="{% url 'songarchiv:song' text.song_id %}">zurück</a>
+                -->
+                <a class="nav-link" href="{{ song.get_absolute_url }}">zurück</a>
+
             </li>
         {% if user.is_authenticated %}
             <li class="nav-item">
@@ -219,7 +223,7 @@
                       <div class="row bg-white">
                           <div class="col-sm-1"></div>
                           <div class="col-sm-11">
-                              <a href="{% url 'songarchiv:print_text' %}?id={{text.id}}">
+                              <a href="{% url 'songarchiv:print_text' %}?slug={{text.slug}}">
                                   <button type="button" class="btn btn-dark">Nur den Text</button>
                               </a>
                           </div>
@@ -229,7 +233,7 @@
                       <div class="row bg-white">
                           <div class="col-sm-1"></div>
                           <div class="col-sm-11">
-                            <a href="{% url 'songarchiv:print_chords' %}?id={{text.id}}">
+                            <a href="{% url 'songarchiv:print_chords' %}?slug={{text.slug}}">
                               <button type="button" class="btn btn-dark">Text und Akkorde</button>
                             </a>
                           </div>
@@ -240,7 +244,7 @@
                       <div class="row bg-white">
                           <div class="col-sm-1"></div>
                           <div class="col-sm-11">
-                            <a href="{% url 'songarchiv:print_chordpro' %}?id={{text.id}}">
+                            <a href="{% url 'songarchiv:print_chordpro' %}?slug={{text.slug}}">
                               <button type="button" class="btn btn-dark">Text und Akkorde {Chordpro}</button>
                             </a>
                           </div>
@@ -251,7 +255,7 @@
                       <div class="row bg-white ">
                           <div class="col-sm-1"></div>
                           <div class="col-sm-11">
-                              <a href="{% url 'songarchiv:print_nashville' %}?id={{text.id}}">
+                              <a href="{% url 'songarchiv:print_nashville' %}?slug={{text.slug}}">
                                   <button type="button" class="btn btn-dark">Text und Akkorde im Nashville-Style</button>
                               </a>
                           </div>
