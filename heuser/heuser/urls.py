@@ -30,5 +30,6 @@ urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
 ]
 
+# Dies ist nur für die Entwicklung notwendig. In Produktion braucht es einen Eintrag in der conf Datei von nginx
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
