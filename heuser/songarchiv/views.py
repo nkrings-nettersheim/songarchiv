@@ -200,7 +200,7 @@ def song_delete_done(request):
 @login_required
 def add_album(request):
     if request.method == "POST":
-        form = AlbumForm(request.POST)
+        form = AlbumForm(request.POST, request.FILES)
         if form.is_valid():
             album_item = form.save(commit=False)
             album_item.save()
