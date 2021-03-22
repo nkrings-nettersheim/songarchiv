@@ -4,7 +4,7 @@ from ckeditor.fields import RichTextField
 from django.urls import reverse
 from django.utils.text import slugify
 
-
+# diese Funktion kann ggf. weg, da sie in songs bei den snipplet eingesetzt war, aber eigentlich nicht benötigt wird
 def dynamik_path(instance, filename):
     file_path = '{filename}'.format(filename=filename)
     return file_path
@@ -21,7 +21,7 @@ class Album(models.Model):
 
     album_title = models.CharField(max_length=250)
     album_year = models.DateField(default='1900-01-01')
-    album_cover = models.CharField(max_length=250, default='')
+    album_cover_image = models.ImageField(upload_to='cover/', null=True, blank=True)
     album_spotify = models.CharField(max_length=500, default='')
     album_amazon_selling = models.CharField(max_length=1000, default='')
     album_single = models.CharField(max_length=20, choices=ALBUM_SINGLE, default='1')
@@ -42,8 +42,7 @@ class Song(models.Model):
     song_spotify = models.URLField(max_length=250, blank=True, default='')
     song_amazon = models.URLField(max_length=250, blank=True, default='')
     song_itunes = models.URLField(max_length=250, blank=True, default='')
-    song_snippet = models.FileField(upload_to=dynamik_path, max_length=100, blank=True)
-    song_cover = models.CharField(max_length=125, blank=True, default='')
+    song_snippet = models.FileField(upload_to='mp3/', max_length=100, blank=True)
     song_youtube = models.CharField(max_length=500, blank=True, default='')
     song_amazon_sale = models.CharField(max_length=250, blank=True, default='')
     song_background = models.TextField(blank=True, default='')

@@ -20,7 +20,7 @@
                 {% if text.text_text %}
                     <a class="nav-link" href="{{ text.get_absolute_url }}">Text/Chords/Übersetzung</a>
                 {% else %}
-                <a class="text-white">Noch kein Text vorhanden</a>
+                    <a class="nav-link" href="{% url 'songarchiv:add_text'%}?id={{ song.id }}">Noch kein Text vorhanden</a>
                 {% endif %}
             </li>
         {% if user.is_authenticated %}
@@ -177,33 +177,10 @@
                     <div class="d-flex justify-content-center col-md">
                         {% if song.album.album_amazon_selling %}
                             <a href="{{ song.album.album_amazon_selling }}" target="_blank">
-                                <img src="{% static 'songarchiv/images/' %}{{ song.album.album_cover}}" width="150px" alt="Coverbild {{ song.album.album_title}}">
+                                <img src="{{ song.album.album_cover_image.url}}" width="150px" alt="Coverbild {{ song.album.album_title}}">
                             </a>
                         {% else %}
-                            <img src="{% static 'songarchiv/images/' %}{{song.album.album_cover}}" width="150px" alt="Coverbild {{ song.album.album_title}}">
-                        {% endif%}
-                    </div>
-                </div>
-                <br>
-            {% endif %}
-            {% if song.song_cover_fehler %}
-                    <div class="row">
-                    <div class="d-flex justify-content-center col-md">
-                        {% if song.song_amazon_sale %}
-                            <a href="{{ song.song_amazon_sale }}" target="_blank">
-                                <img src="{% static 'songarchiv/images/' %}{{ song.song_cover}}"
-                                     width="150px"
-                                     height="150px"
-                                     alt="Coverbild {{ song.song_title }}"
-                                     title="Bei amazon kaufen"
-                                >
-                            </a>
-                        {% else %}
-                            <img src="{% static 'songarchiv/images/' %}{{ song.song_cover}}"
-                                 width="150px"
-                                 alt="Coverbild {{ song.song_title }}"
-                                 title="Bei amazon kaufen"
-                            >
+                            <img src="{{song.album.album_cover_image.url}}" width="150px" alt="Coverbild {{ song.album.album_title}}">
                         {% endif%}
                     </div>
                 </div>
@@ -213,7 +190,7 @@
                     <div class="row">
                     <div class="d-flex justify-content-center col-md">
                                 <audio controls preload="none">
-                                    <source src="{% static 'songarchiv/mp3/' %}{{ song.song_snippet}}" type="audio/mpeg"></source>
+                                    <source src="{{ song.song_snippet.url}}" type="audio/mpeg"></source>
                                 </audio>
                     </div>
                 </div>
