@@ -32,6 +32,7 @@ class Album(models.Model):
 
 class Song(models.Model):
     song_title = models.CharField(max_length=250, unique=True)
+    song_tag = models.CharField(max_length=500, blank=True, default="")
     slug = models.SlugField(max_length=70, null=True, blank=True)
     song_artist = models.CharField(max_length=250)
     song_music = models.CharField(max_length=250, blank=True, default='')
@@ -39,11 +40,14 @@ class Song(models.Model):
     song_year = models.DateField(blank=True, default='1900-01-01')
     song_publisher = models.CharField(max_length=250, blank=True, default='')
     song_producer = models.CharField(max_length=125, blank=True, default='')
+    song_spotify_iframe = models.CharField(max_length=250, blank=True, default='')
     song_spotify = models.URLField(max_length=250, blank=True, default='')
     song_amazon = models.URLField(max_length=250, blank=True, default='')
     song_itunes = models.URLField(max_length=250, blank=True, default='')
     song_snippet = models.FileField(upload_to='mp3/', max_length=100, blank=True)
     song_youtube = models.CharField(max_length=500, blank=True, default='')
+    song_youtube_2 = models.CharField(max_length=500, blank=True, default='')
+    song_youtube_3 = models.CharField(max_length=500, blank=True, default='')
     song_amazon_sale = models.CharField(max_length=250, blank=True, default='')
     song_background = models.TextField(blank=True, default='')
     song_activ = models.BooleanField(default=True)

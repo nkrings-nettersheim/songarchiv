@@ -30,6 +30,17 @@ class SongForm(forms.ModelForm):
                                  )
                                  )
 
+    song_tag = forms.CharField(required=False,
+                                 max_length=500,
+                                 widget=forms.TextInput(
+                                     attrs={
+                                         'class': 'form-control',
+                                         'autofocus': 'autofocus',
+                                         'placeholder': 'Tags eingeben ...'
+                                     }
+                                 )
+                                 )
+
     song_artist = forms.CharField(required=True,
                                   max_length=150,
                                   initial='Björn Heuser',
@@ -94,6 +105,16 @@ class SongForm(forms.ModelForm):
                                     )
                                     )
 
+    song_spotify_iframe = forms.CharField(required=False,
+                                   max_length=250,
+                                   widget=forms.TextInput(
+                                       attrs={
+                                           'class': 'form-control',
+                                           'placeholder': 'Link zu Spotify ...'
+                                       }
+                                   )
+                                   )
+
     song_spotify = forms.CharField(required=False,
                                    max_length=150,
                                    widget=forms.TextInput(
@@ -154,6 +175,26 @@ class SongForm(forms.ModelForm):
                                   )
                                   )
 
+    song_youtube_2 = forms.CharField(required=False,
+                                  max_length=500,
+                                  widget=forms.TextInput(
+                                      attrs={
+                                          'class': 'form-control',
+                                          'placeholder': 'Link zu Youtube ...'
+                                      }
+                                  )
+                                  )
+
+    song_youtube_3 = forms.CharField(required=False,
+                                  max_length=500,
+                                  widget=forms.TextInput(
+                                      attrs={
+                                          'class': 'form-control',
+                                          'placeholder': 'Link zu Youtube ...'
+                                      }
+                                  )
+                                  )
+
     song_amazon_sale = forms.CharField(required=False,
                                   max_length=250,
                                   widget=forms.TextInput(
@@ -181,18 +222,22 @@ class SongForm(forms.ModelForm):
     class Meta:
         model = Song
         fields = ['song_title',
+                  'song_tag',
                   'song_artist',
                   'song_music',
                   'song_lyrics',
                   'song_year',
                   'song_publisher',
                   'song_producer',
+                  'song_spotify_iframe',
                   'song_spotify',
                   'song_amazon',
                   'song_itunes',
                   'song_snippet',
                   'song_cover',
                   'song_youtube',
+                  'song_youtube_2',
+                  'song_youtube_3',
                   'song_amazon_sale',
                   'song_background',
                   'song_activ',

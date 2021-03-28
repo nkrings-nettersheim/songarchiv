@@ -51,6 +51,13 @@
             </div>
         </div>
         <div class="form-group row">
+            <label for="{{ form.song_tag.id_for_label }}" class="col-sm-2 control-label">Tags:</label>
+            <div class="col-sm-6">
+                {{ form.song_tag }}
+                <div class="text-danger">{{ form.song_tag.errors }}</div>
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="{{ form.song_artist.id_for_label }}" class="col-sm-2 control-label">Künstler:</label>
             <div class="col-sm-6">
                 {{ form.song_artist }}
@@ -93,6 +100,13 @@
             </div>
         </div>
         <div class="form-group row">
+            <label for="{{ form.song_spotify_iframe.id_for_label }}" class="col-sm-2 control-label">Spotify iFrame:</label>
+            <div class="col-sm-6">
+                {{ form.song_spotify_iframe }}
+                <div class="text-danger">{{ form.song_spotify_iframe.errors }}</div>
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="{{ form.song_spotify.id_for_label }}" class="col-sm-2 control-label">Link zu Spotify:</label>
             <div class="col-sm-6">
                 {{ form.song_spotify }}
@@ -132,6 +146,22 @@
             <div class="col-sm-6">
                 {{ form.song_youtube }}
                 <div class="text-danger">{{ form.song_youtube.errors }}</div>
+                <div class="text-warning">Hinweis: width... und height... müssen ersetzt werden durch class="embed-responsive-item px-3"</div>
+            </div>
+        </div>
+       <div class="form-group row">
+            <label for="{{ form.song_youtube_2.id_for_label }}" class="col-sm-2 control-label">Youtube Datei 2:</label>
+            <div class="col-sm-6">
+                {{ form.song_youtube_2 }}
+                <div class="text-danger">{{ form.song_youtube_2.errors }}</div>
+                <div class="text-warning">Hinweis: width... und height... müssen ersetzt werden durch class="embed-responsive-item px-3"</div>
+            </div>
+        </div>
+       <div class="form-group row">
+            <label for="{{ form.song_youtube_3.id_for_label }}" class="col-sm-2 control-label">Youtube Datei 3:</label>
+            <div class="col-sm-6">
+                {{ form.song_youtube_3 }}
+                <div class="text-danger">{{ form.song_youtube_3.errors }}</div>
                 <div class="text-warning">Hinweis: width... und height... müssen ersetzt werden durch class="embed-responsive-item px-3"</div>
             </div>
         </div>
