@@ -34,6 +34,10 @@ html, body {
     display: -ms-flexbox;
 }
 
+.container_extend {
+    padding-bottom: 70px;
+}
+
 @media screen and (max-width: 575px){
     .bg-class {
         /*background-image: url('/static/songarchiv/images/bjoern_heuser_mobil.jpg'); */
