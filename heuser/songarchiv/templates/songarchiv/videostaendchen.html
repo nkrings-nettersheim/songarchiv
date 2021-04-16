@@ -65,7 +65,13 @@
             {% if value  < 2 %}
                 <li class="tag"><a class="tag__link" style="font-size:1em" href="{% url 'songarchiv:staendchenlist' %}?tag={{ key }}"> {{key}} - ({{value}}) </a></li>
             {% elif value < 4 %}
+                <li class="tag"><a class="tag__link" style="font-size:1.5em" href="{% url 'songarchiv:staendchenlist' %}?tag={{ key }}"> {{key}} ({{value}}) </a></li>
+            {% endif %}
+            {% elif value < 6 %}
                 <li class="tag"><a class="tag__link" style="font-size:2em" href="{% url 'songarchiv:staendchenlist' %}?tag={{ key }}"> {{key}} ({{value}}) </a></li>
+            {% endif %}
+            {% elif value >= 6 %}
+                <li class="tag"><a class="tag__link" style="font-size:2.5em" href="{% url 'songarchiv:staendchenlist' %}?tag={{ key }}"> {{key}} ({{value}}) </a></li>
             {% endif %}
         {% endfor %}
             </ul>
