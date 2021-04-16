@@ -31,6 +31,9 @@ urlpatterns = [
     path('print_chords/', views.print_chords, name='print_chords'),
     path('print_nashville/', views.print_nashville, name='print_nashville'),
 
+    path('videostaendchen/', views.videostaendchen, name= 'videostaendchen'),
+    path('staendchenlist/', views.staendchenlist, name='staendchenlist'),
+
     path('impressum/', views.impressum, name='impressum'),
     path('datenschutz/', views.datenschutz, name='datenschutz'),
     path('uebers_songarchiv/', views.uebers_songarchiv, name='uebers-songarchiv'),

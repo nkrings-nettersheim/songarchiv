@@ -27,7 +27,10 @@
                 <a class="nav-link" href="https://heuserkoeln.de" target="_blank">Heuser Shop</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'songarchiv:uebers-songarchiv'%}">Övver dat Songarchiv</a>
+                <a class="nav-link" href="{% url 'songarchiv:videostaendchen' %}">Videoständchen</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'songarchiv:uebers-songarchiv' %}">Övver dat Songarchiv</a>
             </li>
         {% if user.is_authenticated %}
             <li class="nav-item">
