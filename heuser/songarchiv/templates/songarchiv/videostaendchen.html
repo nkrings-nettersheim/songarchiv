@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'songarchiv/tagcloud.css' %}">
+{% endblock %}
+
+{% block title %}
+    Heuser Songarchiv - Videoständchen
+{% endblock %}
+
+{% block nav %}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a href="{% url 'songarchiv:index' %}" class="navbar-brand">Song suchen</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar6">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-stretch" id="navbar6">
+        <ul class="navbar-nav">
+
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'logout'%}"><i class="fa fa-sign-out" style="font-size:24px"></i> Logout</a>
+            {% else %}
+                <a class="nav-link" href="{% url 'login'%}"><i class="fa fa-sign-in" style="font-size:24px"></i> Login</a>
+            {% endif %}
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<content>
+    <p></p>
+    <div class="container container_extend">
+        <div class="row">
+            <div class="col-sm">
+            <h3>Wie wäre es mal mit einem individuellem und persönlichem Videoständchen von Björn Heuser?</h3>
+                <p>Im reichhaltigem Liederrepertoire von Björn Heuser gibt es für fast jeden Anlass das passende Lied!
+                    Bestellung erfolgt über die <a class="text-info" href="https://www.heuserkoeln.de/shop-1" target="_blank"> "heuser-shop.de"  </a></p>
+                <p>Welche Kategorie wäre interessant? Einfach anklicken und durch die Songauswahl stöbern.
+                    Links zu den kompletten Texten oder einfach kurz reinhören.</p>
+                <p> Wenn etwas gefällt einfach schnell <a class="text-info" href="https://www.heuserkoeln.de/shop-1" target="_blank"> zum "Heuser-Shop"</a>
+                    anklicken und bestellen. Meist innerhalb von 24h kommt das fertige Video via WhatsApp. Ein super individuelles und
+                    persönliches Geschenk und nicht nur für den großen Anlass, einfach auch mal so zwischendurch.
+                </p>
+            </div>
+            <div class="col-sm text-center">
+                <p>Hier ein Beispiel für ein Geburtstags-Videoständchen ...</p>
+                 <video width="320" height="240" controls>
+                  <source src="{% static 'songarchiv/mp4/Geburtstag_Monika.MP4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">Einfach auf die gewünschte Kategorie klicken:</div>
+        </div>
+        <div class="row">
+            <ul class="tags">
+        {% for key, value in tag_dict.items %}
+            {% if value  < 2 %}
+                <li class="tag"><a class="tag__link" style="font-size:1em" href="{% url 'songarchiv:staendchenlist' %}?tag={{ key }}"> {{key}} - ({{value}}) </a></li>
+            {% elif value < 4 %}
+                <li class="tag"><a class="tag__link" style="font-size:2em" href="{% url 'songarchiv:staendchenlist' %}?tag={{ key }}"> {{key}} ({{value}}) </a></li>
+            {% endif %}
+        {% endfor %}
+            </ul>
+        </div>
+   </div>
+</content>
+{% endblock %}

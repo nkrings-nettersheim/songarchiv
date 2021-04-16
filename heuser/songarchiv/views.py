@@ -402,6 +402,42 @@ def print_nashville(request):
 
 # **************************************************************************************************
 
+def videostaendchen(request):
+    tag_list = []
+    tag_dict = dict()
+    song_list = Song.objects.all()
+
+    for song in song_list:
+        if song.song_tag:
+            tag_split = song.song_tag.split()
+            for tag in tag_split:
+                tag_list.append(tag)
+
+    tag_list.sort()
+
+    for e in tag_list:
+        tag_dict[e] = tag_list.count(e)
+
+    #print(tag_list)
+    #print(tag_dict)
+    #tag_list = list(dict.fromkeys(tag_list))
+    #tag_list.sort()
+
+    return render(request, 'songarchiv/videostaendchen.html', {'tag_dict': tag_dict})
+
+def staendchenlist(request):
+    if request.method == "GET":
+        song_list = Song.objects.filter(song_tag__contains=request.GET.get('tag'))
+
+        return render(request, 'songarchiv/videostaendchenliste.html', {'song_list': song_list, 'kategorie': request.GET.get('tag')})
+    else:
+        form = IndexForm()
+        song_count = Song.objects.all().count()
+        form.song_count = song_count
+        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};Index-site")
+        return render(request, 'songarchiv/index.html', {'form': form})
+
+# **************************************************************************************************
 LOGLEVEL = os.environ.get('LOGLEVEL', 'info').upper()
 logging.config.dictConfig({
     'version': 1,
