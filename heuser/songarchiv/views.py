@@ -13,7 +13,7 @@ from weasyprint import HTML, CSS
 from weasyprint.fonts import FontConfiguration
 
 from .forms import IndexForm, SongForm, SearchAlbumForm, AlbumForm, SongTextForm
-from .models import Song, Album, Song_Text, Content_text
+from .models import Song, Album, Song_Text, Album_song, Content_text
 
 BASE_DIR = settings.BASE_DIR
 
@@ -45,6 +45,12 @@ def uebers_songarchiv(request):
     content = Content_text.objects.get(content_kurz='oevver_dat_songarchiv')
     return render(request, 'songarchiv/uebers_songarchiv.html', {'content': content})
 
+def cd_song_list(request, id):
+    Album_songs = Album_song.objects.filter(album_id=id).order_by('position')
+    for song in Album_songs:
+        song.text = Song_Text.objects.get(song_id=song.song.id)
+    logger.info(f"{request.META.get('HTTP_X_REAL_IP')};CD_Song_List")
+    return render(request, 'songarchiv/cd_song_list.html', {'Album_songs': Album_songs})
 
 @login_required
 def add_song(request):

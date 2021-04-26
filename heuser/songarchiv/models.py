@@ -95,6 +95,15 @@ class Song_Text(models.Model):
         return reverse('songarchiv:text', args=[str(self.slug)])
 
 
+class Album_song(models.Model):
+    album = models.ForeignKey(Album, on_delete=models.CASCADE, default='')
+    song = models.ForeignKey(Song, on_delete=models.CASCADE, default='')
+    position = models.IntegerField(default='')
+
+    def __str__(self):
+        return ("%s %s %s %s" % (self.album.album_title, self.song.song_title, self.song.id, self.position))
+
+
 class Content_text(models.Model):
     content_kurz = models.CharField(max_length=256, default='')
     content_lang = RichTextField()

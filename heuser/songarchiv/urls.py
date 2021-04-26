@@ -34,6 +34,8 @@ urlpatterns = [
     path('videostaendchen/', views.videostaendchen, name= 'videostaendchen'),
     path('staendchenlist/', views.staendchenlist, name='staendchenlist'),
 
+    path('cd_song_list/<id>/', views.cd_song_list, name='cd_song_list'),
+
     path('impressum/', views.impressum, name='impressum'),
     path('datenschutz/', views.datenschutz, name='datenschutz'),
     path('uebers_songarchiv/', views.uebers_songarchiv, name='uebers-songarchiv'),
