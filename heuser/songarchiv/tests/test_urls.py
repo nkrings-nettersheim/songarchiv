@@ -9,7 +9,6 @@ class TestUrls(SimpleTestCase):
 
     def test_url_index_is_resolved(self):
         url = reverse('songarchiv:index')
-        #print(resolve(url))
         self.assertEqual(resolve(url).func, index)
 
     def test_url_autocomplete_is_resolved(self):
