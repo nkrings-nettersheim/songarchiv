@@ -38,22 +38,27 @@
     <p></p>
     <div class="container container_extend">
         <div class="row">
-            <div class="col">
-                <center><h3>Hier die Liste der Songs des Albums "{{Album_songs.0.album.album_title}}".</h3></center>
-                <center><h4>Damit ihr textsicher beim Mitsingkonzert seit, einfach die Texte aufklappen.</h4></center>
+            <div class="col-md-8">
+                <center><h3>Hier die Liste der Songs des Albums: </h3></center> <center><h3 class="font-weight-bolder text-info">{{Album_songs.0.album.album_title}}</h3></center>
+                <center><h4>Damit ihr textsicher beim Mitsingkonzert seid, <br>einfach die Texte aufklappen und es kann losgehen :-)</h4></center>
             </div>
+            <div class="col-md-3">
+                <center><img src="{{Album_songs.0.album.album_cover_image.url}}" width="300px" height="300px" alt="Coverbild {{ song.album.album_title}}"></center>
+            </div>
+            <div class="col-md-1">&nbsp;</div>
         </div>
         <br>
         {% for Album_song in Album_songs %}
         <div class="row">
                 <div class="col-md-1">&nbsp;</div>
-                <div class="col-md-10">
+                <div class="col-md-7">
                     <details>
                         <summary>{{Album_song.song.song_title}}</summary>
                         <p></p>
                         {{Album_song.text.text_text | safe}}
                     </details>
                 </div>
+                <div class="col-md-3">{{ Album_song.song.song_spotify_iframe| safe}}</div>
                 <div class="col-md-1">&nbsp;</div>
         </div>
         <div class="row">

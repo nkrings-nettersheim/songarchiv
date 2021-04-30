@@ -40,16 +40,28 @@
         <div class="row">
             <div class="col">
                 <center><h3>Songs der Kategorie "{{kategorie}}".</h3></center>
-                <center><h4>Bestimmt findest du den perfekten Song für dein persönlichen Videoständchen von Björn Heuser.</h4></center>
+                <center><h4>Bestimmt findest du anhand des Texts und des Song-Snipplet den perfekten Song für dein persönlichen Videoständchen von Björn Heuser.</h4></center>
             </div>
         </div>
         <br>
         {% for song in song_list %}
             <div class="row">
                 <div class="col-md-1">&nbsp;</div>
-                <div class="col-md-3 font-weight-bolder">{{ song }}</div>
-                <div class="col-md-4">{{ song.song_spotify_iframe| safe}}</div>
-                <div class="col-md font-weight-bolder align-middle"><a class="text-dark" href="https://www.heuserkoeln.de/shop-1" target="_blank"> --> zum Heuser-Shop...</a></div>
+                <div class="col-md-6">
+                    {% if forloop.first %}
+                    <details open>
+                    {% else %}
+                    <details>
+                    {% endif %}
+                        <summary class="font-weight-bolder lead">{{song.song.song_title}}</summary>
+                        <p></p>
+                        {{song.text_text | safe}}
+                    </details>
+                </div>
+                <div class="col-md-3">
+                    {{ song.song.song_spotify_iframe| safe}}<br>
+                    <a class="text-primary font-weight-bolder lead" href="https://www.heuserkoeln.de/shop-1" target="_blank"> --> zum Heuser-Shop...</a>
+                </div>
                 <div class="col-md-1">&nbsp;</div>
             </div>
             <div class="row">

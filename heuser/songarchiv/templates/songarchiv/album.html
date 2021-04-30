@@ -53,8 +53,8 @@
 
         {% for alb in album %}
           <div class="row">
-            <div class="col-sm-2">&nbsp;</div>
-            <div class="col-sm-4 pt-3">
+            <div class="col-md-2">&nbsp;</div>
+            <div class="col-md-3 pt-3">
                 <a href="{% url 'songarchiv:cd_song_list' alb.id %}" target="_top" data-toggle='tooltip' data-placement='left' title='zur Songliste'>
                     <img class="img-fluid" src="{{ alb.album_cover_image.url }}" width="500"
                          alt="Coverbild {{ alb.album_title }}"
@@ -62,16 +62,29 @@
                     >
                 </a>
             </div>
-            <div class="col-sm-5 pt-3 justify-content-center d-flex">
-                <div class="row  align-self-center"> {{ alb.album_spotify | safe}} </div>
+            <div class="col-md-3 pt-3 justify-content-center d-flex">
+                <div class="row align-self-center"> {{ alb.album_spotify | safe}} </div>
+                {% if alb.album_amazon_selling %}
             </div>
-            <div class="col-sm-1 pt-3 justify-content-center d-flex">
+            <div class="col-md-2 pt-3 justify-content-center d-flex">
+                <div class="row align-self-center">
+                    <a href="{{ alb.album_amazon_selling }}" target="_blank">
+                            <img class="img-fluid" src="{% static 'songarchiv/images/'%}amazon_shop2.png"
+                                 width="200"
+                                 alt="amazon Sales Logo"
+                                 title="Direkt zu amazon Sale"
+                            >
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+          <div class="col-md-2 pt-3 justify-content-center d-flex">
                 {% if user.is_authenticated %}
                 <div class="row  align-self-center">
                     <a class="nav-link" href="{% url 'songarchiv:edit_album' alb.id %}"><i class="fa fa-pencil fa-fw text-dark" style="font-size:24px"></i></a>
                 </div>
                 {% endif %}
-            </div>
+          </div>
           </div>
         <div class="row">
             &nbsp;
