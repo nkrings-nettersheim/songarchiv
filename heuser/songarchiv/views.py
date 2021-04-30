@@ -433,8 +433,9 @@ def videostaendchen(request):
 
 def staendchenlist(request):
     if request.method == "GET":
-        song_list = Song.objects.filter(song_tag__contains=request.GET.get('tag'))
-
+        #song_list = Song.objects.filter(song_tag__contains=request.GET.get('tag'))
+        #Asset.objects.filter( project__name__contains="Foo" )
+        song_list = Song_Text.objects.filter(song__song_tag__contains=request.GET.get('tag'))
         return render(request, 'songarchiv/videostaendchenliste.html', {'song_list': song_list, 'kategorie': request.GET.get('tag')})
     else:
         form = IndexForm()
