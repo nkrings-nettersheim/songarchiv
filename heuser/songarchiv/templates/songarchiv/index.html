@@ -59,7 +59,7 @@
     <div class="container-fluid min-100 d-flex flex-column" >
         <div class="row flex-grow-1 min-100 special">
             <div class="col p-4 flex-grow-1 bg-class">
-        <form action="{% url 'songarchiv:search_song' %}" method="post">
+        <form id=searchform action="{% url 'songarchiv:search_song' %}" method="post">
         {% csrf_token %}
             <div class="row" >
                 <div class="col-sm text-white">

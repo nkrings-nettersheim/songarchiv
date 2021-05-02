@@ -93,7 +93,11 @@ owa_cmds.push(['trackClicks']);
   $( function() {
     $( "#id_title" ).autocomplete({
       source: '{% url 'songarchiv:autocomplete' %}',
-      minLength: 2
+      minLength: 2,
+      select: function(event, ui) {
+            $("#id_title").val(ui.item.value);
+            $("#searchform").submit();
+        }
     });
   });
 </script>
