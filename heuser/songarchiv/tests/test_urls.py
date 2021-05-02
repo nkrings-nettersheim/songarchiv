@@ -1,7 +1,8 @@
 from django.test import SimpleTestCase
 from django.urls import resolve, reverse
-from ..views import index, impressum, datenschutz, add_song, search_song, edit_song, song, del_song, song_delete_done
-from ..views import autocomplete
+from ..views import index, impressum, datenschutz, add_song, search_song, edit_song, song, del_song, song_delete_done, \
+    videostaendchen, staendchenlist, cd_song_list
+from ..views import autocomplete, uebers_songarchiv
 from ..views import add_album, search_album_start, search_album, edit_album, album, single
 from ..views import add_text, edit_text, text, print_text, print_chordpro, print_chords, print_nashville
 
@@ -10,18 +11,6 @@ class TestUrls(SimpleTestCase):
     def test_url_index_is_resolved(self):
         url = reverse('songarchiv:index')
         self.assertEqual(resolve(url).func, index)
-
-    def test_url_autocomplete_is_resolved(self):
-        url = reverse('songarchiv:autocomplete')
-        self.assertEqual(resolve(url).func, autocomplete)
-
-    def test_url_impressum_is_resolved(self):
-        url = reverse('songarchiv:impressum')
-        self.assertEqual(resolve(url).func, impressum)
-
-    def test_url_datenschutz_is_resolved(self):
-        url = reverse('songarchiv:datenschutz')
-        self.assertEqual(resolve(url).func, datenschutz)
 
     def test_url_add_song_is_resolved(self):
         url = reverse('songarchiv:add_song')
@@ -47,6 +36,11 @@ class TestUrls(SimpleTestCase):
         url = reverse('songarchiv:del_song_done')
         self.assertEqual(resolve(url).func, song_delete_done)
 
+    def test_url_autocomplete_is_resolved(self):
+        url = reverse('songarchiv:autocomplete')
+        self.assertEqual(resolve(url).func, autocomplete)
+
+
     def test_url_add_album_is_resolved(self):
         url = reverse('songarchiv:add_album')
         self.assertEqual(resolve(url).func, add_album)
@@ -71,6 +65,7 @@ class TestUrls(SimpleTestCase):
         url = reverse('songarchiv:single')
         self.assertEqual(resolve(url).func, single)
 
+
     def test_url_add_text_is_resolved(self):
         url = reverse('songarchiv:add_text')
         self.assertEqual(resolve(url).func, add_text)
@@ -82,6 +77,7 @@ class TestUrls(SimpleTestCase):
     def test_url_text_is_resolved(self):
         url = reverse('songarchiv:text', args=['1'])
         self.assertEqual(resolve(url).func, text)
+
 
     def test_url_print_text_is_resolved(self):
         url = reverse('songarchiv:print_text')
@@ -98,3 +94,30 @@ class TestUrls(SimpleTestCase):
     def test_url_print_nashville_is_resolved(self):
         url = reverse('songarchiv:print_nashville')
         self.assertEqual(resolve(url).func, print_nashville)
+
+
+    def test_url_videostaendchen_is_resolved(self):
+        url = reverse('songarchiv:videostaendchen')
+        self.assertEqual(resolve(url).func, videostaendchen)
+
+    def test_url_staendchenlist_is_resolved(self):
+        url = reverse('songarchiv:staendchenlist')
+        self.assertEqual(resolve(url).func, staendchenlist)
+
+
+    def test_url_cd_song_list_is_resolved(self):
+        url = reverse('songarchiv:cd_song_list', args=['1'])
+        self.assertEqual(resolve(url).func, cd_song_list)
+
+
+    def test_url_impressum_is_resolved(self):
+        url = reverse('songarchiv:impressum')
+        self.assertEqual(resolve(url).func, impressum)
+
+    def test_url_datenschutz_is_resolved(self):
+        url = reverse('songarchiv:datenschutz')
+        self.assertEqual(resolve(url).func, datenschutz)
+
+    def test_url_uebers_songarchiv_is_resolved(self):
+        url = reverse('songarchiv:uebers-songarchiv')
+        self.assertEqual(resolve(url).func, uebers_songarchiv)
