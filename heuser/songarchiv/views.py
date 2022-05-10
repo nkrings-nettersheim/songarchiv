@@ -248,7 +248,7 @@ def edit_album(request, id=None):
     if form.is_valid():
         form.save()
         logger.info(f"{request.user.id:>2};edit_album;{str(item.id)};album changed and saved")
-        return redirect('/songarchiv/')
+        return redirect('/songarchiv/album/')
     form.id = item.id
     form.change = True
     logger.info(f"{request.META.get('HTTP_X_REAL_IP')};edit_album;{str(form.id)};AlbumForm for id called")

@@ -275,23 +275,11 @@ class AlbumForm(forms.ModelForm):
             'placeholder': 'Erscheinungsjahr eingeben ...'
         }
     ),
-        required=False
+        required=True
     )
 
 
-    album_cover = forms.CharField(required=False,
-                                  max_length=250,
-                                  widget=forms.TextInput(
-                                      attrs={
-                                          'class': 'form-control',
-                                          'placeholder': 'Album-Cover eingeben ...'
-                                      }
-                                  )
-                                  )
-
-
-
-
+    album_cover_image = forms.FileField(required=True)
 
 
     album_spotify = forms.CharField(required=False,
@@ -320,7 +308,6 @@ class AlbumForm(forms.ModelForm):
         fields = [
             'album_title',
             'album_year',
-            'album_cover',
             'album_cover_image',
             'album_spotify',
             'album_amazon_selling',

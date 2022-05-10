@@ -335,7 +335,8 @@ class SongModelTest(TestCase):
         song = Song.objects.get(id=1)
         self.assertEqual(song.album.album_title, "Zick es Jlöck")
 
-class Song_TextModelTest(TestCase):
+
+class SongTextModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         song = Song.objects.create(song_title='Als Panz')
@@ -417,7 +418,7 @@ class Song_TextModelTest(TestCase):
         self.assertEqual(song_text.song.song_title, "Als Panz")
 
 
-class Album_songModelTest(TestCase):
+class AlbumSongModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         song = Song.objects.create(song_title='Als Panz')
@@ -456,7 +457,7 @@ class Album_songModelTest(TestCase):
         self.assertEqual(expected_object_name, str(album_song))
 
 
-class Content_textModelTest(TestCase):
+class ContentTextModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         cls.content_text = Content_text.objects.create(
