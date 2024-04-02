@@ -45,12 +45,14 @@ def uebers_songarchiv(request):
     content = Content_text.objects.get(content_kurz='oevver_dat_songarchiv')
     return render(request, 'songarchiv/uebers_songarchiv.html', {'content': content})
 
+
 def cd_song_list(request, id):
     Album_songs = Album_song.objects.filter(album_id=id).order_by('position')
     for song in Album_songs:
         song.text = Song_Text.objects.get(song_id=song.song.id)
     logger.info(f"{request.META.get('HTTP_X_REAL_IP')};CD_Song_List")
     return render(request, 'songarchiv/cd_song_list.html', {'Album_songs': Album_songs})
+
 
 @login_required
 def add_song(request):
@@ -61,7 +63,7 @@ def add_song(request):
             song_item.save()
             logger.info(f"User-ID: {request.user.id:>2};add_song;{str(song_item.id)};song created")
             return redirect('/songarchiv/song/' + str(song_item.id) + '/')
-            #return redirect(song.get_abolute_url(song_item))
+            # return redirect(song.get_abolute_url(song_item))
     else:
         logger.info(f"{request.META.get('HTTP_X_REAL_IP')};add_song;;get-call")
         form = SongForm()
@@ -77,7 +79,8 @@ def search_song(request):
         if title != '':
             song_list = Song.objects.filter(song_title__icontains=title, song_activ=True).order_by('song_title')
             if len(song_list) == 1:
-                logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{str(song_list[0].slug)};song with id called")
+                logger.info(
+                    f"{request.META.get('HTTP_X_REAL_IP')};search_song;{str(song_list[0].slug)};song with id called")
                 return redirect('/songarchiv/song/' + str(song_list[0].slug) + '/')
             elif len(song_list) > 1:
                 logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{title};song_list called")
@@ -100,8 +103,8 @@ def search_song(request):
         order = request.GET.get('order', '')
         method = request.GET.get('method', 'startswith')
 
-        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;Titel: {title}, order: {order}, method: {method};GET-call with title")
-
+        logger.info(
+            f"{request.META.get('HTTP_X_REAL_IP')};search_song;Titel: {title}, order: {order}, method: {method};GET-call with title")
 
         if title == "all":
             if order == 'song_title':
@@ -123,9 +126,10 @@ def search_song(request):
             else:
                 song_list = Song.objects.filter(song_title__istartswith=title, song_activ=True).order_by(*order)
 
-        #assert False
+        # assert False
         if len(song_list) == 1:
-            logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{str(song_list[0].slug)};GET-call song with id called")
+            logger.info(
+                f"{request.META.get('HTTP_X_REAL_IP')};search_song;{str(song_list[0].slug)};GET-call song with id called")
             return redirect('/songarchiv/song/' + str(song_list[0].slug) + '/')
         elif len(song_list) > 1:
             logger.info(f"{request.META.get('HTTP_X_REAL_IP')};search_song;{title};GET-call song_list called")
@@ -143,7 +147,7 @@ def search_song(request):
 
 
 def autocomplete(request):
-    if request.method =='GET':
+    if request.method == 'GET':
         title = request.GET['term']
         title = title.strip()
         qs = Song.objects.filter(song_title__icontains=title, song_activ=True).order_by('song_title')
@@ -201,6 +205,7 @@ def song_delete_done(request):
     logger.info(f"{request.META.get('HTTP_X_REAL_IP')};song_delete_done")
     return render(request, 'songarchiv/song_delete_done.html')
 
+
 # **************************************************************************************************
 
 @login_required
@@ -219,13 +224,13 @@ def add_album(request):
     return render(request, 'songarchiv/album_form.html', {'form': form})
 
 
-#wird wahrscheinlich nicht mehr gebraucht
+# wird wahrscheinlich nicht mehr gebraucht
 def search_album_start(request):
     form = SearchAlbumForm()
     return render(request, 'songarchiv/album_search.html', {'form': form})
 
 
-#wird wahrscheinlich nicht mehr gebraucht
+# wird wahrscheinlich nicht mehr gebraucht
 def search_album(request):
     if request.method == "POST":
         title = request.POST['album_title']
@@ -318,13 +323,16 @@ def text(request, slug):
 
         id = text_result.song_id
 
-        #text_result = Song_Text.objects.get(song_id=id)
+        # text_result = Song_Text.objects.get(song_id=id)
         song_result = Song.objects.get(id=id)
-        logger.info(f"{request.META.get('HTTP_X_REAL_IP')};text;{str(slug)};songtext with id and UserAgent {user_agent} called")
-        return render(request, 'songarchiv/text.html', {'text': text_result, 'song': song_result, 'user_agent': user_agent})
+        logger.info(
+            f"{request.META.get('HTTP_X_REAL_IP')};text;{str(slug)};songtext with id and UserAgent {user_agent} called")
+        return render(request, 'songarchiv/text.html',
+                      {'text': text_result, 'song': song_result, 'user_agent': user_agent})
     except ObjectDoesNotExist:
         logger.info(f"{request.META.get('HTTP_X_REAL_IP')};text;;object does not exist")
         return redirect('/songarchiv/add/text/?id=' + id)
+
 
 # **************************************************************************************************
 
@@ -333,7 +341,7 @@ def print_text(request):
     result_text = Song_Text.objects.get(slug=request.GET.get('slug'))
     result_song = Song.objects.get(id=result_text.song_id)
 
-    filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_text.pdf"
+    filename = result_song.song_artist.replace(" ", "_") + "_" + result_song.song_title.replace(" ", "_") + "_text.pdf"
 
     html_string = render_to_string('pdf_templates/print_text.html', {'result_text': result_text,
                                                                      'result_song': result_song})
@@ -352,9 +360,11 @@ def print_chordpro(request):
     result_text = Song_Text.objects.get(slug=request.GET.get('slug'))
     result_song = Song.objects.get(id=result_text.song_id)
 
-    filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_chordpro.pdf"
+    filename = result_song.song_artist.replace(" ", "_") + "_" + result_song.song_title.replace(" ",
+                                                                                                "_") + "_chordpro.pdf"
 
-    html_string = render_to_string('pdf_templates/print_chordpro.html', {'result_text': result_text, 'result_song': result_song})
+    html_string = render_to_string('pdf_templates/print_chordpro.html',
+                                   {'result_text': result_text, 'result_song': result_song})
 
     html = HTML(string=html_string, base_url=request.build_absolute_uri())
     pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
@@ -370,7 +380,8 @@ def print_chords(request):
     result_text = Song_Text.objects.get(slug=request.GET.get('slug'))
     result_song = Song.objects.get(id=result_text.song_id)
 
-    filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_chords.pdf"
+    filename = result_song.song_artist.replace(" ", "_") + "_" + result_song.song_title.replace(" ",
+                                                                                                "_") + "_chords.pdf"
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename=' + filename
 
@@ -390,12 +401,14 @@ def print_chords(request):
 def print_nashville(request):
     slug = request.GET.get('slug')
     result_text = Song_Text.objects.get(slug=request.GET.get('slug'))
-    #result_text = Song_Text.objects.get(id=request.GET.get('id'))
+    # result_text = Song_Text.objects.get(id=request.GET.get('id'))
     result_song = Song.objects.get(id=result_text.song_id)
 
-    filename = result_song.song_artist.replace(" ", "_") + "_" +  result_song.song_title.replace(" ", "_") + "_nashville.pdf"
+    filename = result_song.song_artist.replace(" ", "_") + "_" + result_song.song_title.replace(" ",
+                                                                                                "_") + "_nashville.pdf"
 
-    html_string = render_to_string('pdf_templates/print_nashville.html', {'result_text': result_text, 'result_song': result_song})
+    html_string = render_to_string('pdf_templates/print_nashville.html',
+                                   {'result_text': result_text, 'result_song': result_song})
 
     html = HTML(string=html_string, base_url=request.build_absolute_uri())
     pdf = html.write_pdf(stylesheets=[CSS(settings.STATIC_ROOT + '/songarchiv/print_song.css')])
@@ -424,25 +437,28 @@ def videostaendchen(request):
     for e in tag_list:
         tag_dict[e] = tag_list.count(e)
 
-    #print(tag_list)
-    #print(tag_dict)
-    #tag_list = list(dict.fromkeys(tag_list))
-    #tag_list.sort()
+    # print(tag_list)
+    # print(tag_dict)
+    # tag_list = list(dict.fromkeys(tag_list))
+    # tag_list.sort()
 
     return render(request, 'songarchiv/videostaendchen.html', {'tag_dict': tag_dict})
 
+
 def staendchenlist(request):
     if request.method == "GET":
-        #song_list = Song.objects.filter(song_tag__contains=request.GET.get('tag'))
-        #Asset.objects.filter( project__name__contains="Foo" )
+        # song_list = Song.objects.filter(song_tag__contains=request.GET.get('tag'))
+        # Asset.objects.filter( project__name__contains="Foo" )
         song_list = Song_Text.objects.filter(song__song_tag__contains=request.GET.get('tag'))
-        return render(request, 'songarchiv/videostaendchenliste.html', {'song_list': song_list, 'kategorie': request.GET.get('tag')})
+        return render(request, 'songarchiv/videostaendchenliste.html',
+                      {'song_list': song_list, 'kategorie': request.GET.get('tag')})
     else:
         form = IndexForm()
         song_count = Song.objects.all().count()
         form.song_count = song_count
         logger.info(f"{request.META.get('HTTP_X_REAL_IP')};Index-site")
         return render(request, 'songarchiv/index.html', {'form': form})
+
 
 # **************************************************************************************************
 LOGLEVEL = os.environ.get('LOGLEVEL', 'info').upper()
@@ -466,7 +482,7 @@ logging.config.dictConfig({
             'class': 'logging.handlers.RotatingFileHandler',
             'formatter': 'file',
             'filename': BASE_DIR + '/songarchiv.log',
-            'maxBytes': 1024*1024*1,
+            'maxBytes': 1024 * 1024 * 1,
             'backupCount': 10,
         }
     },

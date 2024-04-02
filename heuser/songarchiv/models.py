@@ -40,7 +40,7 @@ class Song(models.Model):
     song_year = models.DateField(blank=True, default='1900-01-01')
     song_publisher = models.CharField(max_length=250, blank=True, default='')
     song_producer = models.CharField(max_length=125, blank=True, default='')
-    song_spotify_iframe = models.CharField(max_length=250, blank=True, default='')
+    song_spotify_iframe = models.CharField(max_length=500, blank=True, default='')
     song_spotify = models.URLField(max_length=250, blank=True, default='')
     song_amazon = models.URLField(max_length=250, blank=True, default='')
     song_itunes = models.URLField(max_length=250, blank=True, default='')
