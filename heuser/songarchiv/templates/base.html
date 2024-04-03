@@ -46,24 +46,22 @@
         {% cookie_accepted 'analytics' as cookie_analytics %}
         {% if cookie_analytics %}
 
-<!-- Start Open Web Analytics Tracker -->
-<script type="text/javascript">
-//<![CDATA[
-var owa_baseUrl = 'https://www.xkgmbh.eu/owa/';
-var owa_cmds = owa_cmds || [];
-owa_cmds.push(['setSiteId', 'b0e7821a34c572615fae535d59a37c4b']);
-owa_cmds.push(['trackPageView']);
-owa_cmds.push(['trackClicks']);
-
-(function() {
-    var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
-    owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
-    _owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
-    var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
-}());
-//]]>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//apache2.xkgmbh.eu/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
 </script>
-<!-- End Open Web Analytics Code -->
+<!-- End Matomo Code -->
+
         {% endif %}
     {% else %}
     {% endif %}
