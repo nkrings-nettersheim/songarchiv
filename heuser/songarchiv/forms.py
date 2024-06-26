@@ -1,7 +1,8 @@
 import datetime
 from django import forms
 
-from ckeditor.widgets import CKEditorWidget
+#from ckeditor.widgets import CKEditorWidget
+from django_ckeditor_5.widgets import CKEditor5Widget
 
 from .models import Song, Album, Song_Text
 
@@ -317,19 +318,19 @@ class AlbumForm(forms.ModelForm):
 
 class SongTextForm(forms.ModelForm):
     text_text = forms.CharField(required=False,
-                                widget=CKEditorWidget(config_name='text'))
+                                widget=CKEditor5Widget(config_name='text'))
 
     text_standard_german = forms.CharField(required=False,
-                                  widget=CKEditorWidget(config_name='text'))
+                                  widget=CKEditor5Widget(config_name='text'))
 
     text_chordpro = forms.CharField(required=False,
-                                  widget=CKEditorWidget(config_name='text'))
+                                  widget=CKEditor5Widget(config_name='text'))
 
     text_chords = forms.CharField(required=False,
-                                  widget=CKEditorWidget(config_name='chords'))
+                                  widget=CKEditor5Widget(config_name='chords'))
 
     text_nashville = forms.CharField(required=False,
-                                     widget=CKEditorWidget(config_name='chords'))
+                                     widget=CKEditor5Widget(config_name='chords'))
 
     class Meta:
         model = Song_Text

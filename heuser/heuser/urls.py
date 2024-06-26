@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView, TemplateView
 
+
 urlpatterns = [
     path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
     path('', RedirectView.as_view(url='songarchiv/', permanent=True)),
@@ -33,3 +34,7 @@ urlpatterns = [
 # Dies ist nur für die Entwicklung notwendig. In Produktion braucht es einen Eintrag in der conf Datei von nginx
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

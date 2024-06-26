@@ -1,6 +1,10 @@
 import logging
 import os
 
+os.environ['LANG'] = 'de_DE.UTF-8'# desired locale
+os.environ['LC_CTYPE'] = 'de_DE.UTF-8'# desired locale
+os.environ['LC_ALL'] = 'de_DE.UTF-8'# desired locale
+
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
@@ -10,7 +14,8 @@ from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.views.generic import DeleteView
 from weasyprint import HTML, CSS
-from weasyprint.fonts import FontConfiguration
+#´from weasyprint.fonts import FontConfiguration
+from weasyprint.text.fonts import FontConfiguration
 
 from .forms import IndexForm, SongForm, SearchAlbumForm, AlbumForm, SongTextForm
 from .models import Song, Album, Song_Text, Album_song, Content_text
@@ -356,6 +361,7 @@ def print_text(request):
 
 
 def print_chordpro(request):
+    #font_config = FontConfiguration()
     slug = request.GET.get('slug')
     result_text = Song_Text.objects.get(slug=request.GET.get('slug'))
     result_song = Song.objects.get(id=result_text.song_id)

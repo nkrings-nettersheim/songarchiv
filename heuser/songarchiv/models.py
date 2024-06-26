@@ -1,6 +1,7 @@
 
 from django.db import models
-from ckeditor.fields import RichTextField
+#from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 from django.urls import reverse
 from django.utils.text import slugify
 
@@ -75,12 +76,12 @@ class Song(models.Model):
 
 
 class Song_Text(models.Model):
-    text_text = RichTextField()
+    text_text = CKEditor5Field('Text', config_name='extends')
     slug = models.SlugField(max_length=70, null=True, blank=True)
-    text_standard_german = RichTextField()
-    text_chordpro = RichTextField()
-    text_chords = RichTextField()
-    text_nashville = RichTextField()
+    text_standard_german = CKEditor5Field('Text', config_name='extends')
+    text_chordpro = CKEditor5Field('Text', config_name='extends')
+    text_chords = CKEditor5Field('Text', config_name='extends')
+    text_nashville = CKEditor5Field('Text', config_name='extends')
     song = models.ForeignKey(Song, on_delete=models.CASCADE, default='')
 
     def __str__(self):
@@ -106,7 +107,7 @@ class Album_song(models.Model):
 
 class Content_text(models.Model):
     content_kurz = models.CharField(max_length=256, default='')
-    content_lang = RichTextField()
+    content_lang = CKEditor5Field('Text', config_name='extends')
 
     def __str__(self):
         return self.content_kurz
