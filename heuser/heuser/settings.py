@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.utils.translation import gettext_lazy as _
 
 #from django.utils.translation import ugettext_lazy as _
 
@@ -127,40 +128,40 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ## cookiebanner configuration
 ####################################
 COOKIEBANNER = {
-    "title": ("Cookie Einstellungen"),
-    "header_text": ("Wir nutzen zum einen Cookies die für den Betrieb der Webseite unumgänglich sind. "
+    "title": _("Cookie Einstellungen"),
+    "header_text": _("Wir nutzen zum einen Cookies die für den Betrieb der Webseite unumgänglich sind. "
                      "Weiterhin setzen wie Open Web Analytics zur Verbesserung der Nutzererfahrung auf der Webseite ein. <br>"
                      "Weitere Informationen finden sie in den Datenschutzbestimmungen"),
     "footer_text": ("Bitte Cookies akzeptieren:"),
     "footer_links": [
         {
-            "title": ("Impressum"),
+            "title": _("Impressum"),
             "href": "/songarchiv/impressum"
         },
         {
-            "title": ("Datenschutz"),
+            "title": _("Datenschutz"),
             "href": "/songarchiv/datenschutz"
         },
     ],
     "groups": [
         {
             "id": "essential",
-            "name": ("Essential"),
-            "description": ("Essentielle cookies erlauben die Funktion der Website."),
+            "name": _("Essential"),
+            "description": _("Essentielle cookies erlauben die Funktion der Website."),
             "cookies": [
                 {
                     "pattern": "cookiebanner",
-                    "description": ("Damit dieser Hinweis nur beim ersten Aufruf erfolgt."),
+                    "description": _("Damit dieser Hinweis nur beim ersten Aufruf erfolgt."),
                 },
                 {
                     "pattern": "csrftoken",
-                    "description": ("Cookie hilft Cross-Site-Request-Forgery Attacken zu verhindern."),
+                    "description": _("Cookie hilft Cross-Site-Request-Forgery Attacken zu verhindern."),
                 },
             ],
         },
         {
             "id": "analytics",
-            "name": ("Analytics"),
+            "name": _("Analytics"),
             "optional": True,
             "cookies": [
                 {
